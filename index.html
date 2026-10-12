@@ -27,13 +27,19 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Section offset so sticky navigation never overlaps content */
+    section[id], footer[id] {
+      scroll-margin-top: 5.5rem;
+    }
   </style>
 </head>
 <body class="bg-brandNavy text-slate-100 font-sans selection:bg-brandCoral selection:text-white antialiased">
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-brandNavy/90 backdrop-blur-md border-b border-white/10">
+  <header class="fixed top-0 left-0 w-full z-50 bg-brandNavy/95 backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3">
         <!-- Exact Long View Geometric Sunrise Logo -->
@@ -50,15 +56,16 @@
         </div>
       </a>
 
+      <!-- Navigation Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-        <a href="#framework" class="hover:text-white transition">Approach</a>
-        <a href="#system" class="hover:text-white transition">Monthly Rhythm</a>
-        <a href="#nfc" class="hover:text-white transition">NFC Tap Cards</a>
-        <a href="#pricing" class="hover:text-white transition">Packages</a>
+        <a href="#approach" class="hover:text-white transition">Approach</a>
+        <a href="#monthly-rhythm" class="hover:text-white transition">Monthly Rhythm</a>
+        <a href="#nfc-tap-cards" class="hover:text-white transition">NFC Tap Cards</a>
+        <a href="#packages" class="hover:text-white transition">Packages</a>
         <a href="#contact" class="hover:text-white transition">Contact</a>
       </nav>
 
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
+      <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
          target="_blank" 
          class="bg-brandCoral hover:bg-brandCoralHover text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-brandCoral/25 transition">
         Book Discovery Call
@@ -80,18 +87,18 @@
         A great business shouldn't have to hope customers find it. We run the marketing so you can run operations. One dedicated partner for social content, Meta ads, and Google reviews working to one steady monthly rhythm.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#pricing" class="bg-brandCoral hover:bg-brandCoralHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brandCoral/30 transition">
+        <a href="#packages" class="bg-brandCoral hover:bg-brandCoralHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brandCoral/30 transition">
           View Growth Plans
         </a>
-        <a href="#nfc" class="bg-brandCard hover:bg-white/10 border border-white/10 px-8 py-4 rounded-xl font-bold text-base transition">
+        <a href="#nfc-tap-cards" class="bg-brandCard hover:bg-white/10 border border-white/10 px-8 py-4 rounded-xl font-bold text-base transition">
           Custom NFC Review System
         </a>
       </div>
     </div>
   </section>
 
-  <!-- THE 3-PILLAR FRAMEWORK -->
-  <section id="framework" class="py-20 px-6 bg-brandDark/50 border-t border-b border-white/5">
+  <!-- SECTION 1: APPROACH (#approach) -->
+  <section id="approach" class="py-24 px-6 bg-brandDark/50 border-t border-b border-white/5">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Our Methodology</span>
@@ -129,8 +136,8 @@
     </div>
   </section>
 
-  <!-- MONTHLY CONTENT EXECUTION CYCLE -->
-  <section id="system" class="py-24 px-6">
+  <!-- SECTION 2: MONTHLY RHYTHM (#monthly-rhythm) -->
+  <section id="monthly-rhythm" class="py-24 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-6">
         <div>
@@ -170,8 +177,8 @@
     </div>
   </section>
 
-  <!-- NFC REVIEW CARD SECTION -->
-  <section id="nfc" class="py-24 px-6 bg-brandDark/40 border-t border-b border-white/5">
+  <!-- SECTION 3: NFC REVIEW CARD SECTION (#nfc-tap-cards) -->
+  <section id="nfc-tap-cards" class="py-24 px-6 bg-brandDark/40 border-t border-b border-white/5">
     <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
       <div class="lg:w-1/2">
         <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Hardware Reputation Integration</span>
@@ -264,8 +271,8 @@
     </div>
   </section>
 
-  <!-- PRICING TIERS -->
-  <section id="pricing" class="py-24 px-6 bg-brandDark/50 border-t border-white/5">
+  <!-- SECTION 4: PRICING TIERS (#packages) -->
+  <section id="packages" class="py-24 px-6 bg-brandDark/50 border-t border-white/5">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
         <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Growth Retainers</span>
@@ -290,7 +297,9 @@
               <li>✔ Monthly WhatsApp performance reports</li>
             </ul>
           </div>
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan" class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 3-Month</a>
+          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan" 
+             target="_blank"
+             class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 3-Month</a>
         </div>
 
         <!-- 6-Month Plan (Recommended) -->
@@ -314,7 +323,9 @@
               <li>✔ Monthly reach, ad clicks & appointment reports</li>
             </ul>
           </div>
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan" class="mt-8 block w-full py-3.5 text-center bg-brandCoral hover:bg-brandCoralHover text-white font-bold rounded-xl text-sm shadow-lg shadow-brandCoral/30 transition">Select Growth Partner</a>
+          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan" 
+             target="_blank"
+             class="mt-8 block w-full py-3.5 text-center bg-brandCoral hover:bg-brandCoralHover text-white font-bold rounded-xl text-sm shadow-lg shadow-brandCoral/30 transition">Select Growth Partner</a>
         </div>
 
         <!-- 12-Month Plan -->
@@ -335,13 +346,15 @@
               <li>✔ Priority WhatsApp support line</li>
             </ul>
           </div>
-          <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Plan" class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 12-Month</a>
+          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Plan" 
+             target="_blank"
+             class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 12-Month</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TERMS & FOOTER -->
+  <!-- SECTION 5: CONTACT & TERMS (#contact) -->
   <footer id="contact" class="py-16 px-6 border-t border-white/10 text-slate-400 text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
       <div class="md:w-1/2">
