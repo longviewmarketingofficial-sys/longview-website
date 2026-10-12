@@ -1,378 +1,1002 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Long View Digital Marketing | Be Seen. Be Remembered. Be Chosen.</title>
+  <title>Long View Digital Marketing | Ahmedabad’s Local Growth Studio</title>
+  <meta name="description" content="Long View Digital Marketing is Ahmedabad's premier local growth studio. We engineer high-retention Instagram Reels, hyper-local Meta Ads, and custom NFC Google Review cards for ambitious regional businesses." />
+  <meta name="keywords" content="digital marketing ahmedabad, instagram reels ahmedabad, meta ads ahmedabad, nfc google review card, local business marketing gujarat" />
+  
+  <!-- Open Graph / Meta Social -->
+  <meta property="og:title" content="Long View Digital Marketing | Ahmedabad’s Local Growth Studio" />
+  <meta property="og:description" content="Local business marketing without the agency fluff. High-retention Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            brandNavy: '#080F26',
-            brandDark: '#0E1738',
-            brandCard: '#142048',
-            brandCoral: '#FF5938',
-            brandCoralHover: '#E44728',
+            night: '#07090E',
+            nightElevated: '#0D111A',
+            nightCard: '#111723',
+            nightBorder: 'rgba(255, 255, 255, 0.08)',
+            nightBorderActive: 'rgba(255, 77, 46, 0.35)',
+            electricCoral: '#FF4D2E',
+            electricCoralHover: '#E83E20',
+            electricAmber: '#FFA336',
+            electricEmerald: '#10B981',
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          letterSpacing: {
+            tighter: '-0.04em',
+            tightest: '-0.06em',
           }
         }
       }
     }
   </script>
+
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    /* Section offset so sticky navigation never overlaps content */
+    /* Section offset for fixed top bar */
     section[id], footer[id] {
-      scroll-margin-top: 5.5rem;
+      scroll-margin-top: 5rem;
+    }
+
+    /* Ambient noise & grid backdrops */
+    .bg-grid-mesh {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    }
+
+    /* Modern glassmorphic nav bar */
+    .glass-nav {
+      background: rgba(7, 9, 14, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* High-end Bento Cards */
+    .bento-card {
+      background: radial-gradient(130% 100% at 50% 0%, rgba(20, 28, 44, 0.55) 0%, rgba(13, 17, 26, 0.85) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bento-card:hover {
+      border-color: rgba(255, 77, 46, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 24px 48px -20px rgba(255, 77, 46, 0.18);
+    }
+
+    /* Glowing action button */
+    .btn-coral-glow {
+      background: linear-gradient(135deg, #FF4D2E 0%, #ED3919 100%);
+      box-shadow: 0 10px 28px -6px rgba(255, 77, 46, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .btn-coral-glow:hover {
+      box-shadow: 0 14px 36px -2px rgba(255, 77, 46, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+      transform: translateY(-1.5px) scale(1.015);
+    }
+
+    /* Text masking gradients */
+    .text-coral-gradient {
+      background: linear-gradient(135deg, #FFFFFF 30%, #FF8A73 70%, #FF4D2E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-glow {
+      text-shadow: 0 0 40px rgba(255, 77, 46, 0.35);
+    }
+
+    /* NFC Simulation Ripple */
+    @keyframes rippleAnim {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+    .nfc-ripple {
+      animation: rippleAnim 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+    /* Subtle shimmer for featured badges */
+    @keyframes badgeShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .shimmer-pill {
+      background: linear-gradient(90deg, rgba(255, 77, 46, 0.15) 0%, rgba(255, 77, 46, 0.4) 50%, rgba(255, 77, 46, 0.15) 100%);
+      background-size: 200% 100%;
+      animation: badgeShimmer 4s ease-in-out infinite;
     }
   </style>
 </head>
-<body class="bg-brandNavy text-slate-100 font-sans selection:bg-brandCoral selection:text-white antialiased">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-brandNavy/95 backdrop-blur-md border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <!-- Exact Long View Geometric Sunrise Logo -->
-        <svg class="w-10 h-10 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="50" cy="50" r="48" fill="#0E1738"/>
-          <path d="M26 42 A 24 24 0 0 1 74 42 Z" fill="#FF5938"/>
-          <rect x="14" y="42" width="72" height="6" rx="3" fill="#FFFFFF"/>
-          <line x1="48" y1="48" x2="25" y2="76" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
-          <line x1="52" y1="48" x2="75" y2="76" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
-        </svg>
+<body class="bg-night text-slate-100 font-sans selection:bg-electricCoral selection:text-white antialiased relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient Light Orbs & Grid Layer -->
+  <div class="fixed inset-0 bg-grid-mesh pointer-events-none z-0"></div>
+  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[75vw] h-[35rem] rounded-full bg-electricCoral/[0.08] blur-[160px] pointer-events-none z-0"></div>
+  <div class="fixed top-[45vh] -right-32 w-[35vw] h-[35rem] rounded-full bg-blue-600/[0.05] blur-[180px] pointer-events-none z-0"></div>
+
+  <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Geometric Sunrise Mark -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 rounded-xl bg-nightElevated border border-white/10 flex items-center justify-center p-1.5 shadow-md group-hover:border-electricCoral/50 transition-colors">
+          <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="46" fill="#0A0E18"/>
+            <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="url(#coralSunrise)"/>
+            <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF"/>
+            <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+            <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="coralSunrise" x1="26" y1="20" x2="74" y2="44" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF6B4A"/>
+                <stop offset="1" stop-color="#FF3815"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <div>
-          <span class="text-xl font-extrabold tracking-wider block text-white leading-none">LONG VIEW</span>
-          <span class="text-[10px] tracking-[0.25em] text-brandCoral uppercase font-bold">Digital Marketing</span>
+          <span class="text-lg font-black tracking-wider block text-white leading-none">LONG VIEW</span>
+          <span class="text-[9px] tracking-[0.26em] text-electricCoral uppercase font-bold block mt-1">Digital Marketing</span>
         </div>
       </a>
 
-      <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-        <a href="#approach" class="hover:text-white transition">Approach</a>
-        <a href="#monthly-rhythm" class="hover:text-white transition">Monthly Rhythm</a>
-        <a href="#nfc-tap-cards" class="hover:text-white transition">NFC Tap Cards</a>
-        <a href="#packages" class="hover:text-white transition">Packages</a>
-        <a href="#contact" class="hover:text-white transition">Contact</a>
+      <!-- Pill Nav Items (Linear Style) -->
+      <nav class="hidden md:flex items-center gap-1 bg-nightElevated/80 border border-white/10 p-1.5 rounded-full text-xs font-semibold text-slate-300">
+        <a href="#approach" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Approach</a>
+        <a href="#rhythm" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Monthly Rhythm</a>
+        <a href="#hardware" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">NFC Tap Cards</a>
+        <a href="#retainers" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Retainers</a>
+        <a href="#faq" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">FAQ</a>
       </nav>
 
-      <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
-         target="_blank" 
-         class="bg-brandCoral hover:bg-brandCoralHover text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-brandCoral/25 transition">
-        Book Discovery Call
-      </a>
+      <!-- Direct Action CTA -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
+           target="_blank" 
+           class="btn-coral-glow text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2">
+          <span>Book Strategy Call</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileNavToggle" class="md:hidden p-2 rounded-xl bg-nightElevated border border-white/10 text-slate-300 hover:text-white" aria-label="Toggle Navigation">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileNavMenu" class="hidden md:hidden bg-nightElevated/95 backdrop-blur-xl border-b border-white/10 px-6 py-6">
+      <div class="flex flex-col space-y-4 text-sm font-semibold text-slate-300">
+        <a href="#approach" class="hover:text-electricCoral transition mobile-nav-link">Approach</a>
+        <a href="#rhythm" class="hover:text-electricCoral transition mobile-nav-link">Monthly Rhythm</a>
+        <a href="#hardware" class="hover:text-electricCoral transition mobile-nav-link">NFC Tap Cards</a>
+        <a href="#retainers" class="hover:text-electricCoral transition mobile-nav-link">Retainers</a>
+        <a href="#faq" class="hover:text-electricCoral transition mobile-nav-link">FAQ</a>
+        <div class="pt-2">
+          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
+             target="_blank" 
+             class="btn-coral-glow w-full text-center block text-white py-3 rounded-xl font-bold text-xs tracking-wider">
+            Book Strategy Call on WhatsApp →
+          </a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="pt-36 pb-20 md:pt-48 md:pb-28 px-6">
-    <div class="max-w-5xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brandCard border border-white/10 text-xs font-bold text-brandCoral uppercase tracking-widest mb-6">
-        Ahmedabad & Regional Business Growth
-      </div>
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white mb-6 leading-[1.1]">
-        Be seen. Be remembered. <br/>
-        <span class="text-brandCoral">Be chosen.</span>
-      </h1>
-      <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-        A great business shouldn't have to hope customers find it. We run the marketing so you can run operations. One dedicated partner for social content, Meta ads, and Google reviews working to one steady monthly rhythm.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#packages" class="bg-brandCoral hover:bg-brandCoralHover text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-brandCoral/30 transition">
-          View Growth Plans
-        </a>
-        <a href="#nfc-tap-cards" class="bg-brandCard hover:bg-white/10 border border-white/10 px-8 py-4 rounded-xl font-bold text-base transition">
-          Custom NFC Review System
-        </a>
-      </div>
-    </div>
-  </section>
+  <main class="relative z-10">
 
-  <!-- SECTION 1: APPROACH (#approach) -->
-  <section id="approach" class="py-24 px-6 bg-brandDark/50 border-t border-b border-white/5">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Our Methodology</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">How We Win Customers For Local Businesses</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Pillar 1 -->
-        <div class="bg-brandCard p-8 rounded-2xl border border-white/10 relative">
-          <div class="w-10 h-10 rounded-full bg-brandCoral text-white font-black flex items-center justify-center text-base mb-6">1</div>
-          <h3 class="text-2xl font-bold text-white mb-3">Be Seen</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            High-converting Reels, behind-the-counter craft, product hero shots, and engaging posts that make your business the thing people scroll to and share across social feeds.
-          </p>
+    <!-- HERO SECTION -->
+    <section class="pt-36 sm:pt-44 pb-20 sm:pb-28 px-5 sm:px-8">
+      <div class="max-w-5xl mx-auto text-center">
+        
+        <!-- Studio Status Pill -->
+        <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-nightElevated border border-white/10 text-[11px] font-semibold text-slate-300 mb-8 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-electricCoral animate-pulse"></span>
+          <span>Ahmedabad & Gujarat Local Growth Studio</span>
+          <span class="text-white/20">|</span>
+          <span class="text-electricCoral font-mono font-medium">Q2 Retainer Intake Open</span>
         </div>
 
-        <!-- Pillar 2 -->
-        <div class="bg-brandCard p-8 rounded-2xl border border-white/10 relative">
-          <div class="w-10 h-10 rounded-full bg-brandCoral text-white font-black flex items-center justify-center text-base mb-6">2</div>
-          <h3 class="text-2xl font-bold text-white mb-3">Be Remembered</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            A cohesive brand identity, planned monthly calendars, and ahead-of-time festive campaigns so your brand stays top-of-mind between customer visits.
-          </p>
-        </div>
+        <!-- Master Statement -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tightest text-white leading-[1.05] mb-8 text-glow">
+          Be Seen. Be Remembered. <br class="hidden sm:inline" />
+          <span class="text-coral-gradient">Be Chosen.</span>
+        </h1>
 
-        <!-- Pillar 3 -->
-        <div class="bg-brandCard p-8 rounded-2xl border border-white/10 relative">
-          <div class="w-10 h-10 rounded-full bg-brandCoral text-white font-black flex items-center justify-center text-base mb-6">3</div>
-          <h3 class="text-2xl font-bold text-white mb-3">Be Chosen</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Hyper-local Meta Ads driving Click-to-WhatsApp enquiries, paired with branded NFC tap-cards that convert happy in-store guests into genuine 5-star Google reviews.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 2: MONTHLY RHYTHM (#monthly-rhythm) -->
-  <section id="monthly-rhythm" class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-6">
-        <div>
-          <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Consistency Engine</span>
-          <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">A Sample Month With Long View</h2>
-        </div>
-        <div class="bg-brandCard px-6 py-4 rounded-xl border border-white/10 text-sm font-medium">
-          <span class="text-white font-bold text-lg text-brandCoral">16 Content Pieces / Month:</span> 6 Reels + 10 Carousels/Single Posts
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-brandDark p-6 rounded-2xl border border-white/10">
-          <span class="text-xs font-black uppercase tracking-wider text-brandCoral block mb-2">Week 1</span>
-          <h4 class="text-lg font-bold text-white mb-2">Signature Offerings</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Hero Reels on best-selling products/services and menu spotlight carousels that drive initial cravings.</p>
-        </div>
-
-        <div class="bg-brandDark p-6 rounded-2xl border border-white/10">
-          <span class="text-xs font-black uppercase tracking-wider text-brandCoral block mb-2">Week 2</span>
-          <h4 class="text-lg font-bold text-white mb-2">Behind The Scenes</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Authentic staff, kitchen, or operational craft clips showing the humans and quality behind your enterprise.</p>
-        </div>
-
-        <div class="bg-brandDark p-6 rounded-2xl border border-white/10">
-          <span class="text-xs font-black uppercase tracking-wider text-brandCoral block mb-2">Week 3</span>
-          <h4 class="text-lg font-bold text-white mb-2">Offers & Combos</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Direct-response carousels that sell: weekday combo specials, limited-time deals, and event announcements.</p>
-        </div>
-
-        <div class="bg-brandDark p-6 rounded-2xl border border-white/10">
-          <span class="text-xs font-black uppercase tracking-wider text-brandCoral block mb-2">Week 4</span>
-          <h4 class="text-lg font-bold text-white mb-2">Vibes & Community</h4>
-          <p class="text-slate-400 text-xs leading-relaxed">Customer spotlights, weekend ambient reels, and foot-traffic drivers designed to pack your location.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: NFC REVIEW CARD SECTION (#nfc-tap-cards) -->
-  <section id="nfc-tap-cards" class="py-24 px-6 bg-brandDark/40 border-t border-b border-white/5">
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-      <div class="lg:w-1/2">
-        <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Hardware Reputation Integration</span>
-        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2 mb-6">Custom NFC Review Cards. <br/><span class="text-brandCoral">Designed for your brand.</span></h2>
-        <p class="text-slate-300 text-base mb-8 leading-relaxed">
-          We don't hand out generic white plastic. Every card is custom-designed with your business's logo, colors, and branding to sit naturally on billing counters or tables.
+        <!-- Subheading -->
+        <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          Local business marketing without the agency fluff. One dedicated monthly rhythm for cinematic short-form Reels, hyper-local Meta Ads, and automated 5-star Google review hardware.
         </p>
 
-        <div class="space-y-4">
-          <div class="flex items-start gap-4">
-            <span class="w-8 h-8 rounded-full bg-brandCoral/20 text-brandCoral font-bold flex items-center justify-center text-xs shrink-0">1</span>
-            <p class="text-slate-300 text-sm">Customer completes an order or enjoys their visit.</p>
+        <!-- CTA Row -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <a href="#retainers" class="btn-coral-glow text-white px-8 py-4 rounded-xl text-sm font-extrabold shadow-xl w-full sm:w-auto flex items-center justify-center gap-2">
+            <span>Explore Growth Retainers</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </a>
+          <a href="#hardware" class="px-7 py-4 rounded-xl text-sm font-bold bg-nightElevated hover:bg-white/5 border border-white/10 text-slate-200 transition-colors w-full sm:w-auto flex items-center justify-center gap-2">
+            <span>Test NFC Card Demo</span>
+            <span class="text-[10px] bg-electricCoral/20 text-electricCoral font-mono font-bold px-1.5 py-0.5 rounded">Interactive</span>
+          </a>
+        </div>
+
+        <!-- Proof Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto pt-8 border-t border-white/[0.08]">
+          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Consistency</span>
+            <span class="text-2xl font-black text-white block tracking-tight">16 Pieces</span>
+            <span class="text-[11px] text-slate-400">Reels + Carousels Monthly</span>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="w-8 h-8 rounded-full bg-brandCoral/20 text-brandCoral font-bold flex items-center justify-center text-xs shrink-0">2</span>
-            <p class="text-slate-300 text-sm">Your staff politely asks for honest feedback.</p>
+          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Review Lift</span>
+            <span class="text-2xl font-black text-electricCoral block tracking-tight">3.4x</span>
+            <span class="text-[11px] text-slate-400">Google Review Velocity</span>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="w-8 h-8 rounded-full bg-brandCoral/20 text-brandCoral font-bold flex items-center justify-center text-xs shrink-0">3</span>
-            <p class="text-slate-300 text-sm">Customer taps their phone (or scans the backup QR code).</p>
+          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Ad Engine</span>
+            <span class="text-2xl font-black text-white block tracking-tight">Direct WhatsApp</span>
+            <span class="text-[11px] text-slate-400">Hyper-Local Foot Traffic</span>
           </div>
-          <div class="flex items-start gap-4">
-            <span class="w-8 h-8 rounded-full bg-brandCoral/20 text-brandCoral font-bold flex items-center justify-center text-xs shrink-0">4</span>
-            <p class="text-slate-300 text-sm">Your exact Google review popup opens instantly.</p>
+          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
+            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Transparency</span>
+            <span class="text-2xl font-black text-electricEmerald block tracking-tight">Zero Fluff</span>
+            <span class="text-[11px] text-slate-400">Flat Monthly Billing</span>
           </div>
         </div>
-      </div>
 
-      <!-- Card Mockup Preview -->
-      <div class="lg:w-1/2 w-full flex justify-center">
-        <div class="w-full max-w-md aspect-[1.586/1] bg-gradient-to-tr from-[#080d1e] to-[#162248] rounded-3xl p-8 border border-white/20 shadow-2xl relative flex flex-col justify-between">
-          <div class="flex justify-between items-start">
-            <div>
-              <span class="text-xs uppercase font-extrabold tracking-widest text-brandCoral block">Long View Hardware</span>
-              <span class="text-xl font-black tracking-wider text-white">YOUR BRAND</span>
-            </div>
-            <div class="text-right">
-              <span class="text-[10px] text-slate-400 block font-mono">NFC + QR ENABLED</span>
-              <span class="text-xs text-white">📡</span>
-            </div>
-          </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: APPROACH (#approach) -->
+    <section id="approach" class="py-24 px-5 sm:px-8 border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="max-w-2xl mb-16">
+          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// The Methodology</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">The Three-Pillar Growth Bento</h2>
+          <p class="text-slate-400 text-sm mt-3">We replace unstructured, random posting with three interlocking engines engineered specifically for regional offline businesses.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
           
-          <div class="flex items-center gap-4 py-3">
-            <div class="w-12 h-10 rounded-md bg-amber-400/20 border border-amber-300/40 flex items-center justify-center text-[10px] text-amber-200 font-mono">CHIP</div>
-            <p class="text-sm font-bold text-white tracking-wide">LEAVE US A GOOGLE REVIEW</p>
-          </div>
-
-          <div class="flex justify-between items-end">
+          <!-- Bento Card 1: Visual Dominance (Large) -->
+          <div class="lg:col-span-7 bento-card p-7 sm:p-9 flex flex-col justify-between">
             <div>
-              <p class="text-brandCoral font-bold text-xs uppercase tracking-wide">Tap phone to review</p>
-              <p class="text-[10px] text-slate-400">100% Genuine Customer Feedback</p>
+              <div class="flex justify-between items-start mb-6">
+                <span class="text-xs font-mono font-bold text-electricCoral bg-electricCoral/10 px-3 py-1 rounded-full border border-electricCoral/20">01 / BE SEEN</span>
+                <span class="text-xs text-slate-500 font-mono">Organic Reels Engine</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Short-Form Visual Dominance</h3>
+              <p class="text-slate-400 text-sm leading-relaxed max-w-lg mb-8">
+                Your competition is boring customers with static graphics. We produce fast-paced, high-retention Reels highlighting your signature craft, dining atmosphere, and product hero moments.
+              </p>
             </div>
-            <div class="w-10 h-10 rounded bg-white/20 border border-white/30 flex items-center justify-center text-[8px] text-white font-mono">QR CODE</div>
+
+            <!-- Simulated Reel Feed Component -->
+            <div class="bg-nightElevated rounded-2xl p-4 border border-white/10 shadow-xl">
+              <div class="flex items-center justify-between text-xs font-mono text-slate-400 pb-3 mb-3 border-b border-white/10">
+                <span class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-electricCoral"></span>
+                  <span>LIVE REELS PERFORMANCE</span>
+                </span>
+                <span class="text-slate-500">Ahmedabad Reach</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3">
+                <div class="bg-night p-3 rounded-xl border border-white/5 text-center">
+                  <span class="text-[10px] text-slate-500 font-mono block">Reel #1: Signature Dish</span>
+                  <span class="text-lg font-black text-white block mt-1">42.8k</span>
+                  <span class="text-[10px] text-electricEmerald font-mono font-semibold">+184 Shares</span>
+                </div>
+                <div class="bg-night p-3 rounded-xl border border-white/5 text-center">
+                  <span class="text-[10px] text-slate-500 font-mono block">Reel #2: Kitchen Craft</span>
+                  <span class="text-lg font-black text-white block mt-1">68.1k</span>
+                  <span class="text-[10px] text-electricEmerald font-mono font-semibold">+312 Saves</span>
+                </div>
+                <div class="bg-night p-3 rounded-xl border border-white/5 text-center">
+                  <span class="text-[10px] text-slate-500 font-mono block">Reel #3: Weekend Vibe</span>
+                  <span class="text-lg font-black text-white block mt-1">51.4k</span>
+                  <span class="text-[10px] text-electricEmerald font-mono font-semibold">+98 Enquiries</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Brand Memory (Medium) -->
+          <div class="lg:col-span-5 bento-card p-7 sm:p-9 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <span class="text-xs font-mono font-bold text-electricAmber bg-electricAmber/10 px-3 py-1 rounded-full border border-electricAmber/20">02 / BE REMEMBERED</span>
+                <span class="text-xs text-slate-500 font-mono">Cadence</span>
+              </div>
+              <h3 class="text-2xl font-black text-white mb-3">Structured Content Rhythm</h3>
+              <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                Never miss Diwali, Uttarayan, or holiday weekend surges again. Our synchronized schedule maps 16 assets monthly with captions and hashtags delivered well in advance.
+              </p>
+            </div>
+
+            <!-- Calendar Mini-Matrix -->
+            <div class="bg-nightElevated p-4 rounded-2xl border border-white/10 space-y-2.5">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span class="font-bold text-white">Monthly Content Matrix</span>
+                <span class="font-mono text-electricAmber text-[11px]">100% On-Schedule</span>
+              </div>
+              <div class="h-2 w-full bg-night rounded-full overflow-hidden flex">
+                <div class="bg-electricCoral w-[37.5%]" title="6 Reels"></div>
+                <div class="bg-electricAmber w-[62.5%]" title="10 Posts & Carousels"></div>
+              </div>
+              <div class="flex justify-between text-[11px] font-mono text-slate-400 pt-1">
+                <span>● 6 High-Impact Reels</span>
+                <span>● 10 Carousels / Offers</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: The Conversion Engine (Spans 12 cols) -->
+          <div class="lg:col-span-12 bento-card p-7 sm:p-9">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7">
+                <div class="flex items-center gap-2 mb-4">
+                  <span class="text-xs font-mono font-bold text-electricEmerald bg-electricEmerald/10 px-3 py-1 rounded-full border border-electricEmerald/20">03 / BE CHOSEN</span>
+                  <span class="text-xs text-slate-500 font-mono">Conversion Funnel</span>
+                </div>
+                <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Hyper-Local Meta Ads & Google Dominance</h3>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                  Social attention is useless if it doesn't lead to reservations, footfalls, or orders. We pair Click-to-WhatsApp targeted Meta campaigns within a 5km radius with physical Google Review NFC tap hardware for your billing counters.
+                </p>
+              </div>
+
+              <div class="lg:col-span-5 bg-nightElevated p-5 rounded-2xl border border-white/10">
+                <div class="flex items-center justify-between mb-3 text-xs">
+                  <span class="font-mono text-slate-400">FUNNEL METRICS (MOCK)</span>
+                  <span class="text-electricEmerald font-mono font-bold">● Active 4km Radius</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="flex justify-between p-2.5 rounded-lg bg-night border border-white/5">
+                    <span class="text-slate-300">Target Area</span>
+                    <span class="text-white font-mono font-bold">SG Highway / Bodakdev / Prahladnagar</span>
+                  </div>
+                  <div class="flex justify-between p-2.5 rounded-lg bg-night border border-white/5">
+                    <span class="text-slate-300">Avg Cost Per WhatsApp Lead</span>
+                    <span class="text-electricEmerald font-mono font-bold">₹14 — ₹22</span>
+                  </div>
+                  <div class="flex justify-between p-2.5 rounded-lg bg-night border border-white/5">
+                    <span class="text-slate-300">Google Review Capture Rate</span>
+                    <span class="text-electricCoral font-mono font-bold">Up to 4x Normal Velocity</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: MONTHLY RHYTHM (#rhythm) -->
+    <section id="rhythm" class="py-24 px-5 sm:px-8 bg-nightElevated/30 border-t border-white/[0.06]">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// The Content Engine</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">How Every Single Month Operates</h2>
+          <p class="text-slate-400 text-sm mt-3">Click each week below to view the tactical deliverables engineered into our 16-asset monthly rhythm.</p>
+        </div>
+
+        <!-- Week Selector Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 mb-10">
+          <button onclick="switchWeek(1)" id="tab-week-1" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-electricCoral bg-electricCoral text-white transition">
+            Week 1: Signature Hero
+          </button>
+          <button onclick="switchWeek(2)" id="tab-week-2" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
+            Week 2: Craft & Backstory
+          </button>
+          <button onclick="switchWeek(3)" id="tab-week-3" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
+            Week 3: Offers & Combos
+          </button>
+          <button onclick="switchWeek(4)" id="tab-week-4" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
+            Week 4: Community & Vibe
+          </button>
+        </div>
+
+        <!-- Dynamic Week Display Box -->
+        <div id="weekContentBox" class="bento-card p-8 sm:p-10">
+          <!-- Populated by JS function switchWeek() -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: NFC TAP CARDS (#hardware) -->
+    <section id="hardware" class="py-28 px-5 sm:px-8 border-t border-white/[0.06] relative">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+          
+          <!-- Left Column: NFC Concept & Explanation -->
+          <div class="lg:col-span-6 space-y-6">
+            <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block">// Hardware Advantage</span>
+            <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
+              Custom NFC Tap Cards. <br />
+              <span class="text-coral-gradient">Custom-Designed For Your Brand.</span>
+            </h2>
+
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Most businesses beg for reviews on receipts that end up in the trash. We design high-grade matte smart cards customized with your branding, fonts, and colors to sit right on your counter.
+            </p>
+
+            <!-- 4-Step Checklist -->
+            <div class="space-y-3 pt-2">
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
+                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">01</span>
+                <p class="text-xs sm:text-sm text-slate-300">Customer completes payment or enjoys their experience.</p>
+              </div>
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
+                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">02</span>
+                <p class="text-xs sm:text-sm text-slate-300">Staff invites them: <em>“Tap your phone here to share your feedback!”</em></p>
+              </div>
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
+                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">03</span>
+                <p class="text-xs sm:text-sm text-slate-300">Phone taps the card — <strong>no typing, searching, or URLs needed</strong>.</p>
+              </div>
+              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
+                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">04</span>
+                <p class="text-xs sm:text-sm text-slate-300">Your Google review modal opens instantly ready for 5 stars.</p>
+              </div>
+            </div>
+
+            <!-- Finish Picker -->
+            <div class="pt-4 border-t border-white/10">
+              <span class="text-xs font-mono text-slate-400 block mb-3 uppercase tracking-wider">Preview Card Finish:</span>
+              <div class="flex flex-wrap gap-2.5">
+                <button onclick="setCardFinish('midnight')" id="btn-finish-midnight" class="px-4 py-2 text-xs font-mono font-bold rounded-lg border border-electricCoral bg-electricCoral/10 text-white transition">
+                  ● Midnight Matte
+                </button>
+                <button onclick="setCardFinish('obsidian')" id="btn-finish-obsidian" class="px-4 py-2 text-xs font-mono font-bold rounded-lg border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
+                  ● Brushed Obsidian
+                </button>
+                <button onclick="setCardFinish('titanium')" id="btn-finish-titanium" class="px-4 py-2 text-xs font-mono font-bold rounded-lg border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
+                  ● Warm Titanium
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Card Graphic & Simulator Trigger -->
+          <div class="lg:col-span-6 flex flex-col items-center">
+            
+            <div class="relative w-full max-w-md">
+              
+              <!-- Subtle ripple behind card -->
+              <div id="tapRippleContainer" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity">
+                <div class="w-48 h-48 rounded-full border-2 border-electricCoral nfc-ripple"></div>
+              </div>
+
+              <!-- Interactive Card Visual -->
+              <div id="nfcCardVisual" class="w-full aspect-[1.586/1] rounded-3xl p-8 border border-white/20 shadow-2xl relative flex flex-col justify-between transition-all duration-500 overflow-hidden"
+                   style="background: linear-gradient(135deg, #090D18 0%, #121A2F 100%);">
+                
+                <!-- Card Watermark Background Graphic -->
+                <div class="absolute -right-8 -bottom-8 w-48 h-48 opacity-10 pointer-events-none">
+                  <svg viewBox="0 0 100 100" fill="white">
+                    <circle cx="50" cy="50" r="46"/>
+                  </svg>
+                </div>
+
+                <!-- Top Row -->
+                <div class="flex justify-between items-start relative z-10">
+                  <div>
+                    <span class="text-[9px] font-mono font-extrabold uppercase tracking-widest text-electricCoral block">LONG VIEW SMART HARDWARE</span>
+                    <span class="text-2xl font-black tracking-wider text-white">YOUR BRAND</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-slate-400 font-mono text-[10px]">
+                    <span>NFC</span>
+                    <span class="text-white">📡</span>
+                    <span>QR</span>
+                  </div>
+                </div>
+
+                <!-- Center Chip Representation -->
+                <div class="flex items-center gap-4 relative z-10 my-1">
+                  <div class="w-12 h-9 rounded-lg bg-gradient-to-br from-amber-200/25 to-amber-400/10 border border-amber-300/40 flex items-center justify-center">
+                    <span class="text-[8px] font-mono font-black text-amber-200 tracking-wider">CHIP</span>
+                  </div>
+                  <p class="text-xs font-bold text-white tracking-wide">TAP PHONE TO REVIEW</p>
+                </div>
+
+                <!-- Bottom Row -->
+                <div class="flex justify-between items-end relative z-10 pt-2 border-t border-white/10">
+                  <div>
+                    <div class="text-amber-400 text-xs font-bold tracking-widest mb-0.5">★★★★★</div>
+                    <span class="text-[10px] text-slate-400 font-mono">Google Maps Direct Link</span>
+                  </div>
+                  <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-[7px] font-mono font-bold text-white">
+                    QR
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Action Button -->
+            <div class="mt-8 text-center">
+              <button onclick="runTapSimulation()" class="btn-coral-glow text-white px-7 py-3 rounded-full text-xs font-bold flex items-center gap-2 mx-auto">
+                <span>📱 Simulate Customer Tap</span>
+              </button>
+              <p class="text-[11px] text-slate-500 font-mono mt-2">Click to preview the instant 2-second customer experience</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulated Phone Tap Popup Modal -->
+    <div id="simulatedPhoneModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-nightElevated border border-white/20 max-w-sm w-full rounded-3xl p-6 shadow-2xl relative text-left">
+        <button onclick="closeTapModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
+        
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center font-bold text-blue-600 shadow text-lg">
+            G
+          </div>
+          <div>
+            <span class="text-xs font-mono text-slate-400 block">Google Maps Prompt</span>
+            <span class="text-sm font-black text-white">Your Business Name</span>
           </div>
         </div>
+
+        <div class="bg-night p-4 rounded-2xl border border-white/10 mb-4 text-center">
+          <span class="text-xs text-slate-300 font-medium block mb-2">Rate and share your review</span>
+          <div class="text-2xl text-amber-400 flex justify-center gap-1.5 mb-2">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <span class="text-[11px] text-electricEmerald font-mono font-bold block">5-Star Prompt Pre-Configured</span>
+        </div>
+
+        <p class="text-xs text-slate-400 text-center mb-5 leading-relaxed">
+          Zero login barriers. iOS and Android automatically recognize the NFC chip without downloading any third-party app.
+        </p>
+
+        <button onclick="closeTapModal()" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs tracking-wider">
+          Close Preview
+        </button>
       </div>
     </div>
-  </section>
 
-  <!-- ONBOARDING TIMELINE -->
-  <section class="py-20 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-14">
-        <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Zero Friction Onboarding</span>
-        <h2 class="text-3xl font-extrabold text-white mt-2">Your First 30 Days</h2>
-      </div>
+    <!-- SECTION 4: PACKAGES & RETAINERS (#retainers) -->
+    <section id="retainers" class="py-28 px-5 sm:px-8 border-t border-white/[0.06] bg-nightElevated/20">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// Investment</span>
+          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Transparent Monthly Retainers</h2>
+          <p class="text-slate-400 text-sm mt-3">No surprise billing, percentage markups, or lock-in traps. Every plan includes dedicated execution.</p>
+        </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div class="bg-brandCard p-6 rounded-2xl border border-white/10">
-          <span class="text-brandCoral font-bold text-xs uppercase block mb-1">Days 1 - 3</span>
-          <h4 class="text-base font-bold text-white mb-2">Kick-Off</h4>
-          <p class="text-xs text-slate-300">Menu/services review, pricing collection, brand asset collation, and Meta page access setup.</p>
-        </div>
-        <div class="bg-brandCard p-6 rounded-2xl border border-white/10">
-          <span class="text-brandCoral font-bold text-xs uppercase block mb-1">Week 1</span>
-          <h4 class="text-base font-bold text-white mb-2">Strategy & Setup</h4>
-          <p class="text-xs text-slate-300">First monthly content calendar shared for approval. Custom NFC hardware programmed.</p>
-        </div>
-        <div class="bg-brandCard p-6 rounded-2xl border border-white/10">
-          <span class="text-brandCoral font-bold text-xs uppercase block mb-1">Week 2</span>
-          <h4 class="text-base font-bold text-white mb-2">Launch Phase</h4>
-          <p class="text-xs text-slate-300">Reels and posts go live according to plan. Hyper-local Meta Ads campaigns launch.</p>
-        </div>
-        <div class="bg-brandCard p-6 rounded-2xl border border-white/10">
-          <span class="text-brandCoral font-bold text-xs uppercase block mb-1">Weeks 3 - 4</span>
-          <h4 class="text-base font-bold text-white mb-2">Scale & Reports</h4>
-          <p class="text-xs text-slate-300">Continuous ad creative optimization, review harvesting, and first monthly WhatsApp report delivery.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- 3-Month Plan -->
+          <div class="bento-card p-8 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Sprint Package</span>
+              <h3 class="text-2xl font-black text-white mb-2">Starter Test</h3>
+              <p class="text-slate-400 text-xs mb-6">Designed for business owners wanting to validate creative quality and lead flow.</p>
+              
+              <div class="mb-6 pb-6 border-b border-white/10">
+                <span class="text-4xl font-black text-white">₹12,000</span>
+                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              </div>
 
-  <!-- SECTION 4: PRICING TIERS (#packages) -->
-  <section id="packages" class="py-24 px-6 bg-brandDark/50 border-t border-white/5">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
-        <span class="text-brandCoral font-bold text-xs uppercase tracking-widest">Growth Retainers</span>
-        <h2 class="text-3xl sm:text-5xl font-black text-white mt-2">Transparent Monthly Investment</h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-        <!-- 3-Month Plan -->
-        <div class="bg-brandCard p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
-          <div>
-            <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400 mb-2 block">3-Month Commitment</span>
-            <h3 class="text-2xl font-bold text-white mb-2">Starter Test</h3>
-            <p class="text-slate-400 text-xs mb-6">Ideal for business owners looking to validate digital channels.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">₹12,000</span>
-              <span class="text-slate-400 text-xs font-semibold">/ month</span>
+              <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>12 Posts/month:</strong> 4 Reels + 8 Carousels/Single</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>Meta Ads:</strong> 1 Click-to-WhatsApp booking campaign</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>Hardware:</strong> 1 Custom NFC Google Review Tap Card</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span>Monthly WhatsApp performance recap</span>
+                </li>
+              </ul>
             </div>
-            <ul class="text-xs text-slate-300 space-y-3 pt-6 border-t border-white/10">
-              <li>✔ <strong>12 Posts/month:</strong> 4 Reels + 8 Carousels/Single posts</li>
-              <li>✔ <strong>Meta Ads:</strong> 1 Click-to-WhatsApp booking campaign</li>
-              <li>✔ <strong>Local Reputation:</strong> 1 Custom NFC Google Review Tap Card</li>
-              <li>✔ Monthly WhatsApp performance reports</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan" 
-             target="_blank"
-             class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 3-Month</a>
-        </div>
 
-        <!-- 6-Month Plan (Recommended) -->
-        <div class="bg-brandCard p-8 rounded-3xl border-2 border-brandCoral relative flex flex-col justify-between shadow-2xl shadow-brandCoral/15">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brandCoral text-white text-[10px] font-black uppercase px-4 py-1 rounded-full tracking-widest">
-            Recommended Value
+            <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan%20(%E2%82%B912,000/mo)" 
+               target="_blank"
+               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border border-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition">
+              Select 3-Month Sprint →
+            </a>
           </div>
-          <div>
-            <span class="text-xs uppercase font-extrabold tracking-widest text-brandCoral mb-2 block">6-Month Partnership</span>
-            <h3 class="text-2xl font-bold text-white mb-2">The Growth Partner</h3>
-            <p class="text-slate-400 text-xs mb-6">Designed to build steady foot-traffic and lasting brand recall.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">₹10,000</span>
-              <span class="text-slate-400 text-xs font-semibold">/ month</span>
-            </div>
-            <ul class="text-xs text-slate-300 space-y-3 pt-6 border-t border-white/10">
-              <li>✔ <strong>16 Posts/month:</strong> 6 Reels + 10 Carousels/Offers</li>
-              <li>✔ <strong>Meta Ads:</strong> 2 campaigns (1 Always-On + 1 Festive/Seasonal)</li>
-              <li>✔ <strong>Local Reputation:</strong> 2 Custom Branded NFC Review Cards</li>
-              <li>✔ Content calendar planning, captioning & scheduling</li>
-              <li>✔ Monthly reach, ad clicks & appointment reports</li>
-            </ul>
-          </div>
-          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan" 
-             target="_blank"
-             class="mt-8 block w-full py-3.5 text-center bg-brandCoral hover:bg-brandCoralHover text-white font-bold rounded-xl text-sm shadow-lg shadow-brandCoral/30 transition">Select Growth Partner</a>
-        </div>
 
-        <!-- 12-Month Plan -->
-        <div class="bg-brandCard p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
-          <div>
-            <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400 mb-2 block">12-Month Full Delegation</span>
-            <h3 class="text-2xl font-bold text-white mb-2">Market Leader</h3>
-            <p class="text-slate-400 text-xs mb-6">Or pay ₹90,000 upfront for the year. Maximum savings.</p>
-            <div class="mb-6">
-              <span class="text-4xl font-extrabold text-white">₹8,500</span>
-              <span class="text-slate-400 text-xs font-semibold">/ month</span>
+          <!-- 6-Month Plan (FEATURED HERO CARD) -->
+          <div class="bento-card p-8 sm:p-9 border-2 border-electricCoral relative flex flex-col justify-between shadow-2xl shadow-electricCoral/15 md:-translate-y-2">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-electricCoral/50 text-[10px] font-mono font-black uppercase px-4 py-1 rounded-full tracking-widest shadow-md">
+              ★ Recommended Choice
             </div>
-            <ul class="text-xs text-slate-300 space-y-3 pt-6 border-t border-white/10">
-              <li>✔ <strong>16 Posts/month:</strong> Reels, Promos & Spotlights</li>
-              <li>✔ <strong>Meta Ads:</strong> Full ad setup + ongoing creative refreshes</li>
-              <li>✔ <strong>Local Reputation:</strong> 3 Custom Branded NFC Review Cards</li>
-              <li>✔ <strong>Free Bonus:</strong> 1-page mobile-ready landing page launched in 14 days</li>
-              <li>✔ Priority WhatsApp support line</li>
-            </ul>
+
+            <div>
+              <span class="text-[11px] font-mono font-bold text-electricCoral uppercase tracking-widest block mb-2">Growth Retainer</span>
+              <h3 class="text-2xl font-black text-white mb-2">The Growth Partner</h3>
+              <p class="text-slate-400 text-xs mb-6">Built to achieve sustained brand recall and predictable weekend walk-ins across Ahmedabad.</p>
+              
+              <div class="mb-6 pb-6 border-b border-white/10">
+                <span class="text-5xl font-black text-white">₹10,000</span>
+                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              </div>
+
+              <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>16 Posts/month:</strong> 6 Reels + 10 Carousels/Single</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>Meta Ads:</strong> 2 Active Funnels (Always-On + Festive)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span><strong>Hardware:</strong> 2 Custom Branded NFC Review Cards</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span>Calendar planning, captioning & scheduled delivery</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricCoral font-bold">✔</span>
+                  <span>Bi-weekly Meta Ads optimization</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan%20(%E2%82%B910,000/mo)" 
+               target="_blank"
+               class="mt-8 block w-full py-4 text-center btn-coral-glow text-white font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-lg transition">
+              Select Growth Partner →
+            </a>
           </div>
-          <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Plan" 
-             target="_blank"
-             class="mt-8 block w-full py-3 text-center bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl text-sm transition">Select 12-Month</a>
+
+          <!-- 12-Month Plan -->
+          <div class="bento-card p-8 flex flex-col justify-between">
+            <div>
+              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Annual Delegation</span>
+              <h3 class="text-2xl font-black text-white mb-2">Market Leader</h3>
+              <p class="text-slate-400 text-xs mb-6">Or pay ₹90,000 upfront for the year (Save ₹12,000 instantly).</p>
+              
+              <div class="mb-6 pb-6 border-b border-white/10">
+                <span class="text-4xl font-black text-white">₹8,500</span>
+                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              </div>
+
+              <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span><strong>16 Posts/month:</strong> Reels, Promos & Spotlights</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span><strong>Meta Ads:</strong> Full ad setup + ongoing creative refreshes</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span><strong>Hardware:</strong> 3 Custom Branded NFC Review Cards</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span><strong>Free Bonus:</strong> 1-page mobile-ready landing page</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span>Direct founder WhatsApp support channel</span>
+                </li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Market%20Leader%20Plan%20(%E2%82%B98,500/mo)" 
+               target="_blank"
+               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border border-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition">
+              Select 12-Month Plan →
+            </a>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 5: CONTACT & TERMS (#contact) -->
-  <footer id="contact" class="py-16 px-6 border-t border-white/10 text-slate-400 text-xs">
+    <!-- SECTION 5: FAQ (#faq) -->
+    <section id="faq" class="py-24 px-5 sm:px-8 border-t border-white/[0.06]">
+      <div class="max-w-4xl mx-auto">
+        
+        <div class="text-center mb-16">
+          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// Clarity</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white">Frequently Addressed Questions</h2>
+        </div>
+
+        <div class="space-y-3">
+          
+          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-white">How is the Meta advertising budget handled?</h4>
+              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+            </div>
+            <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
+              Your ad spend is paid directly to Meta (Facebook/Instagram) using your own payment card. Long View’s retainer covers ad strategy, target radius setup, creative copywriting, visual design, and weekly performance adjustments. You retain 100% billing transparency.
+            </div>
+          </div>
+
+          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-white">How do we capture raw footage for the Reels?</h4>
+              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+            </div>
+            <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
+              We eliminate guesswork by providing you with clear, monthly shot-lists (e.g. 5–8 second clips your team can capture on any iPhone or Samsung device). You upload raw video files to our shared Google Drive, and our agency editors handle pacing, trending audio hooks, captions, and color correction.
+            </div>
+          </div>
+
+          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-white">Do the NFC tap cards require an app or batteries?</h4>
+              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+            </div>
+            <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
+              Zero batteries, zero charging, and zero apps. NFC cards run on passive near-field frequency powered momentarily by the customer's phone during contact. They last indefinitely and include a printed QR code backup for older smartphones.
+            </div>
+          </div>
+
+          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+            <div class="flex justify-between items-center">
+              <h4 class="text-sm sm:text-base font-bold text-white">How fast does onboarding take?</h4>
+              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+            </div>
+            <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
+              Once you confirm your plan via WhatsApp, we collect your business assets within 48 hours. By Day 7, your Week 1 content calendar is delivered for approval and your custom NFC hardware enters production.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER & CONTACT (#contact) -->
+  <footer id="contact" class="py-16 px-5 sm:px-8 border-t border-white/[0.08] bg-night text-slate-400 text-xs">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
-      <div class="md:w-1/2">
-        <h4 class="text-white font-bold text-sm mb-3">Transparent Working Terms</h4>
-        <p class="mb-2">• Meta advertising budget is paid directly to Meta and is separate from Long View's management retainer.</p>
-        <p class="mb-2">• Plans are billed monthly in advance for the contract duration. Content counts represent monthly limits.</p>
-        <p class="mb-2">• Google reviews must remain genuine customer feedback. We never buy or manipulate reviews.</p>
-        <p>• NFC functionality relies on compatible iOS/Android smartphones with NFC enabled.</p>
+      
+      <div class="md:w-1/2 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-nightElevated border border-white/10 flex items-center justify-center p-1">
+            <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="46" fill="#0A0E18"/>
+              <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF4D2E"/>
+              <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <span class="text-sm font-black text-white tracking-wider">LONG VIEW DIGITAL MARKETING</span>
+        </div>
+        
+        <p class="text-slate-400 leading-relaxed max-w-sm">
+          Disciplined marketing execution for local brands across Ahmedabad & Gujarat. Reels, Meta funnels, and 5-star Google review hardware.
+        </p>
+
+        <div class="text-[11px] text-slate-500 font-mono space-y-1">
+          <p>• Meta advertising budget is paid directly to Meta.</p>
+          <p>• Retainers billed monthly in advance.</p>
+          <p>• Google reviews must remain genuine customer feedback.</p>
+        </div>
       </div>
-      <div>
-        <h4 class="text-white font-bold text-sm mb-3">Long View Digital Marketing</h4>
-        <p class="text-slate-300 mb-1">📍 Ahmedabad, Gujarat</p>
-        <p class="text-slate-300 mb-1">📧 <a href="mailto:longviewmarketingofficial@gmail.com" class="hover:text-white transition">longviewmarketingofficial@gmail.com</a></p>
-        <p class="text-slate-300 mb-4">📸 Instagram: @longview_digital</p>
-        <p class="text-slate-500">© 2026 Long View Digital Marketing. All rights reserved.</p>
+
+      <div class="space-y-3 text-slate-300">
+        <span class="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-2">// Studio Coordinates</span>
+        <p class="flex items-center gap-2">
+          <span>📍</span> <span>Ahmedabad, Gujarat, India</span>
+        </p>
+        <p class="flex items-center gap-2">
+          <span>📱</span> 
+          <a href="https://wa.me/919879583117" class="hover:text-electricCoral font-mono transition">+91 98795 83117</a>
+        </p>
+        <p class="flex items-center gap-2">
+          <span>📧</span> 
+          <a href="mailto:longviewmarketingofficial@gmail.com" class="hover:text-electricCoral transition">longviewmarketingofficial@gmail.com</a>
+        </p>
+        <p class="flex items-center gap-2">
+          <span>📸</span> 
+          <a href="https://instagram.com/longview_digital" target="_blank" class="hover:text-electricCoral transition">@longview_digital</a>
+        </p>
+        <p class="text-slate-600 font-mono pt-4">© 2026 Long View Digital Marketing. All rights reserved.</p>
       </div>
+
     </div>
   </footer>
+
+  <script>
+    // 1. Mobile Menu Drawer Toggle
+    const mobileBtn = document.getElementById('mobileNavToggle');
+    const mobileMenu = document.getElementById('mobileNavMenu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+
+    // 2. Interactive Week Switcher Content
+    const weekData = {
+      1: {
+        title: "Week 1: Signature Offerings & Hero Hooks",
+        badge: "4 Assets Delivered",
+        desc: "We focus on what you are famous for. Hero Reels showcasing signature dishes or flagship services, with macro framing designed to stop local thumbs from scrolling.",
+        items: ["2x Cinematic Reels on bestseller items", "1x Menu/Feature breakdown carousel", "1x Direct-offer single static graphic"]
+      },
+      2: {
+        title: "Week 2: Craft, Kitchen & Backstory",
+        badge: "4 Assets Delivered",
+        desc: "Customers buy from businesses they trust. We highlight hygiene, preparation craft, behind-the-counter dedication, and founder story clips that humanize your brand.",
+        items: ["1x Behind-the-scenes preparation reel", "1x Team & hygiene highlight carousel", "2x High-resolution product showcase posts"]
+      },
+      3: {
+        title: "Week 3: High-Intent Combos & Weekday Footfalls",
+        badge: "4 Assets Delivered",
+        desc: "Designed to drive immediate action and fill slow mid-week periods with lunch combos, seasonal promotions, or early festival bookings.",
+        items: ["1x Fast-cut promotional reel", "2x Multi-slide value combo carousels", "1x WhatsApp direct-order flyer post"]
+      },
+      4: {
+        title: "Week 4: Ambient Vibe & Social Proof",
+        badge: "4 Assets Delivered",
+        desc: "We spotlight buzzing dining rooms, happy guest moments, and review quotes to cement your location as the top weekend destination.",
+        items: ["2x Ambient weekend energy reels", "1x Customer praise review carousel", "1x Weekend schedule/reservation reminder"]
+      }
+    };
+
+    function switchWeek(weekNum) {
+      // Update Tab Styles
+      for (let i = 1; i <= 4; i++) {
+        const tab = document.getElementById(`tab-week-${i}`);
+        if (tab) {
+          if (i === weekNum) {
+            tab.className = "px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-electricCoral bg-electricCoral text-white transition";
+          } else {
+            tab.className = "px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition";
+          }
+        }
+      }
+
+      // Update Box Content
+      const data = weekData[weekNum];
+      const box = document.getElementById('weekContentBox');
+      if (box && data) {
+        box.innerHTML = `
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+            <div>
+              <span class="text-xs font-mono text-electricCoral uppercase tracking-wider block mb-1">Deliberate Cadence</span>
+              <h3 class="text-2xl font-black text-white">${data.title}</h3>
+            </div>
+            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-mono text-slate-300">${data.badge}</span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-2xl">${data.desc}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
+            ${data.items.map(item => `
+              <div class="p-3.5 rounded-xl bg-nightElevated border border-white/5 text-xs text-slate-200 font-medium">
+                ${item}
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+    }
+
+    // Initialize with Week 1
+    switchWeek(1);
+
+    // 3. NFC Finish Selector
+    function setCardFinish(finish) {
+      const card = document.getElementById('nfcCardVisual');
+      const midnightBtn = document.getElementById('btn-finish-midnight');
+      const obsidianBtn = document.getElementById('btn-finish-obsidian');
+      const titaniumBtn = document.getElementById('btn-finish-titanium');
+
+      if (!card || !midnightBtn || !obsidianBtn || !titaniumBtn) return;
+
+      // Reset button styles
+      [midnightBtn, obsidianBtn, titaniumBtn].forEach(b => {
+        b.className = "px-4 py-2 text-xs font-mono font-bold rounded-lg border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition";
+      });
+
+      if (finish === 'midnight') {
+        midnightBtn.className = "px-4 py-2 text-xs font-mono font-bold rounded-lg border border-electricCoral bg-electricCoral/10 text-white transition";
+        card.style.background = 'linear-gradient(135deg, #090D18 0%, #121A2F 100%)';
+        card.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+      } else if (finish === 'obsidian') {
+        obsidianBtn.className = "px-4 py-2 text-xs font-mono font-bold rounded-lg border border-electricCoral bg-electricCoral/10 text-white transition";
+        card.style.background = 'linear-gradient(135deg, #020306 0%, #161616 100%)';
+        card.style.borderColor = 'rgba(255, 77, 46, 0.4)';
+      } else if (finish === 'titanium') {
+        titaniumBtn.className = "px-4 py-2 text-xs font-mono font-bold rounded-lg border border-electricCoral bg-electricCoral/10 text-white transition";
+        card.style.background = 'linear-gradient(135deg, #1C1E24 0%, #2A2E38 100%)';
+        card.style.borderColor = 'rgba(255, 255, 255, 0.35)';
+      }
+    }
+
+    // 4. Tap Simulation Handler
+    function runTapSimulation() {
+      const ripple = document.getElementById('tapRippleContainer');
+      const modal = document.getElementById('simulatedPhoneModal');
+      if (ripple) {
+        ripple.classList.remove('opacity-0');
+      }
+      
+      setTimeout(() => {
+        if (ripple) ripple.classList.add('opacity-0');
+        if (modal) modal.classList.remove('hidden');
+      }, 700);
+    }
+
+    function closeTapModal() {
+      const modal = document.getElementById('simulatedPhoneModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Close modal on escape key or clicking backdrop
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeTapModal();
+    });
+    const modalEl = document.getElementById('simulatedPhoneModal');
+    if (modalEl) {
+      modalEl.addEventListener('click', (e) => {
+        if (e.target === modalEl) closeTapModal();
+      });
+    }
+
+    // 5. Accordion FAQs
+    function toggleFaq(element) {
+      const content = element.querySelector('.faq-content');
+      const icon = element.querySelector('.faq-icon');
+      if (!content || !icon) return;
+
+      const isHidden = content.classList.contains('hidden');
+
+      document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(el => el.textContent = '+');
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.textContent = '−';
+      }
+    }
+  </script>
 
 </body>
 </html>
