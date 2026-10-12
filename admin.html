@@ -154,12 +154,6 @@
             </div>
           </div>
 
-          <div>
-            <label class="block font-mono text-slate-300 mb-1 uppercase">Deliverables Tags (Comma separated)</label>
-            <input type="text" id="clientServices" placeholder="16 Reels/mo, Meta Ads, NFC Review Hardware"
-                   class="w-full px-3.5 py-2.5 rounded-xl bg-nightElevated border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-electricCoral" />
-          </div>
-
           <button type="submit" class="btn-coral w-full py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider mt-2">
             + Add Client To Page
           </button>
@@ -286,12 +280,12 @@
 
       container.innerHTML = clients.map((c, idx) => `
         <div class="p-4 sm:p-5 rounded-2xl bg-nightElevated border border-white/10 flex items-center justify-between gap-4">
-          <div class="flex items-center gap-3.5 min-w-0">
-            <div class="w-12 h-12 rounded-xl bg-night border border-white/10 flex items-center justify-center p-1.5 shrink-0 overflow-hidden">
-              ${c.logo ? `<img src="${c.logo}" alt="Logo" class="max-w-full max-h-full object-contain" onerror="this.parentElement.innerHTML='<span class=\'font-bold text-white\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-bold text-white">${c.name.charAt(0)}</span>`}
+          <div class="flex items-center gap-4 min-w-0">
+            <div class="w-16 h-16 rounded-xl bg-night border border-white/10 flex items-center justify-center p-2 shrink-0 overflow-hidden">
+              ${c.logo ? `<img src="${c.logo}" alt="Logo" class="max-w-full max-h-full object-contain" onerror="this.parentElement.innerHTML='<span class=\'font-bold text-lg text-white\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-bold text-lg text-white">${c.name.charAt(0)}</span>`}
             </div>
             <div class="min-w-0">
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 mb-1">
                 <h4 class="text-sm font-bold text-white truncate">${c.name}</h4>
                 <span class="text-[10px] font-mono text-electricCoral bg-electricCoral/10 px-2 py-0.5 rounded border border-electricCoral/20 shrink-0">
                   ${c.category}
@@ -328,9 +322,6 @@
       const location = document.getElementById('clientLocation').value.trim();
       const tagline = document.getElementById('clientTagline').value.trim();
       const logoUrl = document.getElementById('clientLogoUrl').value.trim();
-      const servicesRaw = document.getElementById('clientServices').value.trim();
-
-      const services = servicesRaw ? servicesRaw.split(',').map(s => s.trim()).filter(Boolean) : ['16 Reels/mo', 'Meta Ads', 'NFC Hardware'];
       const logo = uploadedLogoBase64 || logoUrl || '';
 
       const newClient = {
@@ -339,8 +330,7 @@
         category,
         location,
         tagline,
-        logo,
-        services
+        logo
       };
 
       clients.unshift(newClient);

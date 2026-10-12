@@ -189,7 +189,7 @@
       </div>
 
       <!-- Clients Grid (Populated dynamically from clients-data.js with seamless fallback) -->
-      <div id="clientsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch mb-20">
+      <div id="clientsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch mb-20">
         <!-- Rendered by clients script below -->
       </div>
 
@@ -306,29 +306,24 @@
       }
 
       container.innerHTML = clientList.map(c => `
-        <div class="bento-card p-7 sm:p-8 flex flex-col justify-between group">
-          <div>
-            <!-- Client Header -->
-            <div class="flex items-start justify-between gap-4 mb-6">
-              <div class="w-16 h-16 rounded-2xl bg-nightElevated border border-white/10 flex items-center justify-center p-2.5 overflow-hidden shadow-inner group-hover:border-electricCoral/40 transition">
-                ${c.logo ? `<img src="${c.logo}" alt="${c.name} Logo" class="max-w-full max-h-full object-contain" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'font-black text-xl text-white\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-black text-xl text-white">${c.name.charAt(0)}</span>`}
-              </div>
-              <span class="text-[10px] font-mono font-bold text-electricCoral bg-electricCoral/10 border border-electricCoral/20 px-3 py-1 rounded-full uppercase tracking-wider">
-                ${c.category || 'Client'}
-              </span>
-            </div>
-
-            <!-- Client Info -->
-            <h3 class="text-xl sm:text-2xl font-black text-white mb-1 group-hover:text-electricCoral transition-colors">${c.name}</h3>
-            ${c.location ? `<p class="text-xs font-mono text-slate-500 mb-3 flex items-center gap-1"><span>📍</span><span>${c.location}</span></p>` : ''}
-            ${c.tagline ? `<p class="text-xs text-slate-400 leading-relaxed mb-6">${c.tagline}</p>` : ''}
+        <div class="bento-card p-6 sm:p-7 flex flex-col sm:flex-row items-center sm:items-start gap-6 group">
+          <!-- Bigger Logo on Left -->
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-nightElevated border border-white/10 flex items-center justify-center p-3 shrink-0 overflow-hidden shadow-inner group-hover:border-electricCoral/50 transition">
+            ${c.logo ? `<img src="${c.logo}" alt="${c.name} Logo" class="max-w-full max-h-full object-contain" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'font-black text-2xl text-white\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-black text-2xl text-white">${c.name.charAt(0)}</span>`}
           </div>
 
-          <!-- Bottom Badges / Services -->
-          <div class="pt-5 border-t border-white/10 flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-300">
-            ${(c.services || ['16 Reels/mo', 'Meta Ads', 'NFC Hardware']).map(s => `
-              <span class="px-2.5 py-1 rounded-md bg-nightElevated border border-white/5 text-slate-400">● ${s}</span>
-            `).join('')}
+          <!-- Text Shifted to Right -->
+          <div class="flex-1 min-w-0 text-center sm:text-left">
+            <div class="flex flex-wrap items-center justify-center sm:justify-between gap-2 mb-2">
+              <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-electricCoral transition-colors truncate">${c.name}</h3>
+              ${c.category ? `
+                <span class="text-[10px] font-mono font-bold text-electricCoral bg-electricCoral/10 border border-electricCoral/20 px-3 py-1 rounded-full uppercase tracking-wider shrink-0">
+                  ${c.category}
+                </span>
+              ` : ''}
+            </div>
+            ${c.location ? `<p class="text-xs font-mono text-slate-400 mb-2.5 flex items-center justify-center sm:justify-start gap-1.5"><span>📍</span><span>${c.location}</span></p>` : ''}
+            ${c.tagline ? `<p class="text-xs sm:text-sm text-slate-300/80 leading-relaxed">${c.tagline}</p>` : ''}
           </div>
         </div>
       `).join('');
