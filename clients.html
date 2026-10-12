@@ -282,24 +282,15 @@
       const container = document.getElementById('clientsGrid');
       if (!container) return;
 
-      // Check if client data exists from clients-data.js or localStorage
-      const stored = localStorage.getItem('longview_clients_data');
-      let clientList = [];
+      // Clear any old localStorage data from previous admin portal
+      localStorage.removeItem('longview_clients_data');
 
-      if (stored) {
-        try {
-          clientList = JSON.parse(stored);
-        } catch (e) {
-          clientList = window.LONGVIEW_CLIENTS || [];
-        }
-      } else {
-        clientList = window.LONGVIEW_CLIENTS || [];
-      }
+      const clientList = window.LONGVIEW_CLIENTS || [];
 
       if (clientList.length === 0) {
         container.innerHTML = `
           <div class="col-span-full text-center py-12 text-slate-400 text-sm font-mono">
-            No clients added yet. Visit <a href="admin.html" class="text-electricCoral underline">Admin Portal</a> to add your first client.
+            No clients yet — stay tuned!
           </div>
         `;
         return;
@@ -307,12 +298,12 @@
 
       container.innerHTML = clientList.map(c => `
         <div class="bento-card p-6 sm:p-7 flex flex-col sm:flex-row items-center sm:items-start gap-6 group">
-          <!-- Bigger Logo on Left -->
+          <!-- Logo on Left -->
           <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-nightElevated border border-white/10 flex items-center justify-center p-3 shrink-0 overflow-hidden shadow-inner group-hover:border-electricCoral/50 transition">
-            ${c.logo ? `<img src="${c.logo}" alt="${c.name} Logo" class="max-w-full max-h-full object-contain" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\'font-black text-2xl text-white\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-black text-2xl text-white">${c.name.charAt(0)}</span>`}
+            ${c.logo ? `<img src="${c.logo}" alt="${c.name} Logo" class="max-w-full max-h-full object-contain" onerror="this.onerror=null;this.parentElement.innerHTML='<span class=\\'font-black text-2xl text-white\\'>${c.name.charAt(0)}</span>'"/>` : `<span class="font-black text-2xl text-white">${c.name.charAt(0)}</span>`}
           </div>
 
-          <!-- Text Shifted to Right -->
+          <!-- Text on Right -->
           <div class="flex-1 min-w-0 text-center sm:text-left">
             <div class="flex flex-wrap items-center justify-center sm:justify-between gap-2 mb-2">
               <h3 class="text-xl sm:text-2xl font-black text-white group-hover:text-electricCoral transition-colors truncate">${c.name}</h3>
