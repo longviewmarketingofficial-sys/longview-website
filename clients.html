@@ -85,10 +85,17 @@
       box-shadow: 0 8px 24px -4px rgba(244, 240, 234, 0.3);
       transform: translateY(-1px);
     }
+    /* Architectural blueprint geometric grid */
+    .bg-architectural-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
   </style>
 </head>
 
-<body class="bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen">
+<body class="bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen bg-architectural-grid">
 
   <!-- Ambient Light Orbs -->
   <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[75vw] h-[35rem] rounded-full bg-vermilion/[0.06] blur-[160px] pointer-events-none z-0"></div>
