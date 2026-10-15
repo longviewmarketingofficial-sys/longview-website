@@ -16,26 +16,29 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            night: '#07090E',
-            nightElevated: '#0D111A',
-            nightCard: '#111723',
-            nightBorder: 'rgba(255, 255, 255, 0.08)',
-            nightBorderActive: 'rgba(255, 77, 46, 0.35)',
-            electricCoral: '#FF4D2E',
-            electricCoralHover: '#E83E20',
-            electricAmber: '#FFA336',
-            electricEmerald: '#10B981',
+            obsidian: '#080A0D',
+            obsidianSurface: '#0D1117',
+            obsidianCard: '#101620',
+            obsidianBorder: 'rgba(255, 255, 255, 0.08)',
+            bone: '#F4F0EA',
+            boneMuted: '#8E98A5',
+            vermilion: '#FF441A',
+            vermilionHover: '#E83810',
+            cyberLime: '#CCFF00',
+            techGreen: '#08120E',
+            techGreenBorder: 'rgba(204, 255, 0, 0.15)',
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            bebas: ['"Bebas Neue"', 'sans-serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
           },
           letterSpacing: {
             tighter: '-0.04em',
@@ -52,48 +55,51 @@
       scroll-margin-top: 5rem;
     }
 
-    /* Modern glassmorphic nav bar */
-    .glass-nav {
-      background: rgba(7, 9, 14, 0.82);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    /* Architectural wireframe borders */
+    .tech-border {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+    .tech-border-green {
+      border: 1px solid rgba(204, 255, 0, 0.2);
     }
 
     /* High-end Bento Cards */
     .bento-card {
-      background: radial-gradient(130% 100% at 50% 0%, rgba(20, 28, 44, 0.55) 0%, rgba(13, 17, 26, 0.85) 100%);
+      background: radial-gradient(130% 100% at 50% 0%, rgba(18, 25, 36, 0.6) 0%, rgba(10, 14, 20, 0.95) 100%);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 1.5rem;
+      border-radius: 1.25rem;
       position: relative;
       overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .bento-card:hover {
-      border-color: rgba(255, 77, 46, 0.35);
-      transform: translateY(-3px);
-      box-shadow: 0 24px 48px -20px rgba(255, 77, 46, 0.18);
+      border-color: rgba(255, 68, 26, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 40px -15px rgba(255, 68, 26, 0.15);
     }
 
-    /* Glowing action button */
-    .btn-coral-glow {
-      background: linear-gradient(135deg, #FF4D2E 0%, #ED3919 100%);
-      box-shadow: 0 10px 28px -6px rgba(255, 77, 46, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.35);
-      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    /* Solid vermilion button */
+    .btn-vermilion {
+      background: #FF441A;
+      color: #FFFFFF;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .btn-coral-glow:hover {
-      box-shadow: 0 14px 36px -2px rgba(255, 77, 46, 0.75), inset 0 1px 1px rgba(255, 255, 255, 0.5);
-      transform: translateY(-1.5px) scale(1.015);
+    .btn-vermilion:hover {
+      background: #E63810;
+      box-shadow: 0 10px 28px -4px rgba(255, 68, 26, 0.45);
+      transform: translateY(-1.5px);
     }
 
-    /* Text masking gradients */
-    .text-coral-gradient {
-      background: linear-gradient(135deg, #FFFFFF 30%, #FF8A73 70%, #FF4D2E 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    /* Bone cream button */
+    .btn-bone {
+      background: #F4F0EA;
+      color: #080A0D;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .text-glow {
-      text-shadow: 0 0 40px rgba(255, 77, 46, 0.35);
+    .btn-bone:hover {
+      background: #FFFFFF;
+      box-shadow: 0 8px 24px -4px rgba(244, 240, 234, 0.3);
+      transform: translateY(-1px);
     }
 
     /* NFC Simulation Ripple */
@@ -111,331 +117,461 @@
       100% { background-position: 200% 0; }
     }
     .shimmer-pill {
-      background: linear-gradient(90deg, #FF4D2E 0%, #FF6C4D 50%, #FF4D2E 100%);
+      background: linear-gradient(90deg, #FF441A 0%, #FF6845 50%, #FF441A 100%);
       background-size: 200% 100%;
       animation: badgeShimmer 3.5s ease-in-out infinite;
     }
   </style>
 </head>
 
-<body class="bg-night text-slate-100 font-sans selection:bg-electricCoral selection:text-white antialiased relative overflow-x-hidden min-h-screen">
+<body class="bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen">
 
   <!-- Ambient Light Orbs -->
-  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[75vw] h-[35rem] rounded-full bg-electricCoral/[0.08] blur-[160px] pointer-events-none z-0"></div>
-  <div class="fixed top-[45vh] -right-32 w-[35vw] h-[35rem] rounded-full bg-blue-600/[0.05] blur-[180px] pointer-events-none z-0"></div>
+  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[75vw] h-[35rem] rounded-full bg-vermilion/[0.06] blur-[160px] pointer-events-none z-0"></div>
+  <div class="fixed top-[50vh] -right-32 w-[35vw] h-[35rem] rounded-full bg-blue-600/[0.04] blur-[180px] pointer-events-none z-0"></div>
 
-  <header class="fixed top-0 left-0 w-full z-50 glass-nav">
+  <!-- ARCHITECTURAL TOP NAVIGATION -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-obsidian/90 backdrop-blur-xl border-b border-white/[0.08]">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Geometric Sunrise Mark -->
       <a href="#" class="flex items-center gap-3.5 group">
-        <div class="w-10 h-10 rounded-xl bg-nightElevated border border-white/10 flex items-center justify-center p-1.5 shadow-md group-hover:border-electricCoral/50 transition-colors">
+        <div class="w-10 h-10 rounded-lg bg-obsidianSurface border border-white/10 flex items-center justify-center p-1.5 shadow-md group-hover:border-vermilion/50 transition-colors">
           <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="50" cy="50" r="46" fill="#0A0E18"/>
-            <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="url(#coralSunrise)"/>
+            <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A"/>
             <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF"/>
             <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
             <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="coralSunrise" x1="26" y1="20" x2="74" y2="44" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#FF6B4A"/>
-                <stop offset="1" stop-color="#FF3815"/>
-              </linearGradient>
-            </defs>
           </svg>
         </div>
         <div>
-          <span class="text-lg font-black tracking-wider block text-white leading-none">LONG VIEW</span>
-          <span class="text-[9px] tracking-[0.26em] text-electricCoral uppercase font-bold block mt-1">Digital Marketing</span>
+          <span class="text-xl font-black tracking-wider block text-white leading-none">LONG VIEW</span>
+          <span class="text-[9px] tracking-[0.28em] text-vermilion uppercase font-mono font-bold block mt-1">Digital Marketing</span>
         </div>
       </a>
 
-      <!-- Pill Nav Items (Linear Style) -->
-      <nav class="hidden md:flex items-center gap-1 bg-nightElevated/80 border border-white/10 p-1.5 rounded-full text-xs font-semibold text-slate-300">
-        <a href="#approach" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Approach</a>
-        <a href="#rhythm" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Monthly Rhythm</a>
-        <a href="#hardware" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">NFC Tap Cards</a>
-        <a href="clients.html" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Our Clients</a>
-        <a href="#retainers" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">Retainers</a>
-        <a href="#faq" class="px-4 py-1.5 rounded-full hover:text-white hover:bg-white/5 transition">FAQ</a>
+      <!-- Numbered Monospace Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-mono font-medium text-slate-400">
+        <a href="#approach" class="hover:text-bone transition-colors"><span class="text-slate-600 mr-1.5">01 //</span>APPROACH</a>
+        <a href="#rhythm" class="hover:text-bone transition-colors"><span class="text-slate-600 mr-1.5">02 //</span>RHYTHM</a>
+        <a href="#hardware" class="hover:text-bone transition-colors"><span class="text-slate-600 mr-1.5">03 //</span>NFC HARDWARE</a>
+        <a href="clients.html" class="hover:text-bone transition-colors"><span class="text-slate-600 mr-1.5">04 //</span>CLIENTS</a>
+        <a href="#retainers" class="hover:text-bone transition-colors"><span class="text-slate-600 mr-1.5">05 //</span>INVESTMENTS</a>
       </nav>
 
-      <!-- Direct Action CTA -->
-      <div class="hidden sm:flex items-center gap-3">
+      <!-- Direct Action CTA (Bone Box Button) -->
+      <div class="hidden sm:flex items-center gap-4">
         <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
            target="_blank" 
-           class="btn-coral-glow text-white px-5 py-2.5 rounded-full text-xs font-bold flex items-center gap-2">
-          <span>Book Strategy Call</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+           class="btn-bone px-5 py-2.5 rounded-sm text-xs font-mono font-bold uppercase tracking-wider flex items-center gap-2">
+          <span>BOOK CALL ↗</span>
         </a>
       </div>
 
       <!-- Mobile Menu Toggle Button -->
-      <button id="mobileNavToggle" class="md:hidden p-2 rounded-xl bg-nightElevated border border-white/10 text-slate-300 hover:text-white" aria-label="Toggle Navigation">
+      <button id="mobileNavToggle" class="lg:hidden p-2.5 rounded-lg bg-obsidianSurface border border-white/10 text-slate-300 hover:text-white" aria-label="Toggle Navigation">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
 
     </div>
 
     <!-- Mobile Navigation Drawer -->
-    <div id="mobileNavMenu" class="hidden md:hidden bg-nightElevated/95 backdrop-blur-xl border-b border-white/10 px-6 py-6">
-      <div class="flex flex-col space-y-4 text-sm font-semibold text-slate-300">
-        <a href="#approach" class="hover:text-electricCoral transition mobile-nav-link">Approach</a>
-        <a href="#rhythm" class="hover:text-electricCoral transition mobile-nav-link">Monthly Rhythm</a>
-        <a href="#hardware" class="hover:text-electricCoral transition mobile-nav-link">NFC Tap Cards</a>
-        <a href="clients.html" class="hover:text-electricCoral transition mobile-nav-link">Our Happy Clients</a>
-        <a href="#retainers" class="hover:text-electricCoral transition mobile-nav-link">Retainers</a>
-        <a href="#faq" class="hover:text-electricCoral transition mobile-nav-link">FAQ</a>
-        <div class="pt-2">
+    <div id="mobileNavMenu" class="hidden lg:hidden bg-obsidianSurface/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 font-mono text-xs">
+      <div class="flex flex-col space-y-4 text-slate-300">
+        <a href="#approach" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">01 //</span> APPROACH</a>
+        <a href="#rhythm" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">02 //</span> MONTHLY RHYTHM</a>
+        <a href="#hardware" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">03 //</span> NFC HARDWARE</a>
+        <a href="clients.html" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">04 //</span> OUR CLIENTS</a>
+        <a href="#retainers" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">05 //</span> INVESTMENTS</a>
+        <a href="#faq" class="hover:text-vermilion transition mobile-nav-link flex items-center gap-2"><span class="text-slate-500">06 //</span> FAQ</a>
+        <div class="pt-3">
           <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
              target="_blank" 
-             class="btn-coral-glow w-full text-center block text-white py-3 rounded-xl font-bold text-xs tracking-wider">
-            Book Strategy Call on WhatsApp →
+             class="btn-bone w-full text-center block py-3 rounded-sm font-mono font-bold text-xs uppercase tracking-wider">
+            BOOK CALL ON WHATSAPP ↗
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="relative z-10">
+  <main class="relative z-10 pt-20">
 
-    <!-- HERO SECTION -->
-    <section class="pt-36 sm:pt-44 pb-20 sm:pb-28 px-5 sm:px-8">
-      <div class="max-w-5xl mx-auto text-center">
-        
+    <!-- HERO SECTION (MATCHING INSPIRATION LAYOUT) -->
+    <section class="pt-16 sm:pt-24 pb-16 sm:pb-24 px-5 sm:px-8 border-b border-white/[0.08]">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          
+          <!-- LEFT HERO: ARCHITECTURAL BRUTALIST TYPOGRAPHY -->
+          <div class="lg:col-span-7">
+            <!-- Metadata annotation -->
+            <div class="flex items-center gap-3 mb-5 font-mono text-[11px] text-slate-500 uppercase tracking-widest">
+              <span>ARCHITECTURAL METADATA — WB.12m</span>
+            </div>
 
-        <!-- Master Statement -->
-        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tightest text-white leading-[1.05] mb-8 text-glow">
-          Be Seen. Be Remembered. <br class="hidden sm:inline" />
-          <span class="text-coral-gradient">Be Chosen.</span>
-        </h1>
+            <!-- Massive Headline -->
+            <h1 class="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[104px] xl:text-[124px] leading-[0.87] tracking-tight uppercase mb-8">
+              <span class="block text-bone">BE SEEN.</span>
+              <span class="block text-bone">BE REMEMBERD.</span>
+              <span class="block text-vermilion">BE CHOSEN.</span>
+            </h1>
 
-        <!-- Subheading -->
-        <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Local business marketing without the agency fluff. One dedicated monthly rhythm for cinematic short-form Reels, hyper-local Meta Ads, and automated 5-star Google review hardware.
-        </p>
+            <!-- Editorial Subtitle -->
+            <p class="text-sm sm:text-base text-slate-400 max-w-xl leading-relaxed mb-9 font-normal">
+              Ahmedabad’s disciplined growth studio for ambitious regional brands. We replace agency fluff with a synchronized monthly rhythm: cinematic short-form Reels, hyper-local Meta Ads, and automated 5-star Google Review NFC hardware.
+            </p>
 
-        <!-- CTA Row -->
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <a href="#retainers" class="btn-coral-glow text-white px-8 py-4 rounded-xl text-sm font-extrabold shadow-xl w-full sm:w-auto flex items-center justify-center gap-2">
-            <span>Explore Growth Retainers</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
-          </a>
-          <a href="#hardware" class="px-7 py-4 rounded-xl text-sm font-bold bg-nightElevated hover:bg-white/5 border border-white/10 text-slate-200 transition-colors w-full sm:w-auto flex items-center justify-center gap-2">
-            <span>Test NFC Card Demo</span>
-            <span class="text-[10px] bg-electricCoral/20 text-electricCoral font-mono font-bold px-1.5 py-0.5 rounded">Interactive</span>
-          </a>
+            <!-- Actions Row -->
+            <div class="flex flex-wrap items-center gap-4 mb-10">
+              <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business" 
+                 target="_blank"
+                 class="btn-vermilion px-7 py-3.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-vermilion/20">
+                <span>START SPRINT ↗</span>
+              </a>
+              <a href="#hardware" class="px-6 py-3.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider bg-obsidianSurface hover:bg-white/5 tech-border text-slate-300 transition-colors flex items-center gap-2">
+                <span>TEST NFC CARD DEMO</span>
+                <span class="w-2 h-2 rounded-full bg-cyberLime animate-pulse"></span>
+              </a>
+            </div>
+
+            <!-- Tech Stats Bar -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-white/[0.08] font-mono">
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block">CONTENT</span>
+                <span class="text-base font-bold text-bone">16 Pieces/mo</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block">REVIEW LIFT</span>
+                <span class="text-base font-bold text-cyberLime">+3.4x Velocity</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block">FUNNEL</span>
+                <span class="text-base font-bold text-vermilion">WhatsApp Ads</span>
+              </div>
+              <div>
+                <span class="text-[10px] text-slate-500 uppercase block">CONTRACT</span>
+                <span class="text-base font-bold text-bone">Zero Fluff</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT HERO: 3D PHOTOREALISTIC LONG VIEW NFC CARD SHOWCASE -->
+          <div class="lg:col-span-5">
+            <div class="relative bg-obsidianSurface tech-border rounded-2xl p-6 sm:p-8 overflow-hidden shadow-2xl group">
+              
+              <!-- Neon Lime Status Accent Bar (Inspo Match) -->
+              <div class="absolute top-5 right-5 w-14 h-3.5 bg-cyberLime rounded-full shadow-lg shadow-cyberLime/20"></div>
+
+              <div class="mb-5 font-mono text-[10px] text-slate-500 uppercase tracking-widest flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-vermilion"></span>
+                <span>SMART NFC HARDWARE // TAP SPECIMEN</span>
+              </div>
+
+              <!-- 3D Realistic Render of Long View NFC Card -->
+              <div onclick="runTapSimulation()" class="cursor-pointer relative transform transition-transform duration-500 hover:scale-[1.02] hover:-rotate-1">
+                
+                <!-- The Smart Card Mockup -->
+                <div class="w-full aspect-[1.586/1] rounded-2xl p-6 sm:p-7 border border-white/15 relative flex flex-col justify-between overflow-hidden shadow-2xl"
+                     style="background: linear-gradient(135deg, #121620 0%, #0A0D14 100%);">
+                  
+                  <!-- Subtle textured circuit watermark lines -->
+                  <div class="absolute inset-0 pointer-events-none opacity-20">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0" y1="40" x2="100%" y2="40" stroke="#FFFFFF" stroke-width="0.5" stroke-dasharray="4 8"/>
+                      <line x1="80" y1="0" x2="80" y2="100%" stroke="#FFFFFF" stroke-width="0.5" stroke-dasharray="4 8"/>
+                    </svg>
+                  </div>
+
+                  <!-- Card Header: NFC Signal + Brand Info -->
+                  <div class="flex justify-between items-start relative z-10">
+                    <div class="space-y-1">
+                      <div class="flex items-center gap-2 text-vermilion">
+                        <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.393 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                        </svg>
+                        <span class="text-[9px] font-mono font-bold tracking-widest uppercase">TAP TO CONNECT NFC</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card Center & Contact Block (Matching Inspiration Card Details) -->
+                  <div class="grid grid-cols-12 gap-3 items-center relative z-10 my-2">
+                    <!-- Circular Sunrise Emblem -->
+                    <div class="col-span-5 flex items-center justify-center">
+                      <div class="w-20 h-20 rounded-full bg-[#0E1726] border border-white/20 flex flex-col items-center justify-center p-2 text-center shadow-lg">
+                        <svg class="w-7 h-7 mb-1" viewBox="0 0 100 100" fill="none">
+                          <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A"/>
+                          <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF"/>
+                          <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+                          <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" stroke-width="6.5" stroke-linecap="round"/>
+                        </svg>
+                        <span class="text-[6.5px] font-black tracking-widest text-white leading-tight">LONG VIEW</span>
+                        <span class="text-[5px] font-mono tracking-widest text-vermilion">DIGITAL MARKETING</span>
+                      </div>
+                    </div>
+
+                    <!-- Right Metadata & QR Block -->
+                    <div class="col-span-7 flex flex-col justify-between space-y-2 border-l border-white/10 pl-3">
+                      <div class="text-[8.5px] font-mono text-slate-300 space-y-1">
+                        <div class="flex items-center gap-1.5 truncate">
+                          <span class="text-vermilion">✉</span>
+                          <span class="truncate">longviewmarketingofficial@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                          <span class="text-pink-400">📸</span>
+                          <span>@longview_digital</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 truncate">
+                          <span class="text-amber-400">🌐</span>
+                          <span class="truncate">longviewmarketing.agency</span>
+                        </div>
+                      </div>
+
+                      <!-- QR Code Preview Block -->
+                      <div class="flex items-center gap-2 pt-1">
+                        <div class="w-9 h-9 bg-white p-1 rounded-md shadow flex items-center justify-center shrink-0">
+                          <svg viewBox="0 0 24 24" class="w-full h-full text-black" fill="currentColor">
+                            <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4 4h4v4h-4v-4zm4-4h4v4h-4v-4zM14 14h2v2h-2v-2z"/>
+                          </svg>
+                        </div>
+                        <span class="text-[8px] font-mono text-slate-400">INSTANT REVIEW ROUTE</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Accent Orange Line -->
+                  <div class="pt-2 border-t border-white/10 flex justify-between items-center relative z-10 text-[9px] font-mono text-slate-400">
+                    <span class="text-cyberLime">● VERIFIED GOOGLE MAPS API</span>
+                    <span>NO APPS NEEDED</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Interactive Prompt Below Card -->
+              <div class="mt-4 pt-4 border-t border-white/[0.08] flex items-center justify-between">
+                <span class="font-mono text-xs text-slate-400">Tap to test customer phone scan</span>
+                <button onclick="runTapSimulation()" class="font-mono text-xs font-bold text-vermilion hover:text-white flex items-center gap-1">
+                  <span>LAUNCH SIMULATOR</span>
+                  <span>→</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
         </div>
-
-        <!-- Proof Bar -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto pt-8 border-t border-white/[0.08]">
-          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
-            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Consistency</span>
-            <span class="text-2xl font-black text-white block tracking-tight">16 Pieces</span>
-            <span class="text-[11px] text-slate-400">Reels + Carousels Monthly</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
-            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Review Lift</span>
-            <span class="text-2xl font-black text-electricCoral block tracking-tight">3.4x</span>
-            <span class="text-[11px] text-slate-400">Google Review Velocity</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
-            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Ad Engine</span>
-            <span class="text-2xl font-black text-white block tracking-tight">Direct WhatsApp</span>
-            <span class="text-[11px] text-slate-400">Hyper-Local Foot Traffic</span>
-          </div>
-          <div class="p-4 rounded-2xl bg-nightElevated/40 border border-white/[0.06] text-left">
-            <span class="text-xs font-mono text-slate-500 uppercase tracking-wider block mb-1">Transparency</span>
-            <span class="text-2xl font-black text-electricEmerald block tracking-tight">Zero Fluff</span>
-            <span class="text-[11px] text-slate-400">Flat Monthly Billing</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <!-- SECTION 1: APPROACH (#approach) -->
-    <section id="approach" class="py-24 px-5 sm:px-8 border-t border-white/[0.06]">
+    <!-- SECTION 1: APPROACH / 3-PILLAR BRUTALIST GRID (EXACT INSPIRATION MATCH) -->
+    <section id="approach" class="py-20 sm:py-28 px-5 sm:px-8 border-b border-white/[0.08] bg-techGreen/40">
       <div class="max-w-7xl mx-auto">
         
-        <div class="max-w-2xl mb-16">
-          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// The Methodology</span>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">The Three-Pillar Growth Bento</h2>
-          <p class="text-slate-400 text-sm mt-3">We replace unstructured, random posting with three interlocking engines engineered specifically for regional offline businesses.</p>
+        <!-- Header Info Row with Neon Lime Pill (Inspo Match) -->
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10 pb-6 border-b border-white/10">
+          <div>
+            <span class="font-mono text-xs text-cyberLime uppercase tracking-widest block mb-1">// THE ARCHITECTURE</span>
+            <h2 class="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">THREE-PILLAR GROWTH FRAMEWORK</h2>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 text-slate-500 font-mono text-xs">
+              <span class="px-2 py-1 rounded tech-border hover:text-white cursor-pointer">&lt;</span>
+              <span class="px-2 py-1 rounded tech-border hover:text-white cursor-pointer">&gt;</span>
+            </div>
+            <!-- Inspo Lime Accent Pill -->
+            <div class="w-14 h-3.5 bg-cyberLime rounded-full shadow-lg shadow-cyberLime/20"></div>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- 3-Pillar Brutalist Column Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
-          <!-- Bento Card 1: Visual Dominance -->
-          <div class="lg:col-span-6 bento-card p-7 sm:p-9 flex flex-col justify-between">
+          <!-- Pillar 01: DISCOVERY -->
+          <div class="bg-obsidianSurface/90 tech-border-green p-7 sm:p-8 flex flex-col justify-between rounded-xl relative group hover:border-cyberLime/50 transition-colors">
             <div>
-              <div class="flex justify-between items-start mb-6">
-                <span class="text-xs font-mono font-bold text-electricCoral bg-electricCoral/10 px-3 py-1 rounded-full border border-electricCoral/20">01 / BE SEEN</span>
-                <span class="text-xs text-slate-500 font-mono">Organic Reels Engine</span>
+              <div class="flex justify-between items-start mb-6 font-mono text-xs">
+                <span class="text-slate-400 tracking-wider">LONG VIEW<br/>DIGITAL MARKETING</span>
+                <span class="text-cyberLime font-bold tracking-widest">01 // 03</span>
               </div>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Short-Form Visual Dominance</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                Your competition is boring customers with static graphics. We produce fast-paced, high-retention Reels highlighting your signature craft, dining atmosphere, and product hero moments.
+
+              <h3 class="font-bebas text-4xl sm:text-5xl text-bone mb-3 tracking-wide group-hover:text-cyberLime transition-colors">
+                01 // DISCOVERY
+              </h3>
+
+              <div class="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-4">
+                METADATA — 01 ARCHITECTURE
+              </div>
+
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 font-normal">
+                Understand local customers, competitor blindspots, and unit economics to build a high-retention organic content roadmap.
               </p>
             </div>
 
-            <div class="pt-6 border-t border-white/10 flex flex-wrap gap-2 text-xs font-mono text-slate-300">
-              <span class="px-3 py-1.5 rounded-lg bg-nightElevated border border-white/5">● Cinematic Framing</span>
-              <span class="px-3 py-1.5 rounded-lg bg-nightElevated border border-white/5">● Trending Audio Hooks</span>
-              <span class="px-3 py-1.5 rounded-lg bg-nightElevated border border-white/5">● High-Retention Edits</span>
+            <div class="pt-5 border-t border-white/10 flex flex-wrap gap-2 font-mono text-[11px] text-slate-400">
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● Competitor Audit</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● Local Customer Hooks</span>
             </div>
           </div>
 
-          <!-- Bento Card 2: Brand Memory -->
-          <div class="lg:col-span-6 bento-card p-7 sm:p-9 flex flex-col justify-between">
+          <!-- Pillar 02: ARCHITECTURE -->
+          <div class="bg-obsidianSurface/90 tech-border-green p-7 sm:p-8 flex flex-col justify-between rounded-xl relative group hover:border-cyberLime/50 transition-colors">
             <div>
-              <div class="flex justify-between items-start mb-6">
-                <span class="text-xs font-mono font-bold text-electricAmber bg-electricAmber/10 px-3 py-1 rounded-full border border-electricAmber/20">02 / BE REMEMBERED</span>
-                <span class="text-xs text-slate-500 font-mono">Cadence</span>
+              <div class="flex justify-between items-start mb-6 font-mono text-xs">
+                <span class="text-slate-400 tracking-wider">LONG VIEW<br/>DIGITAL MARKETING</span>
+                <span class="text-cyberLime font-bold tracking-widest">02 // 03</span>
               </div>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Structured Content Rhythm</h3>
-              <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                Never miss Diwali, Uttarayan, or holiday weekend surges again. Our synchronized schedule maps 16 assets monthly with captions and hashtags delivered well in advance.
+
+              <h3 class="font-bebas text-4xl sm:text-5xl text-bone mb-3 tracking-wide group-hover:text-cyberLime transition-colors">
+                02 // ARCHITECTURE
+              </h3>
+
+              <div class="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-4">
+                METADATA — 02 STRATEGY
+              </div>
+
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 font-normal">
+                Custom-designed content cadence with 16 scheduled assets monthly, geo-fenced Meta ad funnels, and branded NFC hardware.
               </p>
             </div>
 
-            <!-- Calendar Mini-Matrix -->
-            <div class="bg-nightElevated p-4 rounded-2xl border border-white/10 space-y-2.5">
-              <div class="flex items-center justify-between text-xs text-slate-400">
-                <span class="font-bold text-white">Monthly Content Matrix</span>
-                <span class="font-mono text-electricAmber text-[11px]">100% On-Schedule</span>
-              </div>
-              <div class="h-2 w-full bg-night rounded-full overflow-hidden flex">
-                <div class="bg-electricCoral w-[37.5%]" title="6 Reels"></div>
-                <div class="bg-electricAmber w-[62.5%]" title="10 Posts & Carousels"></div>
-              </div>
-              <div class="flex justify-between text-[11px] font-mono text-slate-400 pt-1">
-                <span>● 6 High-Impact Reels</span>
-                <span>● 10 Carousels / Offers</span>
-              </div>
+            <div class="pt-5 border-t border-white/10 flex flex-wrap gap-2 font-mono text-[11px] text-slate-400">
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● 16 Assets/Month</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● 5km Radius Ad Setup</span>
             </div>
           </div>
 
-          <!-- Bento Card 3: The Conversion Engine (Spans 12 cols) -->
-          <div class="lg:col-span-12 bento-card p-7 sm:p-9">
-            <div class="max-w-3xl">
-              <div class="flex items-center gap-2 mb-4">
-                <span class="text-xs font-mono font-bold text-electricEmerald bg-electricEmerald/10 px-3 py-1 rounded-full border border-electricEmerald/20">03 / BE CHOSEN</span>
-                <span class="text-xs text-slate-500 font-mono">Conversion Funnel</span>
+          <!-- Pillar 03: EXECUTION -->
+          <div class="bg-obsidianSurface/90 tech-border-green p-7 sm:p-8 flex flex-col justify-between rounded-xl relative group hover:border-cyberLime/50 transition-colors">
+            <div>
+              <div class="flex justify-between items-start mb-6 font-mono text-xs">
+                <span class="text-slate-400 tracking-wider">LONG VIEW<br/>DIGITAL MARKETING</span>
+                <span class="text-cyberLime font-bold tracking-widest">03 // 03</span>
               </div>
-              <h3 class="text-2xl sm:text-3xl font-black text-white mb-3">Hyper-Local Meta Ads & Google Dominance</h3>
-              <p class="text-slate-400 text-sm sm:text-base leading-relaxed mb-6">
-                Social attention is useless if it doesn't lead to reservations, footfalls, or orders. We pair Click-to-WhatsApp targeted Meta campaigns within a 5km radius with physical Google Review NFC tap hardware for your billing counters.
+
+              <h3 class="font-bebas text-4xl sm:text-5xl text-bone mb-3 tracking-wide group-hover:text-cyberLime transition-colors">
+                03 // EXECUTION
+              </h3>
+
+              <div class="font-mono text-[11px] text-slate-500 uppercase tracking-widest mb-4">
+                METADATA — 03 SUCCESS
+              </div>
+
+              <p class="text-slate-400 text-sm leading-relaxed mb-6 font-normal">
+                Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity across Ahmedabad.
               </p>
-              <div class="flex flex-wrap gap-2.5 text-xs font-mono text-slate-300">
-                <span class="px-3.5 py-2 rounded-lg bg-nightElevated border border-white/5">● Radius-Targeted Meta Ads</span>
-                <span class="px-3.5 py-2 rounded-lg bg-nightElevated border border-white/5">● Direct WhatsApp Lead Funnels</span>
-                <span class="px-3.5 py-2 rounded-lg bg-nightElevated border border-white/5">● Physical NFC Counter Hardware</span>
-              </div>
+            </div>
+
+            <div class="pt-5 border-t border-white/10 flex flex-wrap gap-2 font-mono text-[11px] text-slate-400">
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● WhatsApp Walk-Ins</span>
+              <span class="px-2.5 py-1 rounded bg-obsidian tech-border">● Tap Review Cards</span>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
 
     <!-- SECTION 2: MONTHLY RHYTHM (#rhythm) -->
-    <section id="rhythm" class="py-24 px-5 sm:px-8 bg-nightElevated/30 border-t border-white/[0.06]">
+    <section id="rhythm" class="py-24 px-5 sm:px-8 border-b border-white/[0.08]">
       <div class="max-w-6xl mx-auto">
         
         <div class="text-center max-w-2xl mx-auto mb-14">
-          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// The Content Engine</span>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">How Every Single Month Operates</h2>
-          <p class="text-slate-400 text-sm mt-3">Click each week below to view the tactical deliverables engineered into our 16-asset monthly rhythm.</p>
+          <span class="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">// PRODUCTION TIMELINE</span>
+          <h2 class="font-bebas text-4xl sm:text-6xl text-bone tracking-wide">HOW EVERY SINGLE MONTH OPERATES</h2>
+          <p class="text-slate-400 text-sm mt-3 font-normal">Four weekly cycles engineered to produce 16 deliverables with strict adherence to publishing deadlines.</p>
         </div>
 
         <!-- Week Selector Tabs -->
-        <div class="flex flex-wrap justify-center gap-2 mb-10">
-          <button onclick="switchWeek(1)" id="tab-week-1" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-electricCoral bg-electricCoral text-white transition">
-            Week 1: Signature Hero
+        <div class="flex flex-wrap justify-center gap-2.5 mb-10 font-mono text-xs">
+          <button onclick="switchWeek(1)" id="tab-week-1" class="px-5 py-2.5 rounded-sm font-bold border border-vermilion bg-vermilion text-white transition">
+            01 // WEEK 1: SIGNATURE HERO
           </button>
-          <button onclick="switchWeek(2)" id="tab-week-2" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
-            Week 2: Craft & Backstory
+          <button onclick="switchWeek(2)" id="tab-week-2" class="px-5 py-2.5 rounded-sm font-bold tech-border bg-obsidianSurface text-slate-300 hover:border-white/30 transition">
+            02 // WEEK 2: CRAFT & STORY
           </button>
-          <button onclick="switchWeek(3)" id="tab-week-3" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
-            Week 3: Offers & Combos
+          <button onclick="switchWeek(3)" id="tab-week-3" class="px-5 py-2.5 rounded-sm font-bold tech-border bg-obsidianSurface text-slate-300 hover:border-white/30 transition">
+            03 // WEEK 3: OFFERS & COMBOS
           </button>
-          <button onclick="switchWeek(4)" id="tab-week-4" class="px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition">
-            Week 4: Community & Vibe
+          <button onclick="switchWeek(4)" id="tab-week-4" class="px-5 py-2.5 rounded-sm font-bold tech-border bg-obsidianSurface text-slate-300 hover:border-white/30 transition">
+            04 // WEEK 4: AMBIENT VIBE
           </button>
         </div>
 
         <!-- Dynamic Week Display Box -->
-        <div id="weekContentBox" class="bento-card p-8 sm:p-10">
-          <!-- Populated by JS function switchWeek() -->
+        <div id="weekContentBox" class="bg-obsidianSurface tech-border p-8 sm:p-10 rounded-2xl shadow-xl">
+          <!-- Populated by JS switchWeek() -->
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION 3: NFC TAP CARDS (#hardware) -->
-    <section id="hardware" class="py-28 px-5 sm:px-8 border-t border-white/[0.06] relative">
+    <!-- SECTION 3: NFC SMART HARDWARE (#hardware) -->
+    <section id="hardware" class="py-28 px-5 sm:px-8 border-b border-white/[0.08] relative">
       <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
           
           <!-- Left Column: NFC Concept & Explanation -->
           <div class="lg:col-span-6 space-y-6">
-            <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block">// Hardware Advantage</span>
-            <h2 class="text-3xl sm:text-5xl font-black text-white leading-tight">
-              Custom NFC Tap Cards. <br />
-              <span class="text-coral-gradient">Custom-Designed For Your Brand.</span>
+            <span class="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block">// HARDWARE SPECIFICATIONS</span>
+            <h2 class="font-bebas text-4xl sm:text-6xl text-bone leading-tight">
+              CUSTOM NFC SMART CARDS. <br />
+              <span class="text-vermilion">ENGINEERED FOR YOUR BILLING COUNTER.</span>
             </h2>
 
             <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-              Most businesses beg for reviews on receipts that end up in the trash. We design high-grade matte smart cards customized with your branding, fonts, and colors to sit right on your counter.
+              Most businesses print QR codes on paper bills that end up crumpled in the trash. We manufacture high-grade matte PVC smart cards tailored with your brand identity that sit permanently at your checkout.
             </p>
 
             <!-- 4-Step Checklist -->
-            <div class="space-y-3 pt-2">
-              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
-                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">01</span>
-                <p class="text-xs sm:text-sm text-slate-300">Customer completes payment or enjoys their experience.</p>
+            <div class="space-y-3 pt-2 font-mono text-xs">
+              <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-obsidianSurface tech-border">
+                <span class="w-6 h-6 rounded bg-vermilion/20 text-vermilion font-bold flex items-center justify-center shrink-0 mt-0.5">01</span>
+                <p class="text-slate-300">Customer completes bill payment or counter dining experience.</p>
               </div>
-              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
-                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">02</span>
-                <p class="text-xs sm:text-sm text-slate-300">Staff invites them: <em>“Tap your phone here to share your feedback!”</em></p>
+              <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-obsidianSurface tech-border">
+                <span class="w-6 h-6 rounded bg-vermilion/20 text-vermilion font-bold flex items-center justify-center shrink-0 mt-0.5">02</span>
+                <p class="text-slate-300">Staff invites them: <em>“Simply tap your phone here to leave your review!”</em></p>
               </div>
-              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
-                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">03</span>
-                <p class="text-xs sm:text-sm text-slate-300">Phone taps the card — <strong>no typing, searching, or URLs needed</strong>.</p>
+              <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-obsidianSurface tech-border">
+                <span class="w-6 h-6 rounded bg-vermilion/20 text-vermilion font-bold flex items-center justify-center shrink-0 mt-0.5">03</span>
+                <p class="text-slate-300">Customer taps phone — <strong>no typing, search bar, or app download needed</strong>.</p>
               </div>
-              <div class="flex items-start gap-3.5 p-3 rounded-xl bg-nightElevated/50 border border-white/5">
-                <span class="w-6 h-6 rounded-md bg-electricCoral/20 text-electricCoral font-mono font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">04</span>
-                <p class="text-xs sm:text-sm text-slate-300">Your Google review modal opens instantly ready for 5 stars.</p>
+              <div class="flex items-start gap-3.5 p-3.5 rounded-lg bg-obsidianSurface tech-border">
+                <span class="w-6 h-6 rounded bg-vermilion/20 text-vermilion font-bold flex items-center justify-center shrink-0 mt-0.5">04</span>
+                <p class="text-slate-300">Your Google Maps 5-star review modal launches instantaneously.</p>
               </div>
             </div>
 
             <!-- Template Notice -->
-            <div class="pt-4 border-t border-white/10">
-              <div class="p-3.5 rounded-xl bg-nightElevated/70 border border-white/10 flex items-start gap-3 text-xs text-slate-400">
-                <span class="text-electricCoral font-bold text-sm">ℹ</span>
-                <p><strong class="text-white">Design Template Preview:</strong> The card shown is an interactive layout template. Every card is custom-designed and manufactured with your specific brand identity, logo, and colors upon onboarding.</p>
+            <div class="pt-2">
+              <div class="p-3.5 rounded-lg bg-obsidianSurface tech-border flex items-start gap-3 text-xs text-slate-400">
+                <span class="text-cyberLime font-mono font-bold text-sm">ℹ</span>
+                <p><strong class="text-bone">Customized Production:</strong> Every card is custom printed with your exact logo, colors, and direct Google Maps CID link upon client onboarding.</p>
               </div>
             </div>
 
           </div>
 
-          <!-- Right Column: Card Graphic & Simulator Trigger -->
+          <!-- Right Column: Interactive Card Simulator -->
           <div class="lg:col-span-6 flex flex-col items-center">
             
             <div class="relative w-full max-w-md">
               
               <!-- Subtle ripple behind card -->
               <div id="tapRippleContainer" class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0 transition-opacity">
-                <div class="w-48 h-48 rounded-full border-2 border-electricCoral nfc-ripple"></div>
+                <div class="w-48 h-48 rounded-full border-2 border-vermilion nfc-ripple"></div>
               </div>
 
               <!-- Interactive Card Visual -->
-              <div id="nfcCardVisual" class="w-full aspect-[1.586/1] rounded-3xl p-8 border border-white/20 shadow-2xl relative flex flex-col justify-between transition-all duration-500 overflow-hidden"
-                   style="background: linear-gradient(135deg, #090D18 0%, #121A2F 100%);">
+              <div id="nfcCardVisual" class="w-full aspect-[1.586/1] rounded-2xl p-7 border border-white/20 shadow-2xl relative flex flex-col justify-between transition-all duration-500 overflow-hidden"
+                   style="background: linear-gradient(135deg, #121722 0%, #080C14 100%);">
                 
-                <!-- Card Watermark Background Graphic -->
-                <div class="absolute -right-8 -bottom-8 w-48 h-48 opacity-10 pointer-events-none">
+                <!-- Card Background Graphic -->
+                <div class="absolute -right-8 -bottom-8 w-44 h-44 opacity-10 pointer-events-none">
                   <svg viewBox="0 0 100 100" fill="white">
                     <circle cx="50" cy="50" r="46"/>
                   </svg>
@@ -444,11 +580,11 @@
                 <!-- Top Row -->
                 <div class="flex justify-between items-start relative z-10">
                   <div>
-                    <span class="text-[9px] font-mono font-extrabold uppercase tracking-widest text-electricCoral block">SMART HARDWARE DESIGN TEMPLATE</span>
-                    <span class="text-2xl font-black tracking-wider text-white">YOUR BRAND</span>
+                    <span class="text-[9px] font-mono font-bold uppercase tracking-widest text-vermilion block">HARDWARE PROTOTYPE</span>
+                    <span class="font-bebas text-3xl tracking-wider text-bone">YOUR BRAND NAME</span>
                   </div>
                   <div class="flex items-center gap-1.5 text-slate-400 font-mono text-[10px]">
-                    <span>NFC</span>
+                    <span class="text-cyberLime">NFC</span>
                     <span class="text-white">📡</span>
                     <span>QR</span>
                   </div>
@@ -456,19 +592,19 @@
 
                 <!-- Center Chip Representation -->
                 <div class="flex items-center gap-4 relative z-10 my-1">
-                  <div class="w-12 h-9 rounded-lg bg-gradient-to-br from-amber-200/25 to-amber-400/10 border border-amber-300/40 flex items-center justify-center">
+                  <div class="w-12 h-9 rounded-md bg-gradient-to-br from-amber-200/25 to-amber-400/10 border border-amber-300/40 flex items-center justify-center">
                     <span class="text-[8px] font-mono font-black text-amber-200 tracking-wider">CHIP</span>
                   </div>
-                  <p class="text-xs font-bold text-white tracking-wide">TAP PHONE TO REVIEW</p>
+                  <p class="font-mono text-xs font-bold text-bone tracking-wide">TAP PHONE TO REVIEW</p>
                 </div>
 
                 <!-- Bottom Row -->
                 <div class="flex justify-between items-end relative z-10 pt-2 border-t border-white/10">
                   <div>
                     <div class="text-amber-400 text-xs font-bold tracking-widest mb-0.5">★★★★★</div>
-                    <span class="text-[10px] text-slate-400 font-mono">Google Maps Direct Link</span>
+                    <span class="text-[10px] text-slate-400 font-mono">Instant Google Maps API Link</span>
                   </div>
-                  <div class="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center text-[7px] font-mono font-bold text-white">
+                  <div class="w-10 h-10 rounded bg-white/10 tech-border flex items-center justify-center text-[8px] font-mono font-bold text-white">
                     QR
                   </div>
                 </div>
@@ -479,10 +615,10 @@
 
             <!-- Action Button -->
             <div class="mt-8 text-center">
-              <button onclick="runTapSimulation()" class="btn-coral-glow text-white px-7 py-3 rounded-full text-xs font-bold flex items-center gap-2 mx-auto">
-                <span>📱 Simulate Customer Tap</span>
+              <button onclick="runTapSimulation()" class="btn-vermilion px-7 py-3 rounded-sm font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 mx-auto shadow-lg shadow-vermilion/25">
+                <span>📱 SIMULATE PHONE TAP</span>
               </button>
-              <p class="text-[11px] text-slate-500 font-mono mt-2">Click to preview the instant 2-second customer experience</p>
+              <p class="text-[11px] text-slate-500 font-mono mt-2">Preview the zero-friction customer experience</p>
             </div>
 
           </div>
@@ -492,46 +628,84 @@
     </section>
 
     <!-- Simulated Phone Tap Popup Modal -->
-    <div id="simulatedPhoneModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
-      <div class="bg-nightElevated border border-white/20 max-w-sm w-full rounded-3xl p-6 shadow-2xl relative text-left">
-        <button onclick="closeTapModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold">✕</button>
+    <div id="simulatedPhoneModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-obsidianSurface tech-border max-w-sm w-full rounded-2xl p-6 shadow-2xl relative text-left">
+        <button onclick="closeTapModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-sm font-bold font-mono">✕</button>
         
         <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center font-bold text-blue-600 shadow text-lg">
+          <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center font-bold text-blue-600 shadow text-lg font-sans">
             G
           </div>
           <div>
             <span class="text-xs font-mono text-slate-400 block">Google Maps Prompt</span>
-            <span class="text-sm font-black text-white">Your Business Name</span>
+            <span class="text-sm font-black text-bone">Your Business Name</span>
           </div>
         </div>
 
-        <div class="bg-night p-4 rounded-2xl border border-white/10 mb-4 text-center">
-          <span class="text-xs text-slate-300 font-medium block mb-2">Rate and share your review</span>
+        <div class="bg-obsidian p-4 rounded-xl tech-border mb-4 text-center">
+          <span class="text-xs text-slate-300 font-medium block mb-2 font-mono">Rate and share your review</span>
           <div class="text-2xl text-amber-400 flex justify-center gap-1.5 mb-2">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
-          <span class="text-[11px] text-electricEmerald font-mono font-bold block">5-Star Prompt Pre-Configured</span>
+          <span class="text-[11px] text-cyberLime font-mono font-bold block">5-Star Prompt Pre-Configured</span>
         </div>
 
-        <p class="text-xs text-slate-400 text-center mb-5 leading-relaxed">
-          Zero login barriers. iOS and Android automatically recognize the NFC chip without downloading any third-party app.
+        <p class="text-xs text-slate-400 text-center mb-5 leading-relaxed font-mono">
+          Zero login barriers. iOS and Android automatically detect the NFC chip without downloading any third-party application.
         </p>
 
-        <button onclick="closeTapModal()" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs tracking-wider">
-          Close Preview
+        <button onclick="closeTapModal()" class="w-full py-2.5 rounded-sm bg-white/10 hover:bg-white/20 text-bone font-mono font-bold text-xs uppercase tracking-wider">
+          CLOSE PREVIEW
         </button>
       </div>
     </div>
 
+    <!-- SECTION: FEATURED CLIENT SPOTLIGHT (MAHARAJ K MOMOS) -->
+    <section class="py-20 px-5 sm:px-8 border-b border-white/[0.08] bg-obsidianSurface/50">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+          <div>
+            <span class="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">// PROVEN TRACK RECORD</span>
+            <h2 class="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">AMBITIOUS BRANDS IN OUR MONTHLY RHYTHM</h2>
+          </div>
+          <a href="clients.html" class="btn-bone px-5 py-2.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-2">
+            <span>VIEW ALL CLIENTS ↗</span>
+          </a>
+        </div>
+
+        <!-- Client Card (Maharaj K Momos) -->
+        <div class="bg-obsidianSurface tech-border p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-center sm:items-start gap-6 group hover:border-vermilion/40 transition-colors">
+          <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-white p-2 flex items-center justify-center shrink-0 shadow-lg">
+            <img src="maharaj-k-momos-logo.jpg" alt="Maharaj K Momos Logo" class="max-w-full max-h-full object-contain" />
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+              <h3 class="font-bebas text-3xl sm:text-4xl text-bone group-hover:text-vermilion transition-colors">
+                MAHARAJ K MOMOS
+              </h3>
+              <span class="text-[10px] font-mono font-bold text-vermilion bg-vermilion/10 tech-border px-3 py-1 rounded uppercase tracking-wider self-center sm:self-auto">
+                FOOD & DINING
+              </span>
+            </div>
+            <p class="text-xs font-mono text-slate-400 mb-3 flex items-center justify-center sm:justify-start gap-1.5">
+              <span>📍</span> <span>Bopal, Ahmedabad, Gujarat</span>
+            </p>
+            <p class="text-sm text-slate-400 leading-relaxed font-normal">
+              Ahmedabad’s premier destination for authentic, steaming dumplings. Partnered with Long View for cinematic Reels, festive foot traffic campaigns, and counter NFC review hardware.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 4: PACKAGES & RETAINERS (#retainers) -->
-    <section id="retainers" class="py-28 px-5 sm:px-8 border-t border-white/[0.06] bg-nightElevated/20">
+    <section id="retainers" class="py-28 px-5 sm:px-8 border-b border-white/[0.08]">
       <div class="max-w-7xl mx-auto">
         
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// Investment</span>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-white">Transparent Monthly Retainers</h2>
-          <p class="text-slate-400 text-sm mt-3">No surprise billing, percentage markups, or lock-in traps. Every plan includes dedicated execution.</p>
+          <span class="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">// INVESTMENTS & PRICING</span>
+          <h2 class="font-bebas text-4xl sm:text-6xl text-bone tracking-wide">TRANSPARENT MONTHLY RETAINERS</h2>
+          <p class="text-slate-400 text-sm mt-3 font-normal">No hidden percentage cuts, secret markups, or lock-in traps. Every plan includes dedicated execution.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
@@ -539,30 +713,30 @@
           <!-- 3-Month Plan -->
           <div class="bento-card p-8 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Sprint Package</span>
-              <h3 class="text-2xl font-black text-white mb-2">Starter Test</h3>
+              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">01 // SPRINT PACKAGE</span>
+              <h3 class="font-bebas text-3xl text-bone mb-2">STARTER TEST</h3>
               <p class="text-slate-400 text-xs mb-6">Designed for business owners wanting to validate creative quality and lead flow.</p>
               
-              <div class="mb-6 pb-6 border-b border-white/10">
-                <span class="text-4xl font-black text-white">₹12,000</span>
-                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              <div class="mb-6 pb-6 border-b border-white/10 font-mono">
+                <span class="text-4xl font-black text-bone">₹12,000</span>
+                <span class="text-xs text-slate-500">/ month</span>
               </div>
 
               <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
-                  <span><strong>12 Posts/month:</strong> 4 Reels + 8 Carousels/Single</span>
+                  <span class="text-vermilion font-bold">✔</span>
+                  <span><strong>12 Posts/month:</strong> 4 Reels + 8 Carousels</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span><strong>Meta Ads:</strong> 1 Click-to-WhatsApp booking campaign</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span><strong>Hardware:</strong> 1 Custom NFC Google Review Tap Card</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span>Monthly WhatsApp performance recap</span>
                 </li>
               </ul>
@@ -570,46 +744,47 @@
 
             <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan%20(%E2%82%B912,000/mo)" 
                target="_blank"
-               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border border-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition">
-              Select 3-Month Sprint →
+               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 tech-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition">
+              SELECT 3-MONTH SPRINT ↗
             </a>
           </div>
 
           <!-- 6-Month Plan (FEATURED HERO CARD) -->
-          <div class="bento-card !overflow-visible p-8 sm:p-9 pt-10 border-2 border-electricCoral relative flex flex-col justify-between shadow-2xl shadow-electricCoral/15 md:-translate-y-2 mt-4 md:mt-0">
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-white/20 text-[10px] font-mono font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-electricCoral/40 whitespace-nowrap z-20">
-              ★ Recommended Choice
+          <div class="bento-card !overflow-visible p-8 sm:p-9 pt-10 border-2 border-vermilion relative flex flex-col justify-between shadow-2xl shadow-vermilion/15 md:-translate-y-2 mt-4 md:mt-0">
+            <!-- Solid Opaque Badge -->
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-white/20 text-[10px] font-mono font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-vermilion/40 whitespace-nowrap z-20">
+              ★ RECOMMENDED CHOICE
             </div>
 
             <div>
-              <span class="text-[11px] font-mono font-bold text-electricCoral uppercase tracking-widest block mb-2">Growth Retainer</span>
-              <h3 class="text-2xl font-black text-white mb-2">The Growth Partner</h3>
+              <span class="text-[11px] font-mono font-bold text-vermilion uppercase tracking-widest block mb-2">02 // GROWTH RETAINER</span>
+              <h3 class="font-bebas text-3xl text-bone mb-2">THE GROWTH PARTNER</h3>
               <p class="text-slate-400 text-xs mb-6">Built to achieve sustained brand recall and predictable weekend walk-ins across Ahmedabad.</p>
               
-              <div class="mb-6 pb-6 border-b border-white/10">
-                <span class="text-5xl font-black text-white">₹10,000</span>
-                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              <div class="mb-6 pb-6 border-b border-white/10 font-mono">
+                <span class="text-5xl font-black text-bone">₹10,000</span>
+                <span class="text-xs text-slate-500">/ month</span>
               </div>
 
               <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span><strong>16 Posts/month:</strong> 6 Reels + 10 Carousels/Single</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span><strong>Meta Ads:</strong> 2 Active Funnels (Always-On + Festive)</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span><strong>Hardware:</strong> 2 Custom Branded NFC Review Cards</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span>Calendar planning, captioning & scheduled delivery</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricCoral font-bold">✔</span>
+                  <span class="text-vermilion font-bold">✔</span>
                   <span>Bi-weekly Meta Ads optimization</span>
                 </li>
               </ul>
@@ -617,42 +792,42 @@
 
             <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan%20(%E2%82%B910,000/mo)" 
                target="_blank"
-               class="mt-8 block w-full py-4 text-center btn-coral-glow text-white font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-lg transition">
-              6 Months Contract →
+               class="mt-8 block w-full py-4 text-center btn-vermilion text-white font-mono font-extrabold rounded-sm text-xs uppercase tracking-wider shadow-lg transition">
+              6 MONTHS CONTRACT ↗
             </a>
           </div>
 
           <!-- 12-Month Plan -->
           <div class="bento-card p-8 flex flex-col justify-between">
             <div>
-              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">Annual Delegation</span>
-              <h3 class="text-2xl font-black text-white mb-2">Market Leader</h3>
+              <span class="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">03 // ANNUAL DELEGATION</span>
+              <h3 class="font-bebas text-3xl text-bone mb-2">MARKET LEADER</h3>
               <p class="text-slate-400 text-xs mb-6">Or pay ₹90,000 upfront for the year (Save ₹12,000 instantly).</p>
               
-              <div class="mb-6 pb-6 border-b border-white/10">
-                <span class="text-4xl font-black text-white">₹8,500</span>
-                <span class="text-xs text-slate-400 font-mono">/ month</span>
+              <div class="mb-6 pb-6 border-b border-white/10 font-mono">
+                <span class="text-4xl font-black text-bone">₹8,500</span>
+                <span class="text-xs text-slate-500">/ month</span>
               </div>
 
               <ul class="text-xs text-slate-300 space-y-3.5 font-medium">
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span class="text-cyberLime font-bold">✔</span>
                   <span><strong>16 Posts/month:</strong> Reels, Promos & Spotlights</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span class="text-cyberLime font-bold">✔</span>
                   <span><strong>Meta Ads:</strong> Full ad setup + ongoing creative refreshes</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span class="text-cyberLime font-bold">✔</span>
                   <span><strong>Hardware:</strong> 3 Custom Branded NFC Review Cards</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span class="text-cyberLime font-bold">✔</span>
                   <span><strong>Free Bonus:</strong> 1-page mobile-ready landing page</span>
                 </li>
                 <li class="flex items-center gap-2.5">
-                  <span class="text-electricEmerald font-bold">✔</span>
+                  <span class="text-cyberLime font-bold">✔</span>
                   <span>Direct founder WhatsApp support channel</span>
                 </li>
               </ul>
@@ -660,8 +835,8 @@
 
             <a href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Market%20Leader%20Plan%20(%E2%82%B98,500/mo)" 
                target="_blank"
-               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border border-white/10 text-white font-bold rounded-xl text-xs uppercase tracking-wider transition">
-              Select 12-Month Plan →
+               class="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 tech-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition">
+              SELECT 12-MONTH PLAN ↗
             </a>
           </div>
 
@@ -670,50 +845,50 @@
     </section>
 
     <!-- SECTION 5: FAQ (#faq) -->
-    <section id="faq" class="py-24 px-5 sm:px-8 border-t border-white/[0.06]">
+    <section id="faq" class="py-24 px-5 sm:px-8 border-b border-white/[0.08]">
       <div class="max-w-4xl mx-auto">
         
         <div class="text-center mb-16">
-          <span class="text-electricCoral font-mono font-bold text-xs uppercase tracking-widest block mb-2">// Clarity</span>
-          <h2 class="text-3xl sm:text-4xl font-black text-white">Frequently Addressed Questions</h2>
+          <span class="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">// TECHNICAL CLARITY</span>
+          <h2 class="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">FREQUENTLY ADDRESSED QUESTIONS</h2>
         </div>
 
         <div class="space-y-3">
           
-          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="bg-obsidianSurface tech-border p-6 rounded-xl cursor-pointer" onclick="toggleFaq(this)">
             <div class="flex justify-between items-center">
-              <h4 class="text-sm sm:text-base font-bold text-white">How is the Meta advertising budget handled?</h4>
-              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+              <h4 class="text-sm sm:text-base font-mono font-bold text-bone">How is the Meta advertising budget handled?</h4>
+              <span class="text-vermilion text-lg font-mono font-bold faq-icon">+</span>
             </div>
             <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
               Your ad spend is paid directly to Meta (Facebook/Instagram) using your own payment card. Long View’s retainer covers ad strategy, target radius setup, creative copywriting, visual design, and weekly performance adjustments. You retain 100% billing transparency.
             </div>
           </div>
 
-          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="bg-obsidianSurface tech-border p-6 rounded-xl cursor-pointer" onclick="toggleFaq(this)">
             <div class="flex justify-between items-center">
-              <h4 class="text-sm sm:text-base font-bold text-white">How do we capture raw footage for the Reels?</h4>
-              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+              <h4 class="text-sm sm:text-base font-mono font-bold text-bone">How do we capture raw footage for the Reels?</h4>
+              <span class="text-vermilion text-lg font-mono font-bold faq-icon">+</span>
             </div>
             <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
               We eliminate guesswork by providing you with clear, monthly shot-lists (e.g. 5–8 second clips your team can capture on any iPhone or Samsung device). You upload raw video files to our shared Google Drive, and our agency editors handle pacing, trending audio hooks, captions, and color correction.
             </div>
           </div>
 
-          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="bg-obsidianSurface tech-border p-6 rounded-xl cursor-pointer" onclick="toggleFaq(this)">
             <div class="flex justify-between items-center">
-              <h4 class="text-sm sm:text-base font-bold text-white">Do the NFC tap cards require an app or batteries?</h4>
-              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+              <h4 class="text-sm sm:text-base font-mono font-bold text-bone">Do the NFC tap cards require an app or batteries?</h4>
+              <span class="text-vermilion text-lg font-mono font-bold faq-icon">+</span>
             </div>
             <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
               Zero batteries, zero charging, and zero apps. NFC cards run on passive near-field frequency powered momentarily by the customer's phone during contact. They last indefinitely and include a printed QR code backup for older smartphones.
             </div>
           </div>
 
-          <div class="bento-card p-6 cursor-pointer" onclick="toggleFaq(this)">
+          <div class="bg-obsidianSurface tech-border p-6 rounded-xl cursor-pointer" onclick="toggleFaq(this)">
             <div class="flex justify-between items-center">
-              <h4 class="text-sm sm:text-base font-bold text-white">How fast does onboarding take?</h4>
-              <span class="text-electricCoral text-lg font-mono font-bold faq-icon">+</span>
+              <h4 class="text-sm sm:text-base font-mono font-bold text-bone">How fast does onboarding take?</h4>
+              <span class="text-vermilion text-lg font-mono font-bold faq-icon">+</span>
             </div>
             <div class="faq-content hidden mt-3 text-xs sm:text-sm text-slate-400 leading-relaxed pt-3 border-t border-white/10">
               Once you confirm your plan via WhatsApp, we collect your business assets within 48 hours. By Day 7, your Week 1 content calendar is delivered for approval and your custom NFC hardware enters production.
@@ -726,27 +901,27 @@
 
   </main>
 
-  <!-- FOOTER & CONTACT (#contact) -->
-  <footer id="contact" class="py-16 px-5 sm:px-8 border-t border-white/[0.08] bg-night text-slate-400 text-xs">
+  <!-- ARCHITECTURAL FOOTER -->
+  <footer id="contact" class="py-16 px-5 sm:px-8 bg-obsidian text-slate-400 text-xs font-mono">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
       
       <div class="md:w-1/2 space-y-4">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg bg-nightElevated border border-white/10 flex items-center justify-center p-1">
+          <div class="w-8 h-8 rounded bg-obsidianSurface border border-white/10 flex items-center justify-center p-1">
             <svg class="w-full h-full" viewBox="0 0 100 100" fill="none">
               <circle cx="50" cy="50" r="46" fill="#0A0E18"/>
-              <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF4D2E"/>
+              <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A"/>
               <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF"/>
             </svg>
           </div>
-          <span class="text-sm font-black text-white tracking-wider">LONG VIEW DIGITAL MARKETING</span>
+          <span class="text-sm font-black text-bone tracking-wider">LONG VIEW DIGITAL MARKETING</span>
         </div>
         
-        <p class="text-slate-400 leading-relaxed max-w-sm">
+        <p class="text-slate-400 leading-relaxed max-w-sm font-sans text-xs">
           Disciplined marketing execution for local brands across Ahmedabad & Gujarat. Reels, Meta funnels, and 5-star Google review hardware.
         </p>
 
-        <div class="text-[11px] text-slate-500 font-mono space-y-1">
+        <div class="text-[11px] text-slate-500 space-y-1">
           <p>• Meta advertising budget is paid directly to Meta.</p>
           <p>• Retainers billed monthly in advance.</p>
           <p>• Google reviews must remain genuine customer feedback.</p>
@@ -754,23 +929,23 @@
       </div>
 
       <div class="space-y-3 text-slate-300">
-        <span class="text-xs font-mono uppercase tracking-widest text-slate-500 block mb-2">// Studio Coordinates</span>
+        <span class="text-xs uppercase tracking-widest text-slate-500 block mb-2">// COORDINATES</span>
         <p class="flex items-center gap-2">
           <span>📍</span> <span>Ahmedabad, Gujarat, India</span>
         </p>
         <p class="flex items-center gap-2">
           <span>📱</span> 
-          <a href="https://wa.me/919879583117" class="hover:text-electricCoral font-mono transition">+91 98795 83117</a>
+          <a href="https://wa.me/919879583117" class="hover:text-vermilion transition">+91 98795 83117</a>
         </p>
         <p class="flex items-center gap-2">
           <span>📧</span> 
-          <a href="mailto:longviewmarketingofficial@gmail.com" class="hover:text-electricCoral transition">longviewmarketingofficial@gmail.com</a>
+          <a href="mailto:longviewmarketingofficial@gmail.com" class="hover:text-vermilion transition">longviewmarketingofficial@gmail.com</a>
         </p>
         <p class="flex items-center gap-2">
           <span>📸</span> 
-          <a href="https://instagram.com/longview_digital" target="_blank" class="hover:text-electricCoral transition">@longview_digital</a>
+          <a href="https://instagram.com/longview_digital" target="_blank" class="hover:text-vermilion transition">@longview_digital</a>
         </p>
-        <p class="text-slate-600 font-mono pt-4">© 2026 Long View Digital Marketing. All rights reserved.</p>
+        <p class="text-slate-600 pt-4">© 2026 Long View Digital Marketing. All rights reserved.</p>
       </div>
 
     </div>
@@ -794,26 +969,26 @@
     // 2. Interactive Week Switcher Content
     const weekData = {
       1: {
-        title: "Week 1: Signature Offerings & Hero Hooks",
-        badge: "4 Assets Delivered",
+        title: "WEEK 1 // SIGNATURE OFFERINGS & HERO HOOKS",
+        badge: "04 DELIVERABLES",
         desc: "We focus on what you are famous for. Hero Reels showcasing signature dishes or flagship services, with macro framing designed to stop local thumbs from scrolling.",
         items: ["2x Cinematic Reels on bestseller items", "1x Menu/Feature breakdown carousel", "1x Direct-offer single static graphic"]
       },
       2: {
-        title: "Week 2: Craft, Kitchen & Backstory",
-        badge: "4 Assets Delivered",
+        title: "WEEK 2 // CRAFT, KITCHEN & BACKSTORY",
+        badge: "04 DELIVERABLES",
         desc: "Customers buy from businesses they trust. We highlight hygiene, preparation craft, behind-the-counter dedication, and founder story clips that humanize your brand.",
         items: ["1x Behind-the-scenes preparation reel", "1x Team & hygiene highlight carousel", "2x High-resolution product showcase posts"]
       },
       3: {
-        title: "Week 3: High-Intent Combos & Weekday Footfalls",
-        badge: "4 Assets Delivered",
+        title: "WEEK 3 // HIGH-INTENT COMBOS & FOOTFALLS",
+        badge: "04 DELIVERABLES",
         desc: "Designed to drive immediate action and fill slow mid-week periods with lunch combos, seasonal promotions, or early festival bookings.",
         items: ["1x Fast-cut promotional reel", "2x Multi-slide value combo carousels", "1x WhatsApp direct-order flyer post"]
       },
       4: {
-        title: "Week 4: Ambient Vibe & Social Proof",
-        badge: "4 Assets Delivered",
+        title: "WEEK 4 // AMBIENT VIBE & SOCIAL PROOF",
+        badge: "04 DELIVERABLES",
         desc: "We spotlight buzzing dining rooms, happy guest moments, and review quotes to cement your location as the top weekend destination.",
         items: ["2x Ambient weekend energy reels", "1x Customer praise review carousel", "1x Weekend schedule/reservation reminder"]
       }
@@ -825,9 +1000,9 @@
         const tab = document.getElementById(`tab-week-${i}`);
         if (tab) {
           if (i === weekNum) {
-            tab.className = "px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-electricCoral bg-electricCoral text-white transition";
+            tab.className = "px-5 py-2.5 rounded-sm font-bold border border-vermilion bg-vermilion text-white transition";
           } else {
-            tab.className = "px-5 py-2.5 rounded-full text-xs font-mono font-bold border border-white/10 bg-nightElevated text-slate-300 hover:border-white/30 transition";
+            tab.className = "px-5 py-2.5 rounded-sm font-bold tech-border bg-obsidianSurface text-slate-300 hover:border-white/30 transition";
           }
         }
       }
@@ -839,15 +1014,15 @@
         box.innerHTML = `
           <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <div>
-              <span class="text-xs font-mono text-electricCoral uppercase tracking-wider block mb-1">Deliberate Cadence</span>
-              <h3 class="text-2xl font-black text-white">${data.title}</h3>
+              <span class="text-xs font-mono text-vermilion uppercase tracking-wider block mb-1">SYNCHRONIZED CADENCE</span>
+              <h3 class="font-bebas text-3xl sm:text-4xl text-bone tracking-wide">${data.title}</h3>
             </div>
-            <span class="px-3.5 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-mono text-slate-300">${data.badge}</span>
+            <span class="px-3.5 py-1.5 rounded tech-border font-mono text-xs text-cyberLime">${data.badge}</span>
           </div>
-          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-2xl">${data.desc}</p>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10">
+          <p class="text-slate-400 text-sm leading-relaxed mb-6 max-w-2xl font-normal">${data.desc}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-white/10 font-mono text-xs">
             ${data.items.map(item => `
-              <div class="p-3.5 rounded-xl bg-nightElevated border border-white/5 text-xs text-slate-200 font-medium">
+              <div class="p-3.5 rounded bg-obsidian tech-border text-slate-200">
                 ${item}
               </div>
             `).join('')}
@@ -858,7 +1033,6 @@
 
     // Initialize with Week 1
     switchWeek(1);
-
 
     // 4. Tap Simulation Handler
     function runTapSimulation() {
