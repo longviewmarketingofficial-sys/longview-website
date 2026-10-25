@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #080A0D;
+  --color-obsidianSurface: #0D1117;
+  --color-obsidianCard: #101620;
+  --color-bone: #F4F0EA;
+  --color-boneMuted: #8E98A5;
+  --color-vermilion: #FF441A;
+  --color-vermilionHover: #E83810;
+  --color-cyberLime: #D4FF00;
+  --color-techGreen: #07140E;
+  --color-techGreenBorder: #132B1E;
+
+  --font-bebas: var(--font-bebas), "Bebas Neue", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "JetBrains Mono", monospace;
+  --font-sans: var(--font-plus-jakarta), "Plus Jakarta Sans", sans-serif;
+}
+
+/* Section offset for fixed top bar */
+section[id], footer[id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Architectural blueprint geometric grid */
+.bg-architectural-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Wireframe borders */
+.grid-border {
+  border-color: rgba(255, 255, 255, 0.09);
+}
+.grid-border-green {
+  border-color: #132B1E;
+}
+
+/* Bone button */
+.btn-bone {
+  background: #F4F0EA;
+  color: #080A0D;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn-bone:hover {
+  background: #FFFFFF;
+  box-shadow: 0 4px 20px -2px rgba(244, 240, 234, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Vermilion button */
+.btn-vermilion {
+  background: #FF441A;
+  color: #FFFFFF;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn-vermilion:hover {
+  background: #E83810;
+  box-shadow: 0 8px 25px -4px rgba(255, 68, 26, 0.45);
+  transform: translateY(-1px);
+}
+
+/* NFC Simulation Ripple */
+@keyframes rippleAnim {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.nfc-ripple {
+  animation: rippleAnim 1.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* Shimmer animation */
+@keyframes badgeShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-pill {
+  background: linear-gradient(90deg, #FF441A 0%, #FF6845 50%, #FF441A 100%);
+  background-size: 200% 100%;
+  animation: badgeShimmer 3.5s ease-in-out infinite;
+}
