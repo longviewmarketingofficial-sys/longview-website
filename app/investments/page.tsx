@@ -40,10 +40,10 @@ export default function InvestmentsPage() {
         {/* Architectural Page Header */}
         <div className="max-w-4xl mb-16">
           <span className="font-mono text-xs text-cyberLime uppercase tracking-widest block mb-2">
-            // 03 TRANSPARENT INVESTMENTS
+            // PACKAGES
           </span>
           <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl text-bone leading-none mb-6">
-            PREDICTABLE MONTHLY <span className="text-vermilion">GROWTH RETAINERS</span>
+            CHOOSE THE LEVEL OF MARKETING <span className="text-vermilion">YOUR BUSINESS NEEDS</span>
           </h1>
           <p className="text-base text-slate-400 leading-relaxed font-normal">
             No hidden percentage markups, ad-budget kickbacks, or lock-in traps. Every plan includes dedicated visual production, ad campaign management, and custom countertop NFC hardware.
@@ -51,63 +51,60 @@ export default function InvestmentsPage() {
         </div>
 
         {/* PRICING CARDS WITH 3D TILT & GLARE */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-8">
           
-          {/* 3-Month Plan */}
+          {/* 3-Month Contract */}
           <TiltCard maxTilt={5} className="h-full">
             <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
               <div>
                 <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                  01 // SPRINT PACKAGE
+                  01 // SPRINT
                 </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">STARTER TEST</h3>
+                <h3 className="font-bebas text-3xl text-bone mb-1">3-MONTH CONTRACT</h3>
                 <p className="text-slate-400 text-xs mb-6">
-                  Designed for business owners wanting to validate creative quality and lead flow.
+                  Best for owners who want to test the waters.
                 </p>
                 
                 <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-4xl font-black text-bone">₹12,000</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+                  <span className="text-4xl font-black text-bone">₹20,000</span>
+                  <span className="text-xs text-slate-500"> / month</span>
                 </div>
 
                 <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <strong>12 Posts/month:</strong>{' '}
+                      <strong>Social media:</strong> 12 posts a month,{' '}
                       <CreativeStamp badge="4K SONY FX3" category="camera">
                         4 Reels
                       </CreativeStamp>{' '}
-                      + 8 Carousels
+                      and 8 carousels or single posts
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <CreativeStamp badge="1-CLICK DIRECT LEAD" category="ad">
-                        <strong>Meta Ads:</strong> 1 Click-to-WhatsApp campaign
+                      <strong>Meta Ads:</strong> setup and management of 1{' '}
+                      <CreativeStamp badge="DIRECT WHATSAPP LEAD" category="ad">
+                        Click-to-WhatsApp campaign
                       </CreativeStamp>
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <strong>Hardware:</strong> 1 Custom{' '}
-                      <CreativeStamp badge="30-SEC CLOUD UPDATE" category="tech">
-                        NFC Review Tap Card
+                      <strong>Reputation:</strong> 1 branded{' '}
+                      <CreativeStamp badge="INSTANT 5-STAR TAP" category="tech">
+                        NFC Google Review Tap Card
                       </CreativeStamp>
                     </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span>Monthly WhatsApp performance recap</span>
                   </li>
                 </ul>
               </div>
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan%20(%E2%82%B912,000/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
@@ -118,141 +115,151 @@ export default function InvestmentsPage() {
             </div>
           </TiltCard>
 
-          {/* 6-Month Plan (FEATURED HERO CARD) */}
+          {/* 6-Month Contract (FEATURED RECOMMENDED CARD) */}
           <TiltCard maxTilt={6} className="h-full">
             <div className="bg-obsidianSurface border-2 border-vermilion p-8 sm:p-9 pt-10 rounded-xl relative flex flex-col justify-between shadow-2xl shadow-vermilion/15 md:-translate-y-2 mt-4 md:mt-0 h-full">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-white/20 text-[10px] font-mono font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-vermilion/40 whitespace-nowrap z-20">
-                ★ RECOMMENDED CHOICE
+                ★ RECOMMENDED
               </div>
 
               <div>
                 <span className="text-[11px] font-mono font-bold text-vermilion uppercase tracking-widest block mb-2">
-                  02 // GROWTH RETAINER
+                  02 // GROWTH PARTNER
                 </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">THE GROWTH PARTNER</h3>
-                <p className="text-slate-400 text-xs mb-6">
-                  Built to achieve sustained brand recall and predictable weekend walk-ins across Ahmedabad.
+                <h3 className="font-bebas text-3xl text-bone mb-1">6-MONTH CONTRACT</h3>
+                <p className="text-slate-400 text-xs mb-3">
+                  The Growth Partner: the best value for businesses ready to grow.
                 </p>
+
+                <div className="inline-block px-2.5 py-1 mb-4 rounded bg-vermilion/10 border border-vermilion/30 text-[11px] font-mono font-bold text-vermilion">
+                  Save ₹2,500 a month compared with the 3-month plan
+                </div>
                 
                 <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-5xl font-black text-bone">₹10,000</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+                  <span className="text-5xl font-black text-vermilion">₹17,500</span>
+                  <span className="text-xs text-slate-500"> / month</span>
                 </div>
 
                 <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <strong>16 Posts/month:</strong>{' '}
-                      <CreativeStamp badge="CINEMATIC 60FPS" category="camera">
-                        6 Reels
+                      <strong>Social media:</strong> 15 posts a month,{' '}
+                      <CreativeStamp badge="CINEMATIC HOOKS" category="camera">
+                        5 Reels
                       </CreativeStamp>{' '}
-                      + 10 Carousels/Single
+                      and 10 carousels or offers
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <CreativeStamp badge="FULL ACQUISITION FUNNEL" category="ad">
-                        <strong>Meta Funnels:</strong> Retargeting + WhatsApp lead ads
+                      <strong>Meta Ads:</strong> 2 managed campaigns, 1 always-on lead ad and 1{' '}
+                      <CreativeStamp badge="SEASONAL SURGE" category="ad">
+                        festival or seasonal offer ad
                       </CreativeStamp>
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                     <span>
-                      <strong>Hardware:</strong> 2 Custom{' '}
-                      <CreativeStamp badge="INSTANT 5-STAR TAP" category="tech">
-                        NFC Review Tap Cards
+                      <strong>Reputation:</strong> 2 branded{' '}
+                      <CreativeStamp badge="DUAL COUNTER NFC" category="tech">
+                        NFC Google Review Tap Cards
                       </CreativeStamp>
                     </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span>Bi-weekly strategy sync & monthly report</span>
                   </li>
                 </ul>
               </div>
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan%20(%E2%82%B910,000/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B917,500/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 text-center btn-vermilion font-mono font-bold rounded-sm text-xs uppercase tracking-wider shadow-lg shadow-vermilion/30 transition"
                 >
-                  SELECT GROWTH RETAINER ↗
+                  SELECT 6-MONTH CONTRACT ↗
                 </a>
               </MagneticButton>
             </div>
           </TiltCard>
 
-          {/* 12-Month Plan */}
+          {/* 12-Month Contract */}
           <TiltCard maxTilt={5} className="h-full">
             <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
               <div>
                 <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                  03 // SCALE PARTNERSHIP
+                  03 // FULL DELEGATION
                 </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">ANNUAL MOAT</h3>
-                <p className="text-slate-400 text-xs mb-6">
-                  For dominant local brands aiming to lock out local competitors for the year.
+                <h3 className="font-bebas text-3xl text-bone mb-1">12-MONTH CONTRACT</h3>
+                <p className="text-slate-400 text-xs mb-3">
+                  For owners looking for full marketing delegation.
                 </p>
+
+                <div className="inline-block px-2.5 py-1 mb-4 rounded bg-cyberLime/10 border border-cyberLime/30 text-[11px] font-mono font-bold text-cyberLime">
+                  Locked for 1 year, or pay ₹1,74,000 upfront
+                </div>
                 
                 <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-4xl font-black text-bone">₹8,500</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+                  <span className="text-4xl font-black text-bone">₹15,500</span>
+                  <span className="text-xs text-slate-500"> / month</span>
                 </div>
 
                 <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
                     <span>
-                      <strong>20 Posts/month:</strong>{' '}
-                      <CreativeStamp badge="OMNI-PRODUCTION" category="camera">
-                        8 Reels
+                      <strong>Social media:</strong> 16 posts a month:{' '}
+                      <CreativeStamp badge="REELS & SPOTLIGHTS" category="camera">
+                        Reels, client spotlights
                       </CreativeStamp>{' '}
-                      + 12 Carousels/Single
+                      and promotional graphics
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
                     <span>
-                      <CreativeStamp badge="OMNI-CHANNEL GEO ADS" category="ad">
-                        <strong>Meta Ads:</strong> Full omni-channel acquisition funnels
+                      <strong>Meta Ads:</strong> complete ad setup, regular creative refreshes and seasonal campaigns
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                    <span>
+                      <strong>Reputation:</strong> 3 branded{' '}
+                      <CreativeStamp badge="MULTI-LOCATION NFC" category="tech">
+                        NFC Google Review Tap Cards
                       </CreativeStamp>
                     </span>
                   </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
+                  <li className="flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
                     <span>
-                      <strong>Hardware:</strong> 3 Custom{' '}
-                      <CreativeStamp badge="MULTI-COUNTER NFC" category="tech">
-                        NFC Review Tap Cards
-                      </CreativeStamp>
+                      <strong>Support:</strong> priority WhatsApp support
                     </span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span>Dedicated account manager + weekly updates</span>
                   </li>
                 </ul>
               </div>
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Annual%20Moat%20Plan%20(%E2%82%B98,500/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B915,500/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
                 >
-                  SELECT ANNUAL MOAT ↗
+                  SELECT 12-MONTH CONTRACT ↗
                 </a>
               </MagneticButton>
             </div>
           </TiltCard>
 
         </div>
+
+        {/* Disclaimer / Ad Spend & Hosting Note */}
+        <p className="text-center font-mono text-xs text-slate-500 max-w-4xl mx-auto mb-20 leading-relaxed">
+          * Meta advertising spend is separate from our management fee. For the website, the client pays domain and hosting (about ₹1,500 a year).
+        </p>
 
         {/* DELIVERABLES COMPARISON TABLE */}
         <div className="mb-24 bg-obsidianSurface border grid-border rounded-xl overflow-hidden">
@@ -268,47 +275,53 @@ export default function InvestmentsPage() {
               <thead className="bg-obsidian border-b grid-border text-slate-400">
                 <tr>
                   <th className="p-4 sm:p-5">FEATURE</th>
-                  <th className="p-4 sm:p-5">STARTER TEST</th>
-                  <th className="p-4 sm:p-5 text-vermilion">GROWTH PARTNER ★</th>
-                  <th className="p-4 sm:p-5">ANNUAL MOAT</th>
+                  <th className="p-4 sm:p-5">3-MONTH CONTRACT</th>
+                  <th className="p-4 sm:p-5 text-vermilion">6-MONTH CONTRACT ★</th>
+                  <th className="p-4 sm:p-5">12-MONTH CONTRACT</th>
                 </tr>
               </thead>
               <tbody className="divide-y grid-border text-slate-300">
                 <tr>
-                  <td className="p-4 sm:p-5 font-semibold text-white">Monthly Video Reels</td>
-                  <td className="p-4 sm:p-5">4 Reels</td>
-                  <td className="p-4 sm:p-5 text-white font-bold">6 Reels</td>
-                  <td className="p-4 sm:p-5">8 Reels</td>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Monthly Fee</td>
+                  <td className="p-4 sm:p-5 font-bold text-bone">₹20,000 / mo</td>
+                  <td className="p-4 sm:p-5 font-bold text-vermilion">₹17,500 / mo</td>
+                  <td className="p-4 sm:p-5 font-bold text-cyberLime">₹15,500 / mo</td>
                 </tr>
                 <tr>
-                  <td className="p-4 sm:p-5 font-semibold text-white">Carousels & Statics</td>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Monthly Posts</td>
+                  <td className="p-4 sm:p-5">12 Posts</td>
+                  <td className="p-4 sm:p-5 text-white font-bold">15 Posts</td>
+                  <td className="p-4 sm:p-5">16 Posts</td>
+                </tr>
+                <tr>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Reels & Video</td>
+                  <td className="p-4 sm:p-5">4 Reels</td>
+                  <td className="p-4 sm:p-5 text-white font-bold">5 Reels</td>
+                  <td className="p-4 sm:p-5">Reels & Spotlights</td>
+                </tr>
+                <tr>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Carousels & Offers</td>
                   <td className="p-4 sm:p-5">8 Posts</td>
                   <td className="p-4 sm:p-5 text-white font-bold">10 Posts</td>
-                  <td className="p-4 sm:p-5">12 Posts</td>
-                </tr>
-                <tr>
-                  <td className="p-4 sm:p-5 font-semibold text-white">Total Monthly Assets</td>
-                  <td className="p-4 sm:p-5">12 Assets</td>
-                  <td className="p-4 sm:p-5 text-cyberLime font-bold">16 Assets</td>
-                  <td className="p-4 sm:p-5">20 Assets</td>
+                  <td className="p-4 sm:p-5">Included</td>
                 </tr>
                 <tr>
                   <td className="p-4 sm:p-5 font-semibold text-white">Meta Ad Funnels</td>
-                  <td className="p-4 sm:p-5">1 Campaign</td>
-                  <td className="p-4 sm:p-5 text-white font-bold">2 Campaigns</td>
-                  <td className="p-4 sm:p-5">3 Campaigns</td>
+                  <td className="p-4 sm:p-5">1 WhatsApp Campaign</td>
+                  <td className="p-4 sm:p-5 text-white font-bold">2 Campaigns (Always-on + Festival)</td>
+                  <td className="p-4 sm:p-5">Full Setup & Creative Refreshes</td>
                 </tr>
                 <tr>
-                  <td className="p-4 sm:p-5 font-semibold text-white">Custom NFC Cards</td>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Branded NFC Cards</td>
                   <td className="p-4 sm:p-5">1 Card</td>
                   <td className="p-4 sm:p-5 text-cyberLime font-bold">2 Cards</td>
                   <td className="p-4 sm:p-5">3 Cards</td>
                 </tr>
                 <tr>
-                  <td className="p-4 sm:p-5 font-semibold text-white">Commitment Term</td>
-                  <td className="p-4 sm:p-5">3 Months</td>
-                  <td className="p-4 sm:p-5 text-vermilion font-bold">6 Months</td>
-                  <td className="p-4 sm:p-5">12 Months</td>
+                  <td className="p-4 sm:p-5 font-semibold text-white">Priority Support</td>
+                  <td className="p-4 sm:p-5 text-slate-500">Standard</td>
+                  <td className="p-4 sm:p-5 text-slate-300">Bi-weekly Sync</td>
+                  <td className="p-4 sm:p-5 text-cyberLime font-bold">Priority WhatsApp Support</td>
                 </tr>
               </tbody>
             </table>

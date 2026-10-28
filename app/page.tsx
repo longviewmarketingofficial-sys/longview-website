@@ -385,169 +385,225 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">
-              // INVESTMENTS & PRICING
+              // PACKAGES
             </span>
             <h2 className="font-bebas text-4xl sm:text-6xl text-bone tracking-wide">
-              TRANSPARENT MONTHLY RETAINERS
+              CHOOSE THE LEVEL OF MARKETING YOUR BUSINESS NEEDS
             </h2>
             <p className="text-slate-400 text-sm mt-3 font-normal">
               No hidden percentage cuts, secret markups, or lock-in traps. Every plan includes dedicated execution.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch mb-8">
             
-            {/* Plan 1 */}
-            <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                  01 // SPRINT PACKAGE
-                </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">STARTER TEST</h3>
-                <p className="text-slate-400 text-xs mb-6">
-                  Designed for business owners wanting to validate creative quality and lead flow.
-                </p>
-                
-                <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-4xl font-black text-bone">₹12,000</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+            {/* 3-Month Contract */}
+            <TiltCard maxTilt={5} className="h-full">
+              <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
+                    01 // SPRINT
+                  </span>
+                  <h3 className="font-bebas text-3xl text-bone mb-1">3-MONTH CONTRACT</h3>
+                  <p className="text-slate-400 text-xs mb-6">
+                    Best for owners who want to test the waters.
+                  </p>
+                  
+                  <div className="mb-6 pb-6 border-b grid-border font-mono">
+                    <span className="text-4xl font-black text-bone">₹20,000</span>
+                    <span className="text-xs text-slate-500"> / month</span>
+                  </div>
+
+                  <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Social media:</strong> 12 posts a month,{' '}
+                        <CreativeStamp badge="4K SONY FX3" category="camera">
+                          4 Reels
+                        </CreativeStamp>{' '}
+                        and 8 carousels or single posts
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Meta Ads:</strong> setup and management of 1{' '}
+                        <CreativeStamp badge="DIRECT WHATSAPP LEAD" category="ad">
+                          Click-to-WhatsApp campaign
+                        </CreativeStamp>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Reputation:</strong> 1 branded{' '}
+                        <CreativeStamp badge="INSTANT 5-STAR TAP" category="tech">
+                          NFC Google Review Tap Card
+                        </CreativeStamp>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
 
-                <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>12 Posts/month:</strong> 4 Reels + 8 Carousels</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>Meta Ads:</strong> 1 WhatsApp booking campaign</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>Hardware:</strong> 1 Custom NFC Google Review Tap Card</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span>Monthly WhatsApp performance recap</span>
-                  </li>
-                </ul>
+                <MagneticButton strength={0.25} className="w-full mt-8">
+                  <a
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
+                  >
+                    SELECT 3-MONTH SPRINT ↗
+                  </a>
+                </MagneticButton>
               </div>
+            </TiltCard>
 
-              <a
-                href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Starter%20Plan%20(%E2%82%B912,000/mo)"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
-              >
-                SELECT 3-MONTH SPRINT ↗
-              </a>
-            </div>
-
-            {/* Plan 2: FEATURED */}
-            <div className="bg-obsidianSurface border-2 border-vermilion p-8 sm:p-9 pt-10 rounded-xl relative flex flex-col justify-between shadow-2xl shadow-vermilion/15 md:-translate-y-2 mt-4 md:mt-0">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-white/20 text-[10px] font-mono font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-vermilion/40 whitespace-nowrap z-20">
-                ★ RECOMMENDED CHOICE
-              </div>
-
-              <div>
-                <span className="text-[11px] font-mono font-bold text-vermilion uppercase tracking-widest block mb-2">
-                  02 // GROWTH RETAINER
-                </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">THE GROWTH PARTNER</h3>
-                <p className="text-slate-400 text-xs mb-6">
-                  Built to achieve sustained brand recall and predictable weekend walk-ins across Ahmedabad.
-                </p>
-                
-                <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-5xl font-black text-bone">₹10,000</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+            {/* 6-Month Contract (FEATURED) */}
+            <TiltCard maxTilt={6} className="h-full">
+              <div className="bg-obsidianSurface border-2 border-vermilion p-8 sm:p-9 pt-10 rounded-xl relative flex flex-col justify-between shadow-2xl shadow-vermilion/15 md:-translate-y-2 mt-4 md:mt-0 h-full">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 shimmer-pill text-white border border-white/20 text-[10px] font-mono font-black uppercase px-4 py-1.5 rounded-full tracking-widest shadow-lg shadow-vermilion/40 whitespace-nowrap z-20">
+                  ★ RECOMMENDED
                 </div>
 
-                <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>16 Posts/month:</strong> 6 Reels + 10 Carousels/Single</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>Meta Ads:</strong> 2 Active Funnels (Always-On + Festive)</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span><strong>Hardware:</strong> 2 Custom Branded NFC Review Cards</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span>Calendar planning, captions & scheduled delivery</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-vermilion shrink-0" />
-                    <span>Bi-weekly Meta Ads optimization</span>
-                  </li>
-                </ul>
-              </div>
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-vermilion uppercase tracking-widest block mb-2">
+                    02 // GROWTH PARTNER
+                  </span>
+                  <h3 className="font-bebas text-3xl text-bone mb-1">6-MONTH CONTRACT</h3>
+                  <p className="text-slate-400 text-xs mb-3">
+                    The Growth Partner: the best value for businesses ready to grow.
+                  </p>
 
-              <a
-                href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Growth%20Partner%20Plan%20(%E2%82%B910,000/mo)"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 block w-full py-4 text-center btn-vermilion text-white font-mono font-extrabold rounded-sm text-xs uppercase tracking-wider shadow-lg transition"
-              >
-                6 MONTHS CONTRACT ↗
-              </a>
-            </div>
+                  <div className="inline-block px-2.5 py-1 mb-4 rounded bg-vermilion/10 border border-vermilion/30 text-[11px] font-mono font-bold text-vermilion">
+                    Save ₹2,500 a month compared with the 3-month plan
+                  </div>
+                  
+                  <div className="mb-6 pb-6 border-b grid-border font-mono">
+                    <span className="text-5xl font-black text-vermilion">₹17,500</span>
+                    <span className="text-xs text-slate-500"> / month</span>
+                  </div>
 
-            {/* Plan 3 */}
-            <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between">
-              <div>
-                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                  03 // ANNUAL DELEGATION
-                </span>
-                <h3 className="font-bebas text-3xl text-bone mb-2">MARKET LEADER</h3>
-                <p className="text-slate-400 text-xs mb-6">
-                  Or pay ₹90,000 upfront for the year (Save ₹12,000 instantly).
-                </p>
-                
-                <div className="mb-6 pb-6 border-b grid-border font-mono">
-                  <span className="text-4xl font-black text-bone">₹8,500</span>
-                  <span className="text-xs text-slate-500">/ month</span>
+                  <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Social media:</strong> 15 posts a month,{' '}
+                        <CreativeStamp badge="CINEMATIC HOOKS" category="camera">
+                          5 Reels
+                        </CreativeStamp>{' '}
+                        and 10 carousels or offers
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Meta Ads:</strong> 2 managed campaigns, 1 always-on lead ad and 1{' '}
+                        <CreativeStamp badge="SEASONAL SURGE" category="ad">
+                          festival or seasonal offer ad
+                        </CreativeStamp>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Reputation:</strong> 2 branded{' '}
+                        <CreativeStamp badge="DUAL COUNTER NFC" category="tech">
+                          NFC Google Review Tap Cards
+                        </CreativeStamp>
+                      </span>
+                    </li>
+                  </ul>
                 </div>
 
-                <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span><strong>16 Posts/month:</strong> Reels, Promos & Spotlights</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span><strong>Meta Ads:</strong> Full ad setup + creative refreshes</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span><strong>Hardware:</strong> 3 Custom Branded NFC Review Cards</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span><strong>Free Bonus:</strong> 1-page mobile-ready landing page</span>
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <Check className="w-4 h-4 text-cyberLime shrink-0" />
-                    <span>Direct founder WhatsApp support channel</span>
-                  </li>
-                </ul>
+                <MagneticButton strength={0.25} className="w-full mt-8">
+                  <a
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B917,500/mo)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-4 text-center btn-vermilion text-white font-mono font-extrabold rounded-sm text-xs uppercase tracking-wider shadow-lg transition"
+                  >
+                    SELECT 6-MONTH CONTRACT ↗
+                  </a>
+                </MagneticButton>
               </div>
+            </TiltCard>
 
-              <a
-                href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Market%20Leader%20Plan%20(%E2%82%B98,500/mo)"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
-              >
-                SELECT 12-MONTH PLAN ↗
-              </a>
-            </div>
+            {/* 12-Month Contract */}
+            <TiltCard maxTilt={5} className="h-full">
+              <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
+                <div>
+                  <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
+                    03 // FULL DELEGATION
+                  </span>
+                  <h3 className="font-bebas text-3xl text-bone mb-1">12-MONTH CONTRACT</h3>
+                  <p className="text-slate-400 text-xs mb-3">
+                    For owners looking for full marketing delegation.
+                  </p>
+
+                  <div className="inline-block px-2.5 py-1 mb-4 rounded bg-cyberLime/10 border border-cyberLime/30 text-[11px] font-mono font-bold text-cyberLime">
+                    Locked for 1 year, or pay ₹1,74,000 upfront
+                  </div>
+                  
+                  <div className="mb-6 pb-6 border-b grid-border font-mono">
+                    <span className="text-4xl font-black text-bone">₹15,500</span>
+                    <span className="text-xs text-slate-500"> / month</span>
+                  </div>
+
+                  <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Social media:</strong> 16 posts a month:{' '}
+                        <CreativeStamp badge="REELS & SPOTLIGHTS" category="camera">
+                          Reels, client spotlights
+                        </CreativeStamp>{' '}
+                        and promotional graphics
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Meta Ads:</strong> complete ad setup, regular creative refreshes and seasonal campaigns
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Reputation:</strong> 3 branded{' '}
+                        <CreativeStamp badge="MULTI-LOCATION NFC" category="tech">
+                          NFC Google Review Tap Cards
+                        </CreativeStamp>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Support:</strong> priority WhatsApp support
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <MagneticButton strength={0.25} className="w-full mt-8">
+                  <a
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B915,500/mo)"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
+                  >
+                    SELECT 12-MONTH CONTRACT ↗
+                  </a>
+                </MagneticButton>
+              </div>
+            </TiltCard>
 
           </div>
+
+          {/* Disclaimer / Ad Spend & Hosting Note */}
+          <p className="text-center font-mono text-xs text-slate-500 max-w-4xl mx-auto leading-relaxed">
+            * Meta advertising spend is separate from our management fee. For the website, the client pays domain and hosting (about ₹1,500 a year).
+          </p>
         </div>
       </section>
 
