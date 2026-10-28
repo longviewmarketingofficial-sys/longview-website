@@ -25,7 +25,7 @@ export default function ClientsPage() {
             OUR HAPPY <span className="text-vermilion">CLIENTS</span>
           </h1>
           <p className="text-base text-slate-400 leading-relaxed font-normal">
-            From bustling dining destinations to emerging retail showrooms across Ahmedabad and Gujarat — here are the ambitious local businesses powered by Long View&apos;s synchronized monthly creative rhythm.
+            From bustling dining destinations to emerging retail showrooms — here are the ambitious businesses powered by Long View&apos;s synchronized monthly creative rhythm.
           </p>
         </div>
 

@@ -26,7 +26,7 @@ export default function HomePage() {
           <div className="lg:col-span-6 border-b lg:border-b-0 lg:border-r grid-border py-8 lg:py-12 px-6 sm:px-10 lg:px-12 xl:px-14 flex flex-col justify-between">
             <div className="my-auto py-2">
               <span className="font-mono text-xs text-cyberLime uppercase tracking-widest block mb-4">
-                // AHMEDABAD&apos;S LOCAL GROWTH STUDIO
+                // FULL-SERVICE DIGITAL GROWTH STUDIO
               </span>
               <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[76px] xl:text-[88px] 2xl:text-[100px] leading-[0.85] tracking-tight uppercase select-none">
                 <span className="block text-bone">BE SEEN.</span>
@@ -64,7 +64,7 @@ export default function HomePage() {
             <div className="pt-6 border-t grid-border flex items-center justify-between font-mono text-[10px] sm:text-[11px] text-slate-500">
               <span className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-cyberLime animate-pulse"></span>
-                <span>AHMEDABAD & GUJARAT EXCLUSIVE</span>
+                <span>SERVING AMBITIOUS BUSINESSES WORLDWIDE</span>
               </span>
               <span className="text-cyberLime font-bold">// 16 PIECES/MO</span>
             </div>
@@ -220,7 +220,7 @@ export default function HomePage() {
                   METADATA — 03 SUCCESS
                 </div>
                 <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                  Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity across Ahmedabad.
+                  Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity for your business.
                 </p>
               </div>
             </div>

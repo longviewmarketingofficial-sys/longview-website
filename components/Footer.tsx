@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
           
           <p className="text-slate-400 leading-relaxed max-w-sm font-sans text-xs">
-            Disciplined marketing execution for local brands across Ahmedabad & Gujarat. Reels, Meta funnels, and 5-star Google review hardware.
+            Disciplined marketing execution for ambitious brands. Reels, Meta funnels, and 5-star Google review hardware.
           </p>
 
           <div className="text-[11px] text-slate-500 space-y-1">
