@@ -188,37 +188,6 @@ export default function HardwarePage() {
           </div>
         </div>
 
-        {/* TECHNICAL SPECIFICATIONS TABLE */}
-        <div className="mb-24 bg-obsidianSurface border grid-border rounded-xl overflow-hidden">
-          <div className="p-6 sm:p-8 border-b grid-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-            <div>
-              <span className="text-xs font-mono text-vermilion uppercase tracking-widest block mb-1">
-                // HARDWARE METADATA
-              </span>
-              <h3 className="font-bebas text-3xl text-bone">INDUSTRIAL SPECIFICATION MATRIX</h3>
-            </div>
-            <span className="px-3 py-1 rounded bg-cyberLime/10 border grid-border text-cyberLime font-mono text-xs">
-              INCLUDED IN ALL RETAINERS
-            </span>
-          </div>
-
-          <div className="divide-y grid-border font-mono text-xs">
-            {[
-              { label: 'CHIP ARCHITECTURE', val: 'NXP NTAG215 High-Permeability NFC Transponder (13.56 MHz)' },
-              { label: 'OPERATING OS COMPATIBILITY', val: 'iOS (iPhone 7 and newer natively) & all Android devices with NFC' },
-              { label: 'POWER REQUIREMENTS', val: 'Zero Batteries / Zero Charging (Passively inductive field powered)' },
-              { label: 'EXTERIOR FINISH', val: 'Industrial Matte Polymer with Scratch-Resistant UV Coating' },
-              { label: 'CLOUD DESTINATION REDIRECT', val: 'Lifetime Dynamic Cloud Routing (Update review link without re-printing)' },
-              { label: 'ENV RESISTANCE', val: 'Waterproof, grease-proof, and commercial kitchen heat resistant' },
-            ].map((spec, i) => (
-              <div key={i} className="grid grid-cols-1 md:grid-cols-3 p-4 sm:p-5 gap-2">
-                <span className="text-slate-400 uppercase">{spec.label}</span>
-                <span className="md:col-span-2 text-white font-medium">{spec.val}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Bottom Banner */}
         <div className="bg-obsidianSurface border grid-border p-8 sm:p-12 rounded-2xl text-center max-w-4xl mx-auto border-l-4 border-l-vermilion shadow-2xl">
           <span className="text-xs font-mono font-bold text-cyberLime uppercase tracking-widest block mb-2">
