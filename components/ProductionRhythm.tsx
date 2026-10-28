@@ -3,19 +3,12 @@
 import { useState } from 'react';
 import { Calendar, Film, Sparkles, TrendingUp } from 'lucide-react';
 import TiltCard from '@/components/TiltCard';
-import CreativeStamp from '@/components/CreativeStamp';
-
-interface DeliverableItem {
-  text: string;
-  badge: string;
-  category: 'camera' | 'metric' | 'tech' | 'ad';
-}
 
 interface WeekData {
   title: string;
   badge: string;
   desc: string;
-  items: DeliverableItem[];
+  items: string[];
   icon: typeof Film;
 }
 
@@ -25,9 +18,9 @@ const WEEKS: Record<number, WeekData> = {
     badge: "04 DELIVERABLES",
     desc: "We focus on what you are famous for. Hero Reels showcasing signature dishes or flagship services, with macro framing designed to stop local thumbs from scrolling.",
     items: [
-      { text: "2x Cinematic Reels on bestseller items", badge: "4K SONY FX3 // 60FPS", category: "camera" },
-      { text: "1x Menu/Feature breakdown carousel", badge: "HIGH RETENTION SWIPES", category: "metric" },
-      { text: "1x Direct-offer single static graphic", badge: "CONVERSION ANCHOR", category: "ad" }
+      "2x Cinematic Reels on bestseller items",
+      "1x Menu/Feature breakdown carousel",
+      "1x Direct-offer single static graphic"
     ],
     icon: Film
   },
@@ -36,9 +29,9 @@ const WEEKS: Record<number, WeekData> = {
     badge: "04 DELIVERABLES",
     desc: "Customers buy from businesses they trust. We highlight hygiene, preparation craft, behind-the-counter dedication, and founder story clips that humanize your brand.",
     items: [
-      { text: "1x Behind-the-scenes preparation reel", badge: "HYGIENE & TRUST", category: "camera" },
-      { text: "1x Team & hygiene highlight carousel", badge: "FOUNDER STORY", category: "metric" },
-      { text: "2x High-resolution product showcase posts", badge: "MACRO COLOR-GRADED", category: "camera" }
+      "1x Behind-the-scenes preparation reel",
+      "1x Team & hygiene highlight carousel",
+      "2x High-resolution product showcase posts"
     ],
     icon: Sparkles
   },
@@ -47,9 +40,9 @@ const WEEKS: Record<number, WeekData> = {
     badge: "04 DELIVERABLES",
     desc: "Designed to drive immediate action and fill slow mid-week periods with lunch combos, seasonal promotions, or early festival bookings.",
     items: [
-      { text: "1x Fast-cut promotional reel", badge: "0.8s HOOK VELOCITY", category: "metric" },
-      { text: "2x Multi-slide value combo carousels", badge: "AOV MULTIPLIER", category: "ad" },
-      { text: "1x WhatsApp direct-order flyer post", badge: "1-TAP CHAT LINK", category: "tech" }
+      "1x Fast-cut promotional reel",
+      "2x Multi-slide value combo carousels",
+      "1x WhatsApp direct-order flyer post"
     ],
     icon: TrendingUp
   },
@@ -58,9 +51,9 @@ const WEEKS: Record<number, WeekData> = {
     badge: "04 DELIVERABLES",
     desc: "We spotlight buzzing dining rooms, happy guest moments, and review quotes to cement your location as the top weekend destination.",
     items: [
-      { text: "2x Ambient weekend energy reels", badge: "ATMOSPHERE & CROWD", category: "camera" },
-      { text: "1x Customer praise review carousel", badge: "GOOGLE VERIFIED", category: "tech" },
-      { text: "1x Weekend schedule/reservation reminder", badge: "ZERO EMPTY TABLES", category: "metric" }
+      "2x Ambient weekend energy reels",
+      "1x Customer praise review carousel",
+      "1x Weekend schedule/reservation reminder"
     ],
     icon: Calendar
   }
@@ -136,9 +129,7 @@ export default function ProductionRhythm() {
                 className="p-3.5 rounded bg-obsidian/80 border grid-border hover:border-white/30 text-slate-200 flex items-center gap-2.5 transition-colors"
               >
                 <span className="text-cyberLime text-xs">●</span>
-                <CreativeStamp badge={item.badge} category={item.category}>
-                  {item.text}
-                </CreativeStamp>
+                <span>{item}</span>
               </div>
             ))}
           </div>

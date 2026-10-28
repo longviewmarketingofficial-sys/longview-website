@@ -10,7 +10,6 @@ import FaqAccordion from '@/components/FaqAccordion';
 import MarqueeTicker from '@/components/MarqueeTicker';
 import TiltCard from '@/components/TiltCard';
 import MagneticButton from '@/components/MagneticButton';
-import CreativeStamp from '@/components/CreativeStamp';
 
 export default function HomePage() {
   const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
@@ -35,19 +34,7 @@ export default function HomePage() {
                 <span className="block text-vermilion">BE CHOSEN.</span>
               </h1>
               <p className="mt-6 text-sm sm:text-base text-slate-400 max-w-lg leading-relaxed font-normal">
-                Local business marketing without the agency fluff.{' '}
-                <CreativeStamp badge="4K HIGH RETENTION" category="camera">
-                  High-retention Instagram Reels
-                </CreativeStamp>
-                ,{' '}
-                <CreativeStamp badge="GEO-FENCED 5KM" category="ad">
-                  hyper-local Meta Ads
-                </CreativeStamp>
-                , and{' '}
-                <CreativeStamp badge="30-SEC CLOUD ROUTE" category="tech">
-                  automated 5-star Google Review hardware
-                </CreativeStamp>
-                .
+                Local business marketing without the agency fluff. High-retention Instagram Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -418,29 +405,19 @@ export default function HomePage() {
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Social media:</strong> 12 posts a month,{' '}
-                        <CreativeStamp badge="4K SONY FX3" category="camera">
-                          4 Reels
-                        </CreativeStamp>{' '}
-                        and 8 carousels or single posts
+                        <strong>Social media:</strong> 12 posts a month, 4 Reels and 8 carousels or single posts
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Meta Ads:</strong> setup and management of 1{' '}
-                        <CreativeStamp badge="DIRECT WHATSAPP LEAD" category="ad">
-                          Click-to-WhatsApp campaign
-                        </CreativeStamp>
+                        <strong>Meta Ads:</strong> setup and management of 1 Click-to-WhatsApp campaign
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Reputation:</strong> 1 branded{' '}
-                        <CreativeStamp badge="INSTANT 5-STAR TAP" category="tech">
-                          NFC Google Review Tap Card
-                        </CreativeStamp>
+                        <strong>Reputation:</strong> 1 branded NFC Google Review Tap Card
                       </span>
                     </li>
                   </ul>
@@ -488,29 +465,19 @@ export default function HomePage() {
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Social media:</strong> 15 posts a month,{' '}
-                        <CreativeStamp badge="CINEMATIC HOOKS" category="camera">
-                          5 Reels
-                        </CreativeStamp>{' '}
-                        and 10 carousels or offers
+                        <strong>Social media:</strong> 15 posts a month, 5 Reels and 10 carousels or offers
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Meta Ads:</strong> 2 managed campaigns, 1 always-on lead ad and 1{' '}
-                        <CreativeStamp badge="SEASONAL SURGE" category="ad">
-                          festival or seasonal offer ad
-                        </CreativeStamp>
+                        <strong>Meta Ads:</strong> 2 managed campaigns, 1 always-on lead ad and 1 festival or seasonal offer ad
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
                       <span>
-                        <strong>Reputation:</strong> 2 branded{' '}
-                        <CreativeStamp badge="DUAL COUNTER NFC" category="tech">
-                          NFC Google Review Tap Cards
-                        </CreativeStamp>
+                        <strong>Reputation:</strong> 2 branded NFC Google Review Tap Cards
                       </span>
                     </li>
                   </ul>
@@ -554,11 +521,7 @@ export default function HomePage() {
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
                       <span>
-                        <strong>Social media:</strong> 16 posts a month:{' '}
-                        <CreativeStamp badge="REELS & SPOTLIGHTS" category="camera">
-                          Reels, client spotlights
-                        </CreativeStamp>{' '}
-                        and promotional graphics
+                        <strong>Social media:</strong> 16 posts a month: Reels, client spotlights and promotional graphics
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
@@ -570,10 +533,7 @@ export default function HomePage() {
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
                       <span>
-                        <strong>Reputation:</strong> 3 branded{' '}
-                        <CreativeStamp badge="MULTI-LOCATION NFC" category="tech">
-                          NFC Google Review Tap Cards
-                        </CreativeStamp>
+                        <strong>Reputation:</strong> 3 branded NFC Google Review Tap Cards
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
