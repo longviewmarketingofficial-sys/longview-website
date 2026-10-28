@@ -7,6 +7,10 @@ import { ArrowUpRight, Wifi, Sparkles, Check, Phone, MapPin } from 'lucide-react
 import NfcModal from '@/components/NfcModal';
 import ProductionRhythm from '@/components/ProductionRhythm';
 import FaqAccordion from '@/components/FaqAccordion';
+import MarqueeTicker from '@/components/MarqueeTicker';
+import TiltCard from '@/components/TiltCard';
+import MagneticButton from '@/components/MagneticButton';
+import CreativeStamp from '@/components/CreativeStamp';
 
 export default function HomePage() {
   const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
@@ -31,25 +35,41 @@ export default function HomePage() {
                 <span className="block text-vermilion">BE CHOSEN.</span>
               </h1>
               <p className="mt-6 text-sm sm:text-base text-slate-400 max-w-lg leading-relaxed font-normal">
-                Local business marketing without the agency fluff. High-retention Instagram Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware.
+                Local business marketing without the agency fluff.{' '}
+                <CreativeStamp badge="4K HIGH RETENTION" category="camera">
+                  High-retention Instagram Reels
+                </CreativeStamp>
+                ,{' '}
+                <CreativeStamp badge="GEO-FENCED 5KM" category="ad">
+                  hyper-local Meta Ads
+                </CreativeStamp>
+                , and{' '}
+                <CreativeStamp badge="30-SEC CLOUD ROUTE" category="tech">
+                  automated 5-star Google Review hardware
+                </CreativeStamp>
+                .
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-vermilion px-6 py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-vermilion/30"
-                >
-                  <span>START 3-MONTH SPRINT</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-                <Link
-                  href="/approach"
-                  className="px-6 py-3.5 rounded-sm bg-obsidianSurface border grid-border hover:border-white/30 text-bone font-mono text-xs font-bold uppercase tracking-wider transition"
-                >
-                  VIEW METHODOLOGY →
-                </Link>
+                <MagneticButton strength={0.25}>
+                  <a
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-vermilion px-6 py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-vermilion/30"
+                  >
+                    <span>START 3-MONTH SPRINT</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </MagneticButton>
+                <MagneticButton strength={0.25}>
+                  <Link
+                    href="/approach"
+                    className="px-6 py-3.5 rounded-sm bg-obsidianSurface border grid-border hover:border-white/30 text-bone font-mono text-xs font-bold uppercase tracking-wider transition block"
+                  >
+                    VIEW METHODOLOGY →
+                  </Link>
+                </MagneticButton>
               </div>
             </div>
 
@@ -63,7 +83,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* RIGHT HERO COLUMN: 3D REALISTIC SLATE NFC CARD SHOWCASE */}
+          {/* RIGHT HERO COLUMN: 3D REALISTIC SLATE NFC CARD SHOWCASE WITH 3D TILT */}
           <div className="lg:col-span-6 relative bg-[#070A0F] py-10 lg:py-16 px-6 sm:px-8 lg:px-10 flex flex-col justify-center items-center overflow-hidden min-h-[420px] lg:min-h-[480px]">
             {/* Neon Lime Status Capsule */}
             <div className="absolute top-4 right-6 lg:right-10 w-14 h-3.5 bg-cyberLime rounded-sm shadow-[0_0_15px_rgba(212,255,0,0.35)] z-20"></div>
@@ -71,77 +91,84 @@ export default function HomePage() {
             {/* 3D Angled Slate Pedestal Background */}
             <div className="w-full max-w-[370px] xl:max-w-[420px] aspect-[1.586/1] bg-gradient-to-br from-[#1A2230] to-[#0D121B] rounded-2xl transform rotate-[-4deg] scale-[1.03] border border-white/10 shadow-2xl absolute pointer-events-none -z-0"></div>
 
-            {/* THE SMART NFC BUSINESS CARD */}
-            <div
-              onClick={() => setIsNfcModalOpen(true)}
-              className="w-full max-w-[340px] xl:max-w-[390px] aspect-[1.586/1] rounded-xl p-5 border border-white/20 shadow-2xl relative flex flex-col justify-between overflow-hidden cursor-pointer transform hover:scale-[1.03] transition-all duration-300 z-10 group"
-              style={{ background: 'linear-gradient(135deg, #131722 0%, #080B12 100%)' }}
-            >
-              {/* Subtle watermark */}
-              <div className="absolute inset-0 pointer-events-none opacity-15">
-                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="0" y1="30" x2="100%" y2="30" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
-                  <line x1="75" y1="0" x2="75" y2="100%" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
-                </svg>
-              </div>
-
-              {/* Top Row: NFC Wave Icon & Label */}
-              <div className="flex items-center gap-1.5 text-vermilion relative z-10">
-                <Wifi className="w-4 h-4 animate-pulse rotate-90" />
-                <span className="text-[8.5px] sm:text-[9px] font-mono font-bold tracking-widest uppercase">
-                  TAP TO CONNECT NFC
-                </span>
-              </div>
-
-              {/* Center Row: Navy Sunrise Logo Badge + Contact Details */}
-              <div className="grid grid-cols-12 gap-3 items-center relative z-10 my-0.5">
-                {/* Circular Navy Emblem */}
-                <div className="col-span-5 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-[#0E1726] border border-white/20 flex flex-col items-center justify-center p-2 text-center shadow-lg group-hover:border-vermilion/60 transition-colors">
-                    <svg className="w-7 h-7 mb-0.5" viewBox="0 0 100 100" fill="none">
-                      <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A" />
-                      <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF" />
-                      <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
-                      <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
-                    </svg>
-                    <span className="text-[7.5px] font-black tracking-widest text-white leading-tight">LONG VIEW</span>
-                    <span className="text-[5.5px] font-mono tracking-widest text-vermilion">DIGITAL MARKETING</span>
-                  </div>
+            {/* THE SMART NFC BUSINESS CARD (WRAPPED IN 3D TILT WITH MOVING GLARE) */}
+            <TiltCard maxTilt={10} className="w-full max-w-[340px] xl:max-w-[390px] z-10">
+              <div
+                onClick={() => setIsNfcModalOpen(true)}
+                className="w-full aspect-[1.586/1] rounded-xl p-5 border border-white/20 shadow-2xl relative flex flex-col justify-between overflow-hidden cursor-pointer group"
+                style={{ background: 'linear-gradient(135deg, #131722 0%, #080B12 100%)' }}
+              >
+                {/* Subtle watermark */}
+                <div className="absolute inset-0 pointer-events-none opacity-15">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="30" x2="100%" y2="30" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
+                    <line x1="75" y1="0" x2="75" y2="100%" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
+                  </svg>
                 </div>
 
-                {/* Right Contact Info */}
-                <div className="col-span-7 flex flex-col justify-between space-y-1.5 border-l border-white/10 pl-3">
-                  <div className="text-[8px] sm:text-[9px] font-mono text-slate-300 space-y-1">
-                    <div className="truncate">longviewmarketingofficial@gmail.com</div>
-                    <div>@longview_digital</div>
-                    <div className="text-amber-400">Ahmedabad, Gujarat</div>
-                  </div>
+                {/* Top Row: NFC Wave Icon & Label */}
+                <div className="flex items-center gap-1.5 text-vermilion relative z-10">
+                  <Wifi className="w-4 h-4 animate-pulse rotate-90" />
+                  <span className="text-[8.5px] sm:text-[9px] font-mono font-bold tracking-widest uppercase">
+                    TAP TO CONNECT NFC
+                  </span>
+                </div>
 
-                  {/* Google Maps Indicator */}
-                  <div className="flex items-center gap-2 pt-1">
-                    <div className="w-7 h-7 bg-white p-0.5 rounded shadow flex items-center justify-center shrink-0">
-                      <svg viewBox="0 0 24 24" className="w-full h-full text-black" fill="currentColor">
-                        <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4 4h4v4h-4v-4zm4-4h4v4h-4v-4zM14 14h2v2h-2v-2z" />
+                {/* Center Row: Navy Sunrise Logo Badge + Contact Details */}
+                <div className="grid grid-cols-12 gap-3 items-center relative z-10 my-0.5">
+                  {/* Circular Navy Emblem */}
+                  <div className="col-span-5 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-[#0E1726] border border-white/20 flex flex-col items-center justify-center p-2 text-center shadow-lg group-hover:border-vermilion/60 transition-colors">
+                      <svg className="w-7 h-7 mb-0.5" viewBox="0 0 100 100" fill="none">
+                        <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A" />
+                        <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF" />
+                        <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
+                        <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
                       </svg>
+                      <span className="text-[7.5px] font-black tracking-widest text-white leading-tight">LONG VIEW</span>
+                      <span className="text-[5.5px] font-mono tracking-widest text-vermilion">DIGITAL MARKETING</span>
                     </div>
-                    <span className="text-[7.5px] font-mono text-slate-400">GOOGLE MAPS VERIFIED</span>
+                  </div>
+
+                  {/* Right Contact Info */}
+                  <div className="col-span-7 flex flex-col justify-between space-y-1.5 border-l border-white/10 pl-3">
+                    <div className="text-[8px] sm:text-[9px] font-mono text-slate-300 space-y-1">
+                      <div className="truncate">longviewmarketingofficial@gmail.com</div>
+                      <div>@longview_digital</div>
+                      <div className="text-amber-400">Ahmedabad, Gujarat</div>
+                    </div>
+
+                    {/* Google Maps Indicator */}
+                    <div className="flex items-center gap-2 pt-1">
+                      <div className="w-7 h-7 bg-white p-0.5 rounded shadow flex items-center justify-center shrink-0">
+                        <svg viewBox="0 0 24 24" className="w-full h-full text-black" fill="currentColor">
+                          <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4 4h4v4h-4v-4zm4-4h4v4h-4v-4zM14 14h2v2h-2v-2z" />
+                        </svg>
+                      </div>
+                      <span className="text-[7.5px] font-mono text-slate-400">GOOGLE MAPS VERIFIED</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Bottom Edge */}
-              <div className="pt-2 border-t border-white/10 flex justify-between items-center relative z-10 text-[8px] font-mono text-slate-400">
-                <span className="text-cyberLime flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyberLime"></span>
-                  SMART NFC CHIP
-                </span>
-                <span className="text-vermilion font-bold group-hover:underline">CLICK TO TEST TAP →</span>
+                {/* Bottom Edge */}
+                <div className="pt-2 border-t border-white/10 flex justify-between items-center relative z-10 text-[8px] font-mono text-slate-400">
+                  <span className="text-cyberLime flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyberLime"></span>
+                    SMART NFC CHIP
+                  </span>
+                  <span className="text-vermilion font-bold group-hover:underline">CLICK TO TEST TAP →</span>
+                </div>
               </div>
-            </div>
+            </TiltCard>
           </div>
 
         </div>
       </section>
+
+      {/* ========================================================== */}
+      {/* KINETIC INFINITE TYPOGRAPHY MARQUEE STRIP                   */}
+      {/* ========================================================== */}
+      <MarqueeTicker />
 
       {/* ========================================================== */}
       {/* 2. 3-PILLAR STRIP (DISCOVERY / ARCHITECTURE / EXECUTION)    */}
@@ -150,61 +177,67 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 w-full">
           
           {/* Pillar 01: DISCOVERY */}
-          <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 border-b md:border-b-0 md:border-r grid-border-green flex flex-col justify-between group">
-            <div>
-              <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
-                <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                <span className="text-cyberLime font-bold tracking-widest text-[11px]">01 // 03</span>
+          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r grid-border-green">
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+              <div>
+                <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
+                  <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
+                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">01 // 03</span>
+                </div>
+                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                  01 // DISCOVERY
+                </h3>
+                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
+                  METADATA — 01 AUDIT
+                </div>
+                <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
+                  Understand customers, advertising gaps, and business unit economics to build a high-retention organic content roadmap.
+                </p>
               </div>
-              <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
-                01 // DISCOVERY
-              </h3>
-              <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
-                METADATA — 01 AUDIT
-              </div>
-              <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                Understand customers, advertising gaps, and business unit economics to build a high-retention organic content roadmap.
-              </p>
             </div>
-          </div>
+          </TiltCard>
 
           {/* Pillar 02: ARCHITECTURE */}
-          <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 border-b md:border-b-0 md:border-r grid-border-green flex flex-col justify-between group">
-            <div>
-              <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
-                <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                <span className="text-cyberLime font-bold tracking-widest text-[11px]">02 // 03</span>
+          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r grid-border-green">
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+              <div>
+                <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
+                  <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
+                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">02 // 03</span>
+                </div>
+                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                  02 // ARCHITECTURE
+                </h3>
+                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
+                  METADATA — 02 STRATEGY
+                </div>
+                <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
+                  Custom-designed with 16 scheduled assets, geo-fenced Meta ad funnels, and counter NFC review hardware.
+                </p>
               </div>
-              <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
-                02 // ARCHITECTURE
-              </h3>
-              <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
-                METADATA — 02 STRATEGY
-              </div>
-              <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                Custom-designed with 16 scheduled assets, geo-fenced Meta ad funnels, and counter NFC review hardware.
-              </p>
             </div>
-          </div>
+          </TiltCard>
 
           {/* Pillar 03: EXECUTION */}
-          <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 flex flex-col justify-between group">
-            <div>
-              <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
-                <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                <span className="text-cyberLime font-bold tracking-widest text-[11px]">03 // 03</span>
+          <TiltCard maxTilt={4}>
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+              <div>
+                <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
+                  <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
+                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">03 // 03</span>
+                </div>
+                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                  03 // EXECUTION
+                </h3>
+                <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
+                  METADATA — 03 SUCCESS
+                </div>
+                <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
+                  Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity across Ahmedabad.
+                </p>
               </div>
-              <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
-                03 // EXECUTION
-              </h3>
-              <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
-                METADATA — 03 SUCCESS
-              </div>
-              <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity across Ahmedabad.
-              </p>
             </div>
-          </div>
+          </TiltCard>
 
         </div>
       </section>

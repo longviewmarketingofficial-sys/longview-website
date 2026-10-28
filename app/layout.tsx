@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, JetBrains_Mono, Bebas_Neue } from 'next/font/google'
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CursorSpotlight from '@/components/CursorSpotlight';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${bebasNeue.variable} bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen bg-architectural-grid`}
       >
+        <CursorSpotlight />
         <Navbar />
         <main className="pt-16 min-h-[calc(100vh-4rem)] flex flex-col">
           {children}

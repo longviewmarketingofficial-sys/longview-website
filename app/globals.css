@@ -81,3 +81,35 @@ section[id], footer[id] {
   background-size: 200% 100%;
   animation: badgeShimmer 3.5s ease-in-out infinite;
 }
+
+/* Infinite Marquee Ticker */
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 24s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* 3D Perspective and Card utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Creative Badge Pop */
+@keyframes badgePop {
+  0% { transform: scale(0.85) translateY(4px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.animate-badge-pop {
+  animation: badgePop 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
