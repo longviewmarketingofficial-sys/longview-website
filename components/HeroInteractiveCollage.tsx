@@ -27,10 +27,10 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
   };
 
   return (
-    <div className="relative w-full h-full min-h-[580px] lg:min-h-[720px] flex items-center justify-center bg-transparent select-none">
+    <div className="relative w-full h-[460px] sm:h-[480px] lg:h-[510px] flex items-center justify-center bg-transparent select-none">
       
       {/* 3D COLLAGE STAGE */}
-      <div className="relative z-10 w-full max-w-[560px] sm:max-w-[640px] lg:max-w-[720px] px-2 py-6 flex items-center justify-center">
+      <div className="relative z-10 w-full max-w-[560px] sm:max-w-[620px] lg:max-w-[680px] px-2 py-2 flex items-center justify-center">
 
         {/* CENTRAL SUBJECT: SLEEK MATTE-BLACK VERTICAL NFC SMART CARD WITH REALISTIC 3D PERSPECTIVE */}
         <TiltCard maxTilt={6} className="relative z-10">

@@ -20,28 +20,28 @@ export default function HomePage() {
       {/* ========================================================== */}
       {/* 1. HERO SECTION WITH INTEGRATED BOTTOM MARQUEE             */}
       {/* ========================================================== */}
-      <section className="w-full relative min-h-screen flex flex-col justify-between pb-2 border-b border-white/[0.08] overflow-hidden hero-backdrop-bg pt-20 lg:pt-22">
+      <section className="w-full relative h-screen max-h-screen overflow-hidden flex flex-col justify-between pt-16 pb-2 px-8 lg:px-14 border-b border-white/[0.08] hero-backdrop-bg">
         
-        <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2">
+        <div className="w-full max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-6 lg:gap-8 relative z-10 my-auto py-1">
           
           {/* LEFT COLUMN: CRISP ARCHITECTURAL & MONUMENTAL TYPOGRAPHY (LEFT 50%) */}
-          <div className="lg:col-span-6 flex flex-col justify-between py-2">
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-3.5 py-1">
             <div>
               {/* Monospaced Super-heading */}
-              <span className="font-mono text-[11px] sm:text-xs text-[#F59E0B] uppercase tracking-[0.25em] block mb-3 sm:mb-4 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">
+              <span className="font-mono text-[10px] sm:text-[11px] text-[#F59E0B] uppercase tracking-[0.25em] block mb-2 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">
                 // FULL-SERVICE DIGITAL GROWTH STUDIO
               </span>
 
-              {/* Stacked Monumental Headline with 3 Distinct Typographic Styles */}
+              {/* Stacked Monumental Headline with 3 Distinct Typographic Styles - Scaled ~10% */}
               <h1 className="tracking-tight select-text">
                 {/* 1st Line: Mammoth, ultra-bold flat white sans-serif */}
-                <span className="block font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[80px] xl:text-[98px] 2xl:text-[112px] text-white leading-[0.88] drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+                <span className="block font-bebas text-5xl lg:text-7xl text-white leading-[0.9] drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
                   BE SEEN.
                 </span>
 
                 {/* 2nd Line: Sprawling, elegant, high-contrast serif-italic with metallic amber-gold gradient - ONE SINGLE LINE */}
                 <span
-                  className="block whitespace-nowrap text-4xl sm:text-5xl md:text-6xl lg:text-[54px] xl:text-[68px] 2xl:text-[80px] leading-[1.05] tracking-wide my-1.5 sm:my-2 drop-shadow-[0_0_25px_rgba(245,158,11,0.5)]"
+                  className="block whitespace-nowrap text-5xl lg:text-7xl leading-[1.05] tracking-wide my-1 drop-shadow-[0_0_25px_rgba(245,158,11,0.5)]"
                   style={{
                     background: 'linear-gradient(90deg, #FEE180 0%, #E5A93C 50%, #C86016 100%)',
                     WebkitBackgroundClip: 'text',
@@ -55,7 +55,7 @@ export default function HomePage() {
 
                 {/* 3rd Line: Massive fiery orange block lettering */}
                 <span
-                  className="block font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[80px] xl:text-[98px] 2xl:text-[112px] leading-[0.88] drop-shadow-[0_4px_30px_rgba(255,106,0,0.65)]"
+                  className="block font-bebas text-5xl lg:text-7xl leading-[0.9] drop-shadow-[0_4px_30px_rgba(255,106,0,0.65)]"
                   style={{
                     background: 'linear-gradient(180deg, #FF6A00 0%, #D43800 100%)',
                     WebkitBackgroundClip: 'text',
@@ -67,29 +67,29 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              {/* Neutral readable white/slate description */}
-              <p className="mt-5 text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-normal select-text">
+              {/* Neutral readable white/slate description - compact text-sm */}
+              <p className="mt-2.5 text-sm leading-relaxed max-w-md text-slate-300 font-normal select-text">
                 Local business marketing without the agency fluff. High-retention Instagram Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware.
               </p>
 
-              {/* Action Buttons: 2 Pill-shaped CTAs */}
-              <div className="mt-7 flex flex-wrap items-center gap-4">
+              {/* Action Buttons: 2 Pill-shaped CTAs with compact padding */}
+              <div className="mt-4 flex flex-wrap items-center gap-3.5">
                 <MagneticButton strength={0.25}>
                   <a
                     href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full px-7 py-3.5 bg-gradient-to-r from-[#FF5722] via-[#FF441A] to-[#E63900] hover:from-[#FF6A3D] hover:to-[#FF5722] text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-[0_0_25px_rgba(255,68,26,0.55)] transition-all hover:scale-[1.02]"
+                    className="rounded-full px-6 py-2.5 bg-gradient-to-r from-[#FF5722] via-[#FF441A] to-[#E63900] hover:from-[#FF6A3D] hover:to-[#FF5722] text-white font-mono text-xs font-semibold uppercase tracking-wider flex items-center gap-2 shadow-[0_0_20px_rgba(255,68,26,0.5)] transition-all hover:scale-[1.02]"
                   >
                     <span>START 3-MONTH SPRINT</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </MagneticButton>
 
                 <MagneticButton strength={0.25}>
                   <Link
                     href="/approach"
-                    className="rounded-full px-6 py-3.5 bg-white/[0.06] hover:bg-white/[0.14] border border-white/20 hover:border-white/40 backdrop-blur-md text-white font-mono text-xs font-bold uppercase tracking-wider transition-all block"
+                    className="rounded-full px-6 py-2.5 bg-white/[0.06] hover:bg-white/[0.14] border border-white/20 hover:border-white/40 backdrop-blur-md text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all block"
                   >
                     VIEW METHODOLOGY →
                   </Link>
@@ -98,22 +98,22 @@ export default function HomePage() {
             </div>
 
             {/* Bottom Features: Gold-bordered Worldwide Capsule & 16 Pieces/Mo Flag */}
-            <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-3 mt-3 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-3">
               {/* Bottom Left Capsule */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-[10px] sm:text-[11px] font-mono tracking-wider text-slate-300 shadow-sm select-text">
-                <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse"></span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-[10px] font-mono tracking-wider text-slate-300 shadow-sm select-text">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse"></span>
                 <span>SERVING AMBITIOUS BUSINESSES WORLDWIDE</span>
               </div>
 
               {/* Bottom Right Flag */}
-              <div className="inline-flex items-center px-3 py-1 rounded-sm border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-[10px] sm:text-[11px] font-bold tracking-widest select-text">
+              <div className="inline-flex items-center px-2.5 py-0.5 rounded-sm border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-[10px] font-bold tracking-widest select-text">
                 // 16 PIECES/MO
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN: 3D INTERACTIVE UI COLLAGE ON VOLUMETRIC VORTEX CANVAS (RIGHT 50%) */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
+          {/* RIGHT COLUMN: 3D INTERACTIVE UI COLLAGE ON VOLUMETRIC VORTEX CANVAS (SCALED ~10%) */}
+          <div className="lg:col-span-6 relative flex items-center justify-center transform scale-[0.92] origin-center">
             <HeroInteractiveCollage onCardClick={() => setIsNfcModalOpen(true)} />
           </div>
 

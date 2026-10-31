@@ -16,7 +16,7 @@ export default function MarqueeTicker({ className = '' }: MarqueeTickerProps) {
   const items = [...PHRASES, ...PHRASES, ...PHRASES, ...PHRASES];
 
   return (
-    <div className={`w-full overflow-hidden border-t border-white/10 bg-[#05070B] py-3.5 select-none whitespace-nowrap flex ${className}`}>
+    <div className={`w-full overflow-hidden border-t border-white/10 bg-[#05070B] py-1 select-none whitespace-nowrap flex ${className}`}>
       <style jsx>{`
         @keyframes marqueeScroll {
           0% {
@@ -41,8 +41,8 @@ export default function MarqueeTicker({ className = '' }: MarqueeTickerProps) {
         <div className="flex shrink-0 items-center">
           {items.map((item, idx) => (
             <div key={`m1-${idx}`} className="flex items-center">
-              <span className="text-[#FF7A00] text-sm px-4 select-none drop-shadow-[0_0_8px_rgba(255,122,0,0.6)]">★</span>
-              <span className="font-mono text-xs sm:text-[13px] font-medium tracking-[0.28em] text-slate-300 uppercase whitespace-nowrap pr-4">
+              <span className="text-[#FF7A00] text-xs px-3 select-none drop-shadow-[0_0_8px_rgba(255,122,0,0.6)]">★</span>
+              <span className="font-mono text-[11px] font-medium tracking-[0.28em] text-slate-300 uppercase whitespace-nowrap pr-3">
                 {item}
               </span>
             </div>
@@ -53,8 +53,8 @@ export default function MarqueeTicker({ className = '' }: MarqueeTickerProps) {
         <div className="flex shrink-0 items-center" aria-hidden="true">
           {items.map((item, idx) => (
             <div key={`m2-${idx}`} className="flex items-center">
-              <span className="text-[#FF7A00] text-sm px-4 select-none drop-shadow-[0_0_8px_rgba(255,122,0,0.6)]">★</span>
-              <span className="font-mono text-xs sm:text-[13px] font-medium tracking-[0.28em] text-slate-300 uppercase whitespace-nowrap pr-4">
+              <span className="text-[#FF7A00] text-xs px-3 select-none drop-shadow-[0_0_8px_rgba(255,122,0,0.6)]">★</span>
+              <span className="font-mono text-[11px] font-medium tracking-[0.28em] text-slate-300 uppercase whitespace-nowrap pr-3">
                 {item}
               </span>
             </div>
