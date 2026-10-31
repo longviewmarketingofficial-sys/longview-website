@@ -58,7 +58,7 @@ export default function NfcModal({ isOpen, onClose, businessName = 'Your Busines
               <Star key={star} className="w-6 h-6 fill-amber-400 text-amber-400" />
             ))}
           </div>
-          <span className="text-[11px] text-cyberLime font-mono font-bold flex items-center justify-center gap-1">
+          <span className="text-[11px] text-amber-400 font-mono font-bold flex items-center justify-center gap-1">
             <CheckCircle className="w-3.5 h-3.5" />
             5-Star Rating Pre-Configured
           </span>

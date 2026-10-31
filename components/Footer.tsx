@@ -50,7 +50,7 @@ export default function Footer() {
             <span>Ahmedabad, Gujarat, India</span>
           </p>
           <p className="flex items-center gap-2">
-            <Phone className="w-3.5 h-3.5 text-cyberLime" />
+            <Phone className="w-3.5 h-3.5 text-amber-400" />
             <a href="https://wa.me/919879583117" target="_blank" rel="noopener noreferrer" className="hover:text-vermilion transition flex items-center gap-1">
               +91 98795 83117
               <ArrowUpRight className="w-3 h-3" />

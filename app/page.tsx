@@ -128,18 +128,18 @@ export default function HomePage() {
       {/* ========================================================== */}
       {/* 2. 3-PILLAR STRIP (DISCOVERY / ARCHITECTURE / EXECUTION)    */}
       {/* ========================================================== */}
-      <section id="approach" className="w-full border-b grid-border bg-techGreen relative flex-none">
+      <section id="approach" className="w-full border-b border-white/10 editorial-glass-card relative flex-none">
         <div className="grid grid-cols-1 md:grid-cols-3 w-full">
           
           {/* Pillar 01: DISCOVERY */}
-          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r grid-border-green">
-            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r border-white/10">
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group hover:bg-white/[0.02] transition-colors">
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">01 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">01 // 03</span>
                 </div>
-                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
                   01 // DISCOVERY
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
@@ -153,14 +153,14 @@ export default function HomePage() {
           </TiltCard>
 
           {/* Pillar 02: ARCHITECTURE */}
-          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r grid-border-green">
-            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+          <TiltCard maxTilt={4} className="border-b md:border-b-0 md:border-r border-white/10">
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group hover:bg-white/[0.02] transition-colors">
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">02 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">02 // 03</span>
                 </div>
-                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
                   02 // ARCHITECTURE
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
@@ -175,13 +175,13 @@ export default function HomePage() {
 
           {/* Pillar 03: EXECUTION */}
           <TiltCard maxTilt={4}>
-            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group">
+            <div className="py-6 sm:py-8 px-6 sm:px-8 lg:px-10 h-full flex flex-col justify-between group hover:bg-white/[0.02] transition-colors">
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-cyberLime font-bold tracking-widest text-[11px]">03 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">03 // 03</span>
                 </div>
-                <h3 className="font-bebas text-3xl sm:text-4xl text-bone mb-1 tracking-wide group-hover:text-cyberLime transition-colors">
+                <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
                   03 // EXECUTION
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
@@ -258,7 +258,7 @@ export default function HomePage() {
           {/* Right: Simulator Callout */}
           <div className="lg:col-span-5 flex flex-col items-center text-center">
             <div className="p-8 rounded-xl bg-obsidianSurface border grid-border w-full max-w-sm space-y-5">
-              <span className="text-cyberLime font-mono text-xs font-bold block uppercase tracking-widest">
+              <span className="text-amber-400 font-mono text-xs font-bold block uppercase tracking-widest">
                 // LIVE TEST
               </span>
               <h4 className="font-bebas text-3xl text-bone">TEST THE 2-SECOND EXPERIENCE</h4>
@@ -476,7 +476,7 @@ export default function HomePage() {
                     For owners looking for full marketing delegation.
                   </p>
 
-                  <div className="inline-block px-2.5 py-1 mb-4 rounded bg-cyberLime/10 border border-cyberLime/30 text-[11px] font-mono font-bold text-cyberLime">
+                  <div className="inline-block px-2.5 py-1 mb-4 rounded bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono font-bold text-amber-400">
                     Locked for 1 year, or pay ₹1,74,000 upfront
                   </div>
                   
@@ -487,25 +487,25 @@ export default function HomePage() {
 
                   <ul className="text-xs text-slate-300 space-y-3.5 font-medium">
                     <li className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
                       <span>
                         <strong>Social media:</strong> 16 posts a month: Reels, client spotlights and promotional graphics
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
                       <span>
                         <strong>Meta Ads:</strong> complete ad setup, regular creative refreshes and seasonal campaigns
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
                       <span>
                         <strong>Reputation:</strong> 3 branded NFC Google Review Tap Cards
                       </span>
                     </li>
                     <li className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-cyberLime shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
                       <span>
                         <strong>Support:</strong> priority WhatsApp support
                       </span>
