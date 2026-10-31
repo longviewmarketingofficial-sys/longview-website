@@ -147,9 +147,11 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           <div className="flex items-center justify-between gap-3 mb-3">
             <div className="flex items-center">
               {/* Official Meta Logo */}
-              <svg className="w-5 h-5 inline-block mr-1.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fillRule="evenodd" clipRule="evenodd" d="M2.5 12C2.5 8.13 5.34 5.5 8.58 5.5c1.9 0 3.32.93 4.42 2.3 1.1-1.37 2.52-2.3 4.42-2.3 3.24 0 6.08 2.63 6.08 6.5 0 4.1-3.08 7.5-6.52 7.5-2.07 0-3.36-.98-3.98-1.78-.62.8-1.91 1.78-3.98 1.78C5.58 19.5 2.5 16.1 2.5 12zm3.17 0c0 2.2 1.48 4.2 3.33 4.2 1.8 0 2.87-1.4 3.4-2.58.53-1.18.9-2.3.9-2.3s-.37-1.12-.9-2.3c-.53-1.18-1.6-2.58-3.4-2.58-1.85 0-3.33 2-3.33 4.26zm12.66 0c0-2.26-1.48-4.26-3.33-4.26-1.8 0-2.87 1.4-3.4 2.58-.53 1.18-.9 2.3-.9 2.3s.37 1.12.9 2.3c.53 1.18 1.6 2.58 3.4 2.58 1.85 0 3.33-2 3.33-4.2z" fill="#0081FB"/>
-              </svg>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+                alt="Meta"
+                className="w-5 h-5 object-contain inline-block mr-1.5 shrink-0"
+              />
               <span className="text-sm font-sans font-bold text-white tracking-wide">Meta</span>
             </div>
             
@@ -255,13 +257,13 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           className="absolute top-0 -right-6 sm:-right-10 lg:-right-16 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[215px] sm:w-[245px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Official Google Ads 3-Color Ribbon Logo + "Google Ads" in bold white */}
+          {/* Header: Official Google Ads Logo + "Google Ads" in bold white */}
           <div className="flex items-center mb-3">
-            <svg className="w-5 h-5 inline-block mr-1.5 shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M8.5 35.5L20.5 7.5C21.3 5.6 23.5 4.6 25.4 5.4C27.3 6.2 28.3 8.4 27.5 10.3L15.5 38.3C14.7 40.2 12.5 41.2 10.6 40.4C8.7 39.6 7.7 37.4 8.5 35.5Z" fill="#4285F4"/>
-              <path d="M39.5 35.5L27.5 7.5C26.7 5.6 24.5 4.6 22.6 5.4C20.7 6.2 19.7 8.4 20.5 10.3L32.5 38.3C33.3 40.2 35.5 41.2 37.4 40.4C39.3 39.6 40.3 37.4 39.5 35.5Z" fill="#FBBC04"/>
-              <circle cx="12" cy="38" r="5" fill="#34A853"/>
-            </svg>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
+              alt="Google Ads"
+              className="w-5 h-5 object-contain inline-block mr-1.5 shrink-0"
+            />
             <span className="text-sm font-sans font-bold text-white tracking-wide">
               Google Ads
             </span>
