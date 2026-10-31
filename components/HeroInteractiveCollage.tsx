@@ -137,48 +137,48 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
         </div>
 
         {/* ======================================================== */}
-        {/* 3. META CARD (BOTTOM LEFT): METRICS & LEVEL BAR PILLS    */}
+        {/* 3. META CARD (BOTTOM LEFT): SCALED UP FOR BALANCE        */}
         {/* ======================================================== */}
         <div
-          className="absolute -bottom-8 -left-4 sm:-left-8 lg:-left-14 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto min-w-[240px] sm:min-w-[275px]"
+          className="absolute -bottom-10 -left-6 sm:-left-10 lg:-left-16 z-30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[285px] sm:w-[325px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Official Meta Logo + "Meta" in bold white */}
-          <div className="flex items-center justify-between gap-3 mb-3">
+          {/* Header: Enriched w-8 h-8 Logo + text-base Meta + text-xs ROI */}
+          <div className="flex items-center justify-between gap-3 mb-3.5">
             <div className="flex items-center">
-              {/* Official Meta Logo */}
+              {/* Enlarge Meta logo image to w-8 h-8 */}
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
                 alt="Meta"
-                className="w-5 h-5 object-contain inline-block mr-1.5 shrink-0"
+                className="w-8 h-8 object-contain inline-block mr-2 shrink-0 drop-shadow-[0_0_8px_rgba(0,129,251,0.5)]"
               />
-              <span className="text-sm font-sans font-bold text-white tracking-wide">Meta</span>
+              <span className="text-base font-bold text-white tracking-wide">Meta</span>
             </div>
             
-            {/* Luminous +340% ROI Pill */}
+            {/* Luminous +340% ROI Pill (text-xs font-bold) */}
             <span
-              className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(245,158,11,0.4)]"
+              className="text-xs font-mono font-bold px-3 py-1 rounded-full shadow-[0_0_14px_rgba(245,158,11,0.5)]"
               style={{
                 background: 'rgba(245, 158, 11, 0.22)',
-                border: '1px solid rgba(245, 158, 11, 0.5)',
+                border: '1px solid rgba(245, 158, 11, 0.55)',
                 color: '#ffffff',
               }}
             >
-              <span style={{ color: '#fbbf24', marginRight: '3px' }}>+340%</span>ROI
+              <span style={{ color: '#fbbf24', marginRight: '4px' }}>+340%</span>ROI
             </span>
           </div>
 
-          {/* Area Graph: Amber glowing stroke (#f59e0b) with semi-transparent orange gradient underneath */}
-          <div className="relative w-full h-16 mb-3">
+          {/* Area Graph: Scaled height (h-20) for bold, clear curve */}
+          <div className="relative w-full h-20 mb-3.5">
             {/* Background Axis Labels */}
-            <div className="absolute top-0 left-0 bottom-3 flex flex-col justify-between text-[8px] font-mono text-slate-400 select-none pointer-events-none">
+            <div className="absolute top-0 left-0 bottom-4 flex flex-col justify-between text-[9px] font-mono text-slate-400 select-none pointer-events-none">
               <span>40M</span>
               <span>30M</span>
               <span>20M</span>
             </div>
 
-            <div className="w-full h-full pl-6">
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 120 40">
+            <div className="w-full h-full pl-7">
+              <svg className="w-full h-full overflow-visible" viewBox="0 0 120 45">
                 <defs>
                   <linearGradient id="metaAreaGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.45" />
@@ -187,26 +187,26 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
                 </defs>
                 {/* Area Gradient Fill */}
                 <path
-                  d="M 0 35 Q 25 32 45 22 T 85 14 T 120 4 L 120 40 L 0 40 Z"
+                  d="M 0 40 Q 25 36 45 25 T 85 16 T 120 5 L 120 45 L 0 45 Z"
                   fill="url(#metaAreaGrad)"
                 />
                 {/* Glowing Amber Stroke */}
                 <path
-                  d="M 0 35 Q 25 32 45 22 T 85 14 T 120 4"
+                  d="M 0 40 Q 25 36 45 25 T 85 16 T 120 5"
                   fill="none"
                   stroke="#f59e0b"
-                  strokeWidth="2.5"
+                  strokeWidth="3"
                   style={{
-                    filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.9))',
+                    filter: 'drop-shadow(0 0 10px rgba(245, 158, 11, 0.95))',
                   }}
                 />
                 {/* Peak Node Point */}
-                <circle cx="120" cy="4" r="3.5" fill="#FFF" style={{ filter: 'drop-shadow(0 0 8px #FFF)' }} />
+                <circle cx="120" cy="5" r="4" fill="#FFF" style={{ filter: 'drop-shadow(0 0 8px #FFF)' }} />
               </svg>
             </div>
 
             {/* X-axis months */}
-            <div className="w-full pl-6 flex justify-between text-[8px] font-mono text-slate-400 select-none">
+            <div className="w-full pl-7 flex justify-between text-[9px] font-mono text-slate-400 select-none mt-0.5">
               <span>Jan</span>
               <span>Feb</span>
               <span>Mar</span>
@@ -215,20 +215,20 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           </div>
 
           {/* Footer: "ACTIVE CAMPAIGNS" label above two mini progress-bar pills */}
-          <div className="text-[9px] font-mono uppercase tracking-widest mb-2 font-bold text-slate-300">
+          <div className="text-[10px] font-mono uppercase tracking-widest mb-2.5 font-bold text-slate-300">
             ACTIVE CAMPAIGNS
           </div>
 
-          <div className="grid grid-cols-2 gap-2 text-[10px] font-mono">
+          <div className="grid grid-cols-2 gap-2.5 text-[11px] font-mono">
             {/* Impressions Pill with Orange Level Bar */}
             <div
-              className="rounded-xl px-2.5 py-1.5 flex flex-col justify-center"
+              className="rounded-xl px-3 py-2 flex flex-col justify-center"
               style={miniGlassTileStyle}
             >
-              <span className="text-white font-medium block text-[10px] mb-1">Impressions</span>
-              <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+              <span className="text-white font-medium block text-[11px] mb-1.5">Impressions</span>
+              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded-full shadow-[0_0_6px_#f59e0b]"
+                  className="h-full rounded-full shadow-[0_0_8px_#f59e0b]"
                   style={{ width: '78%', background: 'linear-gradient(90deg, #ff7a00, #f59e0b)' }}
                 ></div>
               </div>
@@ -236,13 +236,13 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
 
             {/* Reactivity Pill with Orange Level Bar */}
             <div
-              className="rounded-xl px-2.5 py-1.5 flex flex-col justify-center"
+              className="rounded-xl px-3 py-2 flex flex-col justify-center"
               style={miniGlassTileStyle}
             >
-              <span className="text-slate-200 font-medium block text-[10px] mb-1">Reactivity</span>
-              <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+              <span className="text-slate-200 font-medium block text-[11px] mb-1.5">Reactivity</span>
+              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded-full shadow-[0_0_6px_#f59e0b]"
+                  className="h-full rounded-full shadow-[0_0_8px_#f59e0b]"
                   style={{ width: '52%', background: 'linear-gradient(90deg, #ff7a00, #f59e0b)' }}
                 ></div>
               </div>
@@ -251,40 +251,40 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
         </div>
 
         {/* ======================================================== */}
-        {/* 4. GOOGLE ADS CARD (TALL RIGHT PANEL)                    */}
+        {/* 4. GOOGLE ADS CARD (TALL RIGHT PANEL): SCALED UP         */}
         {/* ======================================================== */}
         <div
-          className="absolute top-0 -right-6 sm:-right-10 lg:-right-16 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[215px] sm:w-[245px]"
+          className="absolute -top-2 -right-4 sm:-right-8 lg:-right-12 xl:-right-14 z-30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[260px] sm:w-[295px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Official Google Ads Logo + "Google Ads" in bold white */}
-          <div className="flex items-center mb-3">
+          {/* Header: Enlarge Google Ads logo to w-7 h-7 + text-base Google Ads */}
+          <div className="flex items-center mb-3.5">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg"
               alt="Google Ads"
-              className="w-5 h-5 object-contain inline-block mr-1.5 shrink-0"
+              className="w-7 h-7 object-contain inline-block mr-2 shrink-0 drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]"
             />
-            <span className="text-sm font-sans font-bold text-white tracking-wide">
+            <span className="text-base font-bold text-white tracking-wide">
               Google Ads
             </span>
           </div>
 
           {/* Top section: "Search" and "Click" metrics with amber multi-wave chart */}
-          <div className="flex justify-between items-center text-[10px] font-mono mb-1 font-semibold">
+          <div className="flex justify-between items-center text-xs font-mono mb-1.5 font-semibold">
             <span className="text-white">Search</span>
-            <span className="text-amber-400 font-bold drop-shadow-[0_0_6px_rgba(245,158,11,0.7)]">Click</span>
+            <span className="text-amber-400 font-bold drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]">Click</span>
           </div>
 
-          <div className="relative w-full h-13 mb-3">
+          <div className="relative w-full h-16 mb-4">
             {/* Axis marks */}
-            <div className="absolute top-0 left-0 bottom-2 flex flex-col justify-between text-[7px] font-mono text-slate-400 select-none">
+            <div className="absolute top-0 left-0 bottom-2 flex flex-col justify-between text-[8px] font-mono text-slate-400 select-none">
               <span>2000</span>
               <span>1000</span>
               <span>0</span>
             </div>
 
-            <div className="w-full h-full pl-5">
-              <svg className="w-full h-full" viewBox="0 0 100 30">
+            <div className="w-full h-full pl-6">
+              <svg className="w-full h-full" viewBox="0 0 100 32">
                 <defs>
                   <linearGradient id="adsWaveGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.4" />
@@ -293,76 +293,76 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
                 </defs>
                 {/* Amber Multi-Wave Area */}
                 <path
-                  d="M 0 24 Q 25 6 50 18 T 100 8 L 100 30 L 0 30 Z"
+                  d="M 0 25 Q 25 7 50 19 T 100 9 L 100 32 L 0 32 Z"
                   fill="url(#adsWaveGrad)"
                 />
                 {/* Amber Primary Curve */}
                 <path
-                  d="M 0 24 Q 25 6 50 18 T 100 8"
+                  d="M 0 25 Q 25 7 50 19 T 100 9"
                   fill="none"
                   stroke="#f59e0b"
-                  strokeWidth="2.5"
-                  style={{ filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.9))' }}
+                  strokeWidth="2.8"
+                  style={{ filter: 'drop-shadow(0 0 10px rgba(245, 158, 11, 0.95))' }}
                 />
                 {/* Secondary Wave Curve */}
                 <path
-                  d="M 0 28 Q 30 18 60 22 T 100 14"
+                  d="M 0 29 Q 30 19 60 23 T 100 15"
                   fill="none"
                   stroke="#93c5fd"
-                  strokeWidth="1.5"
+                  strokeWidth="1.8"
                   opacity="0.85"
                 />
               </svg>
             </div>
           </div>
 
-          {/* Middle section: Two side-by-side glass metric tiles */}
-          <div className="grid grid-cols-2 gap-2 mb-3 font-mono">
-            {/* Left tile: "5.0" (bold white) / "RATING" (muted white) */}
+          {/* Middle section: Two prominent side-by-side glass metric tiles */}
+          <div className="grid grid-cols-2 gap-2.5 mb-4 font-mono">
+            {/* Left tile: "5.0" (text-xl sm:text-2xl font-extrabold white) / "RATING" */}
             <div
-              className="rounded-xl p-2.5 text-center flex flex-col justify-center"
+              className="rounded-xl p-3 text-center flex flex-col justify-center"
               style={miniGlassTileStyle}
             >
-              <span className="text-[10px] text-amber-300 font-bold block mb-0.5">★★★★★</span>
-              <span className="text-lg font-black text-white block leading-tight">5.0</span>
-              <span className="text-[8px] text-slate-300 font-semibold tracking-wider block mt-0.5">RATING</span>
+              <span className="text-[11px] text-amber-300 font-bold block mb-1">★★★★★</span>
+              <span className="text-xl sm:text-2xl font-extrabold text-white block leading-tight">5.0</span>
+              <span className="text-[9px] text-slate-300 font-semibold tracking-wider block mt-1">RATING</span>
             </div>
 
-            {/* Right tile: "4.8x" (bright amber) / "ROAS" (muted white) */}
+            {/* Right tile: "4.8x" (text-xl sm:text-2xl font-extrabold amber) / "ROAS" */}
             <div
-              className="rounded-xl p-2.5 text-center flex flex-col justify-center"
+              className="rounded-xl p-3 text-center flex flex-col justify-center"
               style={miniGlassTileStyle}
             >
-              <span className="text-[8px] text-slate-300 font-semibold tracking-wider block mb-0.5">ROAS</span>
-              <span className="text-lg font-black text-[#fbbf24] block leading-tight drop-shadow-[0_0_10px_rgba(251,191,36,0.85)]">4.8x</span>
+              <span className="text-[9px] text-slate-300 font-semibold tracking-wider block mb-1">ROAS</span>
+              <span className="text-xl sm:text-2xl font-extrabold text-amber-400 block leading-tight drop-shadow-[0_0_12px_rgba(251,191,36,0.9)]">4.8x</span>
             </div>
           </div>
 
           {/* Bottom section: "CAMPAIGN ANALYTICS" with "4.8x" badge, upward trend line, and 6-column amber vertical bar chart */}
-          <div className="pt-2.5 border-t border-white/15">
-            <div className="flex justify-between items-center text-[9px] font-mono mb-1.5 font-bold">
+          <div className="pt-3 border-t border-white/15">
+            <div className="flex justify-between items-center text-[10px] font-mono mb-2 font-bold">
               <span className="text-white">CAMPAIGN ANALYTICS</span>
-              <span className="text-[#fbbf24] bg-amber-500/20 border border-amber-500/40 px-1.5 py-0.5 rounded-full text-[9px] drop-shadow-[0_0_6px_rgba(251,191,36,0.7)]">
+              <span className="text-amber-400 bg-amber-500/20 border border-amber-500/40 px-2 py-0.5 rounded-full text-[10px] drop-shadow-[0_0_8px_rgba(251,191,36,0.75)]">
                 4.8x
               </span>
             </div>
 
             {/* Upward trend line */}
-            <div className="w-full h-4 mb-1">
+            <div className="w-full h-5 mb-1.5">
               <svg className="w-full h-full overflow-visible" viewBox="0 0 100 16">
                 <path
                   d="M 0 14 Q 30 12 60 7 T 100 2"
                   fill="none"
                   stroke="#f59e0b"
-                  strokeWidth="2"
-                  style={{ filter: 'drop-shadow(0 0 6px rgba(245, 158, 11, 0.8))' }}
+                  strokeWidth="2.2"
+                  style={{ filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.85))' }}
                 />
-                <circle cx="100" cy="2" r="2.5" fill="#FFF" style={{ filter: 'drop-shadow(0 0 6px #FFF)' }} />
+                <circle cx="100" cy="2" r="3" fill="#FFF" style={{ filter: 'drop-shadow(0 0 8px #FFF)' }} />
               </svg>
             </div>
 
-            {/* 6-Column Amber Vertical Bar Chart */}
-            <div className="flex items-end gap-1.5 h-9">
+            {/* 6-Column Amber Vertical Bar Chart (enlarged h-12 with clear spacing) */}
+            <div className="flex items-end gap-2 h-12">
               <div
                 className="flex-1 rounded-t h-[35%]"
                 style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 100%)' }}
@@ -379,21 +379,21 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
                 className="flex-1 rounded-t h-[70%]"
                 style={{
                   background: 'linear-gradient(180deg, #fbbf24 0%, #f59e0b 100%)',
-                  boxShadow: '0 0 8px rgba(245, 158, 11, 0.45)',
+                  boxShadow: '0 0 10px rgba(245, 158, 11, 0.5)',
                 }}
               ></div>
               <div
                 className="flex-1 rounded-t h-[85%]"
                 style={{
                   background: 'linear-gradient(180deg, #ff9e42 0%, #ff5722 100%)',
-                  boxShadow: '0 0 12px rgba(255, 122, 0, 0.65)',
+                  boxShadow: '0 0 14px rgba(255, 122, 0, 0.7)',
                 }}
               ></div>
               <div
                 className="flex-1 rounded-t h-[100%]"
                 style={{
                   background: 'linear-gradient(180deg, #fbbf24 0%, #ff6b00 100%)',
-                  boxShadow: '0 0 16px rgba(251, 191, 36, 0.95)',
+                  boxShadow: '0 0 18px rgba(251, 191, 36, 1)',
                 }}
               ></div>
             </div>
