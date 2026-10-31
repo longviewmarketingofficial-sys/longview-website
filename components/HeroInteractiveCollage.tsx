@@ -143,16 +143,15 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           className="absolute -bottom-10 -left-6 sm:-left-10 lg:-left-16 z-30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[285px] sm:w-[325px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Enriched w-8 h-8 Logo + text-base Meta + text-xs ROI */}
+          {/* Header: Clean Meta Icon + single bold white Meta text + aligned ROI badge */}
           <div className="flex items-center justify-between gap-3 mb-3.5">
-            <div className="flex items-center">
-              {/* Enlarge Meta logo image to w-8 h-8 */}
+            <div className="flex items-center gap-2">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg"
+                src="https://cdn.simpleicons.org/meta/0081FB"
                 alt="Meta"
-                className="w-8 h-8 object-contain inline-block mr-2 shrink-0 drop-shadow-[0_0_8px_rgba(0,129,251,0.5)]"
+                className="w-7 h-7 object-contain shrink-0 drop-shadow-[0_0_8px_rgba(0,129,251,0.6)]"
               />
-              <span className="text-base font-bold text-white tracking-wide">Meta</span>
+              <span className="text-lg font-bold text-white tracking-wide">Meta</span>
             </div>
             
             {/* Luminous +340% ROI Pill (text-xs font-bold) */}
