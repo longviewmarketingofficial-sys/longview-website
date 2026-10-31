@@ -54,12 +54,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${bebasNeue.variable} bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen bg-architectural-grid`}
       >
         <CursorSpotlight />
         <Navbar />
-        <main className="pt-16 min-h-[calc(100vh-4rem)] flex flex-col">
+        <main className="min-h-screen flex flex-col">
           {children}
         </main>
         <Footer />

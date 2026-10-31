@@ -10,6 +10,7 @@ import FaqAccordion from '@/components/FaqAccordion';
 import MarqueeTicker from '@/components/MarqueeTicker';
 import TiltCard from '@/components/TiltCard';
 import MagneticButton from '@/components/MagneticButton';
+import HeroInteractiveCollage from '@/components/HeroInteractiveCollage';
 
 export default function HomePage() {
   const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
@@ -17,42 +18,78 @@ export default function HomePage() {
   return (
     <div className="w-full flex flex-col justify-between">
       {/* ========================================================== */}
-      {/* 1. HERO SECTION (GEOMETRIC SPLIT)                          */}
+      {/* 1. HERO SECTION WITH INTEGRATED BOTTOM MARQUEE             */}
       {/* ========================================================== */}
-      <section className="w-full border-b grid-border relative flex-1 flex items-stretch">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch w-full">
+      <section className="w-full relative min-h-screen flex flex-col justify-between pb-2 border-b border-white/[0.08] overflow-hidden hero-backdrop-bg pt-20 lg:pt-22">
+        
+        <div className="w-full max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2">
           
-          {/* LEFT HERO COLUMN: ARCHITECTURAL TYPOGRAPHY */}
-          <div className="lg:col-span-6 border-b lg:border-b-0 lg:border-r grid-border py-8 lg:py-12 px-6 sm:px-10 lg:px-12 xl:px-14 flex flex-col justify-between">
-            <div className="my-auto py-2">
-              <span className="font-mono text-xs text-cyberLime uppercase tracking-widest block mb-4">
+          {/* LEFT COLUMN: CRISP ARCHITECTURAL & MONUMENTAL TYPOGRAPHY (LEFT 50%) */}
+          <div className="lg:col-span-6 flex flex-col justify-between py-2">
+            <div>
+              {/* Monospaced Super-heading */}
+              <span className="font-mono text-[11px] sm:text-xs text-[#F59E0B] uppercase tracking-[0.25em] block mb-3 sm:mb-4 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">
                 // FULL-SERVICE DIGITAL GROWTH STUDIO
               </span>
-              <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[76px] xl:text-[88px] 2xl:text-[100px] leading-[0.85] tracking-tight uppercase select-none">
-                <span className="block text-bone">BE SEEN.</span>
-                <span className="block text-bone">BE REMEMBERED.</span>
-                <span className="block text-vermilion">BE CHOSEN.</span>
+
+              {/* Stacked Monumental Headline with 3 Distinct Typographic Styles */}
+              <h1 className="tracking-tight select-text">
+                {/* 1st Line: Mammoth, ultra-bold flat white sans-serif */}
+                <span className="block font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[80px] xl:text-[98px] 2xl:text-[112px] text-white leading-[0.88] drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]">
+                  BE SEEN.
+                </span>
+
+                {/* 2nd Line: Sprawling, elegant, high-contrast serif-italic with metallic amber-gold gradient - ONE SINGLE LINE */}
+                <span
+                  className="block whitespace-nowrap text-4xl sm:text-5xl md:text-6xl lg:text-[54px] xl:text-[68px] 2xl:text-[80px] leading-[1.05] tracking-wide my-1.5 sm:my-2 drop-shadow-[0_0_25px_rgba(245,158,11,0.5)]"
+                  style={{
+                    background: 'linear-gradient(90deg, #FEE180 0%, #E5A93C 50%, #C86016 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontFamily: 'serif',
+                    fontStyle: 'italic',
+                  }}
+                >
+                  BE REMEMBERED.
+                </span>
+
+                {/* 3rd Line: Massive fiery orange block lettering */}
+                <span
+                  className="block font-bebas text-6xl sm:text-7xl md:text-8xl lg:text-[80px] xl:text-[98px] 2xl:text-[112px] leading-[0.88] drop-shadow-[0_4px_30px_rgba(255,106,0,0.65)]"
+                  style={{
+                    background: 'linear-gradient(180deg, #FF6A00 0%, #D43800 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 900,
+                  }}
+                >
+                  BE CHOSEN.
+                </span>
               </h1>
-              <p className="mt-6 text-sm sm:text-base text-slate-400 max-w-lg leading-relaxed font-normal">
+
+              {/* Neutral readable white/slate description */}
+              <p className="mt-5 text-sm sm:text-base text-slate-300 max-w-lg leading-relaxed font-normal select-text">
                 Local business marketing without the agency fluff. High-retention Instagram Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware.
               </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
+              {/* Action Buttons: 2 Pill-shaped CTAs */}
+              <div className="mt-7 flex flex-wrap items-center gap-4">
                 <MagneticButton strength={0.25}>
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20a%20growth%20plan%20for%20my%20business"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-vermilion px-6 py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-vermilion/30"
+                    className="rounded-full px-7 py-3.5 bg-gradient-to-r from-[#FF5722] via-[#FF441A] to-[#E63900] hover:from-[#FF6A3D] hover:to-[#FF5722] text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-[0_0_25px_rgba(255,68,26,0.55)] transition-all hover:scale-[1.02]"
                   >
                     <span>START 3-MONTH SPRINT</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </a>
                 </MagneticButton>
+
                 <MagneticButton strength={0.25}>
                   <Link
                     href="/approach"
-                    className="px-6 py-3.5 rounded-sm bg-obsidianSurface border grid-border hover:border-white/30 text-bone font-mono text-xs font-bold uppercase tracking-wider transition block"
+                    className="rounded-full px-6 py-3.5 bg-white/[0.06] hover:bg-white/[0.14] border border-white/20 hover:border-white/40 backdrop-blur-md text-white font-mono text-xs font-bold uppercase tracking-wider transition-all block"
                   >
                     VIEW METHODOLOGY →
                   </Link>
@@ -60,102 +97,33 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Bottom Coordinates Bar */}
-            <div className="pt-6 border-t grid-border flex items-center justify-between font-mono text-[10px] sm:text-[11px] text-slate-500">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-cyberLime animate-pulse"></span>
+            {/* Bottom Features: Gold-bordered Worldwide Capsule & 16 Pieces/Mo Flag */}
+            <div className="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-4">
+              {/* Bottom Left Capsule */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-[10px] sm:text-[11px] font-mono tracking-wider text-slate-300 shadow-sm select-text">
+                <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse"></span>
                 <span>SERVING AMBITIOUS BUSINESSES WORLDWIDE</span>
-              </span>
-              <span className="text-cyberLime font-bold">// 16 PIECES/MO</span>
+              </div>
+
+              {/* Bottom Right Flag */}
+              <div className="inline-flex items-center px-3 py-1 rounded-sm border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-[10px] sm:text-[11px] font-bold tracking-widest select-text">
+                // 16 PIECES/MO
+              </div>
             </div>
           </div>
 
-          {/* RIGHT HERO COLUMN: 3D REALISTIC SLATE NFC CARD SHOWCASE WITH 3D TILT */}
-          <div className="lg:col-span-6 relative bg-[#070A0F] py-10 lg:py-16 px-6 sm:px-8 lg:px-10 flex flex-col justify-center items-center overflow-hidden min-h-[420px] lg:min-h-[480px]">
-            {/* Neon Lime Status Capsule */}
-            <div className="absolute top-4 right-6 lg:right-10 w-14 h-3.5 bg-cyberLime rounded-sm shadow-[0_0_15px_rgba(212,255,0,0.35)] z-20"></div>
-
-            {/* 3D Angled Slate Pedestal Background */}
-            <div className="w-full max-w-[370px] xl:max-w-[420px] aspect-[1.586/1] bg-gradient-to-br from-[#1A2230] to-[#0D121B] rounded-2xl transform rotate-[-4deg] scale-[1.03] border border-white/10 shadow-2xl absolute pointer-events-none -z-0"></div>
-
-            {/* THE SMART NFC BUSINESS CARD (WRAPPED IN 3D TILT WITH MOVING GLARE) */}
-            <TiltCard maxTilt={10} className="w-full max-w-[340px] xl:max-w-[390px] z-10">
-              <div
-                onClick={() => setIsNfcModalOpen(true)}
-                className="w-full aspect-[1.586/1] rounded-xl p-5 border border-white/20 shadow-2xl relative flex flex-col justify-between overflow-hidden cursor-pointer group"
-                style={{ background: 'linear-gradient(135deg, #131722 0%, #080B12 100%)' }}
-              >
-                {/* Subtle watermark */}
-                <div className="absolute inset-0 pointer-events-none opacity-15">
-                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0" y1="30" x2="100%" y2="30" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
-                    <line x1="75" y1="0" x2="75" y2="100%" stroke="#FFFFFF" strokeWidth="0.5" strokeDasharray="3 6" />
-                  </svg>
-                </div>
-
-                {/* Top Row: NFC Wave Icon & Label */}
-                <div className="flex items-center gap-1.5 text-vermilion relative z-10">
-                  <Wifi className="w-4 h-4 animate-pulse rotate-90" />
-                  <span className="text-[8.5px] sm:text-[9px] font-mono font-bold tracking-widest uppercase">
-                    TAP TO CONNECT NFC
-                  </span>
-                </div>
-
-                {/* Center Row: Navy Sunrise Logo Badge + Contact Details */}
-                <div className="grid grid-cols-12 gap-3 items-center relative z-10 my-0.5">
-                  {/* Circular Navy Emblem */}
-                  <div className="col-span-5 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-[#0E1726] border border-white/20 flex flex-col items-center justify-center p-2 text-center shadow-lg group-hover:border-vermilion/60 transition-colors">
-                      <svg className="w-7 h-7 mb-0.5" viewBox="0 0 100 100" fill="none">
-                        <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF441A" />
-                        <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF" />
-                        <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
-                        <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
-                      </svg>
-                      <span className="text-[7.5px] font-black tracking-widest text-white leading-tight">LONG VIEW</span>
-                      <span className="text-[5.5px] font-mono tracking-widest text-vermilion">DIGITAL MARKETING</span>
-                    </div>
-                  </div>
-
-                  {/* Right Contact Info */}
-                  <div className="col-span-7 flex flex-col justify-between space-y-1.5 border-l border-white/10 pl-3">
-                    <div className="text-[8px] sm:text-[9px] font-mono text-slate-300 space-y-1">
-                      <div className="truncate">longviewmarketingofficial@gmail.com</div>
-                      <div>@longview_digital</div>
-                      <div className="text-amber-400">Ahmedabad, Gujarat</div>
-                    </div>
-
-                    {/* Google Maps Indicator */}
-                    <div className="flex items-center gap-2 pt-1">
-                      <div className="w-7 h-7 bg-white p-0.5 rounded shadow flex items-center justify-center shrink-0">
-                        <svg viewBox="0 0 24 24" className="w-full h-full text-black" fill="currentColor">
-                          <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v4h-4v-4zm-4 4h4v4h-4v-4zm4-4h4v4h-4v-4zM14 14h2v2h-2v-2z" />
-                        </svg>
-                      </div>
-                      <span className="text-[7.5px] font-mono text-slate-400">GOOGLE MAPS VERIFIED</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Edge */}
-                <div className="pt-2 border-t border-white/10 flex justify-between items-center relative z-10 text-[8px] font-mono text-slate-400">
-                  <span className="text-cyberLime flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyberLime"></span>
-                    SMART NFC CHIP
-                  </span>
-                  <span className="text-vermilion font-bold group-hover:underline">CLICK TO TEST TAP →</span>
-                </div>
-              </div>
-            </TiltCard>
+          {/* RIGHT COLUMN: 3D INTERACTIVE UI COLLAGE ON VOLUMETRIC VORTEX CANVAS (RIGHT 50%) */}
+          <div className="lg:col-span-6 relative flex items-center justify-center">
+            <HeroInteractiveCollage onCardClick={() => setIsNfcModalOpen(true)} />
           </div>
 
         </div>
-      </section>
 
-      {/* ========================================================== */}
-      {/* KINETIC INFINITE TYPOGRAPHY MARQUEE STRIP                   */}
-      {/* ========================================================== */}
-      <MarqueeTicker />
+        {/* INTEGRATED FULL-WIDTH BOTTOM TICKER INSIDE THE HERO VIEWPORT */}
+        <div className="w-full relative z-20">
+          <MarqueeTicker className="border-t border-white/10" />
+        </div>
+      </section>
 
       {/* ========================================================== */}
       {/* 2. 3-PILLAR STRIP (DISCOVERY / ARCHITECTURE / EXECUTION)    */}
