@@ -9,13 +9,13 @@ interface HeroInteractiveCollageProps {
 }
 
 export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveCollageProps) {
-  // True frosted glass styling allowing amber rays and glowing rings to shine through
+  // Explicit translucent frosted glass styling allowing background amber light rings to shine through
   const glassPanelStyle: React.CSSProperties = {
-    background: 'rgba(255, 255, 255, 0.07)',
-    backdropFilter: 'blur(20px)',
-    WebkitBackdropFilter: 'blur(20px)',
-    border: '1px solid rgba(255, 255, 255, 0.18)',
-    boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.25)',
+    background: 'rgba(255, 255, 255, 0.08)',
+    backdropFilter: 'blur(24px) saturate(180%)',
+    WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+    border: '1px solid rgba(255, 255, 255, 0.22)',
+    boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
   };
 
   return (
@@ -84,37 +84,42 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
 
         {/* ======================================================== */}
         {/* FLOATING GLASS CARD 1 (TOP LEFT): GOOGLE VERIFIED        */}
-        {/* Scaled up 25%, overlapping top-left shoulder of NFC card */}
+        {/* Force translucent frosted glass, pure white & gold text  */}
         {/* ======================================================== */}
         <div
           className="absolute -top-6 left-0 sm:-left-4 lg:-left-8 z-30 rounded-2xl p-4.5 sm:p-5 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto min-w-[170px] sm:min-w-[195px]"
           style={glassPanelStyle}
         >
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-mono font-bold text-white tracking-wide">
+            <span className="text-xs font-mono font-bold tracking-wide" style={{ color: '#ffffff' }}>
               Google Verified
             </span>
           </div>
 
-          {/* Brightened Golden Amber Stars */}
+          {/* Bright Golden Yellow Stars (#ffc107) with Subtle Glow */}
           <div className="flex items-center gap-1.5 mb-2">
             {[...Array(5)].map((_, i) => (
               <Star
                 key={i}
-                className="w-4 h-4 fill-[#ffb703] text-[#ffb703] drop-shadow-[0_0_8px_rgba(255,183,3,0.6)]"
+                className="w-4 h-4"
+                style={{
+                  fill: '#ffc107',
+                  color: '#ffc107',
+                  filter: 'drop-shadow(0 0 6px rgba(255, 193, 7, 0.8))',
+                }}
               />
             ))}
           </div>
 
-          {/* Crisp Light Gray/White Reviews Label */}
-          <div className="text-gray-200 text-xs sm:text-[13px] font-mono font-semibold tracking-wider">
+          {/* Crisp Light Gray (#e5e7eb) Reviews Label */}
+          <div className="text-xs sm:text-[13px] font-mono font-semibold tracking-wider" style={{ color: '#e5e7eb' }}>
             +145 New Reviews
           </div>
         </div>
 
         {/* ======================================================== */}
         {/* FLOATING GLASS CARD 2 (BOTTOM LEFT): META (+340% ROI)    */}
-        {/* Scaled up 25%, overlapping bottom-left corner of NFC card*/}
+        {/* Force translucent frosted glass, bright orange trendline */}
         {/* ======================================================== */}
         <div
           className="absolute -bottom-8 -left-4 sm:-left-8 lg:-left-14 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto min-w-[240px] sm:min-w-[275px]"
@@ -127,29 +132,29 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
               <svg className="w-5 h-5 text-[#0081FB] shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 7.2c2.1-3 4.2-4.2 6.5-4.2 3.3 0 5.5 2.5 5.5 6 0 4.8-4.2 8.8-8.9 12-1.9 1.3-4.3 1.3-6.2 0-4.7-3.2-8.9-7.2-8.9-12 0-3.5 2.2-6 5.5-6 2.3 0 4.4 1.2 6.5 4.2zm-2.8 5.7c-1.3-1.6-2.5-2.7-3.7-2.7-1.5 0-2.5 1.1-2.5 2.8 0 2.6 2.5 5.3 5.4 7.4 1.1.8 2.5.8 3.6 0 .9-.6 1.8-1.4 2.8-2.4-2-2.3-3.9-3.7-5.6-5.1zm5.6 0c1.7 1.4 3.6 2.8 5.6 5.1 1 1 1.9 1.8 2.8 2.4 1.1.8 2.5.8 3.6 0 2.9-2.1 5.4-4.8 5.4-7.4 0-1.7-1-2.8-2.5-2.8-1.2 0-2.4 1.1-3.7 2.7z" />
               </svg>
-              <span className="text-sm font-mono font-bold text-white">Meta</span>
+              <span className="text-sm font-mono font-bold" style={{ color: '#ffffff' }}>Meta</span>
             </div>
             
             {/* Bright +340% ROI Pill */}
             <span
-              className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(255,107,0,0.4)]"
+              className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-full shadow-[0_0_12px_rgba(255,122,0,0.5)]"
               style={{
-                background: 'rgba(255, 107, 0, 0.2)',
-                border: '1px solid rgba(255, 107, 0, 0.4)',
-                color: '#ff9e42',
+                background: 'rgba(255, 122, 0, 0.22)',
+                border: '1px solid rgba(255, 122, 0, 0.55)',
+                color: '#ffffff',
               }}
             >
-              +340% ROI
+              <span style={{ color: '#fbbf24', marginRight: '3px' }}>+340%</span>ROI
             </span>
           </div>
 
-          {/* Distinct Glowing Bright Orange Sparkline Graph */}
+          {/* Glowing Orange #ff7a00 Sparkline Graph with Drop Shadow */}
           <div className="w-full h-14 mb-3">
             <svg className="w-full h-full overflow-visible" viewBox="0 0 120 40">
               <defs>
                 <linearGradient id="metaGlowGrad" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#ff6b00" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="#ff6b00" stopOpacity="0.0" />
+                  <stop offset="0%" stopColor="#ff7a00" stopOpacity="0.4" />
+                  <stop offset="100%" stopColor="#ff7a00" stopOpacity="0.0" />
                 </linearGradient>
               </defs>
               <path
@@ -159,24 +164,40 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
               <path
                 d="M 0 35 Q 25 32 45 22 T 85 14 T 120 4"
                 fill="none"
-                stroke="#ff6b00"
+                stroke="#ff7a00"
                 strokeWidth="2.5"
-                className="drop-shadow-[0_0_6px_rgba(255,107,0,0.8)]"
+                style={{
+                  filter: 'drop-shadow(0 0 6px rgba(255, 122, 0, 0.8))',
+                }}
               />
-              <circle cx="120" cy="4" r="3.5" fill="#FFF" className="drop-shadow-[0_0_10px_#FFF]" />
+              <circle cx="120" cy="4" r="3.5" fill="#FFF" style={{ filter: 'drop-shadow(0 0 8px #FFF)' }} />
             </svg>
           </div>
 
-          <div className="text-[9px] font-mono text-slate-300 uppercase tracking-widest mb-2 font-semibold">
+          <div className="text-[9px] font-mono uppercase tracking-widest mb-2 font-semibold" style={{ color: '#d1d5db' }}>
             ACTIVE CAMPAIGNS
           </div>
 
           {/* Bottom Tabs */}
           <div className="flex items-center gap-2 text-[10px] font-mono">
-            <span className="px-3 py-1 rounded-full bg-[#ff6b00]/25 text-[#ff9e42] border border-[#ff6b00]/50 font-bold shadow-[0_0_10px_rgba(255,107,0,0.4)]">
+            <span
+              className="px-3 py-1 rounded-full font-bold shadow-[0_0_10px_rgba(255,122,0,0.4)]"
+              style={{
+                background: 'rgba(255, 122, 0, 0.25)',
+                color: '#fbbf24',
+                border: '1px solid rgba(255, 122, 0, 0.5)',
+              }}
+            >
               Impressions
             </span>
-            <span className="px-3 py-1 rounded-full bg-white/[0.08] text-gray-200 hover:text-white border border-white/20">
+            <span
+              className="px-3 py-1 rounded-full border"
+              style={{
+                background: 'rgba(255, 255, 255, 0.1)',
+                borderColor: 'rgba(255, 255, 255, 0.25)',
+                color: '#f3f4f6',
+              }}
+            >
               Reactivity
             </span>
           </div>
@@ -184,7 +205,7 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
 
         {/* ======================================================== */}
         {/* FLOATING GLASS CARD 3 (RIGHT): GOOGLE ADS               */}
-        {/* Scaled up 25%, prominent high-contrast numbers           */}
+        {/* Force translucent frosted glass, pure white & gold text  */}
         {/* ======================================================== */}
         <div
           className="absolute top-0 -right-6 sm:-right-10 lg:-right-16 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[210px] sm:w-[240px]"
@@ -192,36 +213,36 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
         >
           {/* Header */}
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center p-0.5 shrink-0">
+            <div className="w-5 h-5 rounded-full bg-white/15 flex items-center justify-center p-0.5 shrink-0">
               <svg viewBox="0 0 24 24" className="w-full h-full">
                 <path fill="#FBBC04" d="M3.7 13.9 8.2 6.1c1-1.8 3.3-2.4 5.1-1.3l.8.5c1.8 1 2.4 3.3 1.3 5.1l-4.5 7.8c-1 1.8-3.3 2.4-5.1 1.3l-.8-.5c-1.8-1-2.4-3.3-1.3-5.1z"/>
                 <path fill="#4285F4" d="M19.3 15.6 14.8 7.8c-.5-.9-1.4-1.5-2.4-1.7l6.1-3.5c1.8-1 4.1-.4 5.1 1.3l.8 1.4c1 1.8.4 4.1-1.3 5.1l-3.8 5.2z"/>
                 <circle fill="#34A853" cx="6.4" cy="18.6" r="2.9"/>
               </svg>
             </div>
-            <span className="text-xs sm:text-sm font-mono font-bold text-white tracking-wide">
+            <span className="text-xs sm:text-sm font-mono font-bold tracking-wide" style={{ color: '#ffffff' }}>
               Google Ads
             </span>
           </div>
 
-          {/* Search / Click wave graph with glowing amber tones */}
+          {/* Clean White/Light Gray (#f3f4f6) Search / Click Labels */}
           <div className="flex justify-between items-center text-[10px] font-mono mb-1 font-semibold">
-            <span className="text-gray-100">Search</span>
-            <span className="text-[#ffb703] font-bold drop-shadow-[0_0_6px_rgba(255,183,3,0.6)]">Click</span>
+            <span style={{ color: '#f3f4f6' }}>Search</span>
+            <span style={{ color: '#ffffff', filter: 'drop-shadow(0 0 4px rgba(255,255,255,0.6))' }}>Click</span>
           </div>
           <div className="w-full h-11 mb-3.5">
             <svg className="w-full h-full" viewBox="0 0 100 30">
               <path
                 d="M 0 24 Q 25 6 50 18 T 100 8"
                 fill="none"
-                stroke="#ff6b00"
+                stroke="#ff7a00"
                 strokeWidth="2.5"
-                className="drop-shadow-[0_0_8px_rgba(255,107,0,0.8)]"
+                style={{ filter: 'drop-shadow(0 0 8px rgba(255, 122, 0, 0.8))' }}
               />
               <path
                 d="M 0 28 Q 30 18 60 22 T 100 14"
                 fill="none"
-                stroke="#ffb703"
+                stroke="#60A5FA"
                 strokeWidth="1.5"
                 opacity="0.85"
               />
@@ -230,29 +251,65 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
 
           {/* Large Crisp White and High-Contrast Gold Metric Boxes */}
           <div className="grid grid-cols-2 gap-2 mb-3.5 font-mono">
-            <div className="bg-white/[0.08] border border-white/20 rounded-xl p-2 text-center backdrop-blur-sm">
-              <span className="text-[10px] text-[#ffb703] font-bold block mb-0.5 drop-shadow-[0_0_6px_rgba(255,183,3,0.6)]">★★★★★</span>
-              <span className="text-sm sm:text-base font-black text-white block">5.0</span>
-              <span className="text-[8px] text-gray-300 font-semibold tracking-wider block">RATING</span>
+            {/* 5.0 RATING */}
+            <div
+              className="rounded-xl p-2 text-center"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(255, 255, 255, 0.18)',
+              }}
+            >
+              <span className="text-[10px] font-bold block mb-0.5" style={{ color: '#ffc107', filter: 'drop-shadow(0 0 6px rgba(255, 193, 7, 0.8))' }}>★★★★★</span>
+              <span className="text-lg font-black block" style={{ color: '#ffffff' }}>5.0</span>
+              <span className="text-[8px] font-semibold tracking-wider block" style={{ color: '#9ca3af' }}>RATING</span>
             </div>
-            <div className="bg-white/[0.08] border border-white/20 rounded-xl p-2 text-center flex flex-col justify-center backdrop-blur-sm">
-              <span className="text-[9px] text-gray-300 font-semibold tracking-wider block">ROAS</span>
-              <span className="text-sm sm:text-base font-black text-[#ffb703] block drop-shadow-[0_0_10px_rgba(255,183,3,0.7)]">4.8x</span>
+
+            {/* 4.8x ROAS */}
+            <div
+              className="rounded-xl p-2 text-center flex flex-col justify-center"
+              style={{
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(255, 255, 255, 0.18)',
+              }}
+            >
+              <span className="text-[9px] font-semibold tracking-wider block" style={{ color: '#9ca3af' }}>ROAS</span>
+              <span className="text-lg font-black block" style={{ color: '#fbbf24', filter: 'drop-shadow(0 0 10px rgba(251, 191, 36, 0.8))' }}>4.8x</span>
             </div>
           </div>
 
-          {/* Campaign Analytics Bar Chart with Glowing Amber Tones */}
-          <div className="pt-2.5 border-t border-white/10">
+          {/* Campaign Analytics Bar Chart with Bright Luminous Amber/Orange Gradients */}
+          <div className="pt-2.5 border-t border-white/15">
             <div className="flex justify-between items-center text-[9px] font-mono mb-2 font-bold">
-              <span className="text-gray-100">CAMPAIGN ANALYTICS</span>
-              <span className="text-[#ffb703] drop-shadow-[0_0_6px_rgba(255,183,3,0.6)]">4.8x</span>
+              <span style={{ color: '#f3f4f6' }}>CAMPAIGN ANALYTICS</span>
+              <span style={{ color: '#fbbf24', filter: 'drop-shadow(0 0 6px rgba(251, 191, 36, 0.7))' }}>4.8x</span>
             </div>
             <div className="flex items-end gap-2 h-9">
-              <div className="flex-1 bg-white/20 rounded-t h-[40%]"></div>
-              <div className="flex-1 bg-white/30 rounded-t h-[60%]"></div>
-              <div className="flex-1 bg-[#ff9e42]/50 rounded-t h-[50%]"></div>
-              <div className="flex-1 bg-[#ff6b00]/80 rounded-t h-[85%] shadow-[0_0_10px_rgba(255,107,0,0.5)]"></div>
-              <div className="flex-1 bg-[#ffb703] rounded-t h-[100%] shadow-[0_0_14px_rgba(255,183,3,0.8)]"></div>
+              <div
+                className="flex-1 rounded-t h-[40%]"
+                style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 100%)' }}
+              ></div>
+              <div
+                className="flex-1 rounded-t h-[60%]"
+                style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.25) 100%)' }}
+              ></div>
+              <div
+                className="flex-1 rounded-t h-[50%]"
+                style={{ background: 'linear-gradient(180deg, #ffb703 0%, #ff7a00 100%)' }}
+              ></div>
+              <div
+                className="flex-1 rounded-t h-[85%]"
+                style={{
+                  background: 'linear-gradient(180deg, #ff9e42 0%, #ff5722 100%)',
+                  boxShadow: '0 0 10px rgba(255, 122, 0, 0.6)',
+                }}
+              ></div>
+              <div
+                className="flex-1 rounded-t h-[100%]"
+                style={{
+                  background: 'linear-gradient(180deg, #fbbf24 0%, #ff6b00 100%)',
+                  boxShadow: '0 0 16px rgba(251, 191, 36, 0.9)',
+                }}
+              ></div>
             </div>
           </div>
         </div>
