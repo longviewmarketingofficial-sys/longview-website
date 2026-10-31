@@ -143,12 +143,12 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           className="absolute -bottom-8 -left-4 sm:-left-8 lg:-left-14 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto min-w-[240px] sm:min-w-[275px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Blue Meta infinity logo + "Meta" in bold white */}
+          {/* Header: Official Meta Logo + "Meta" in bold white */}
           <div className="flex items-center justify-between gap-3 mb-3">
-            <div className="flex items-center gap-2">
-              {/* Blue Meta infinity logo */}
-              <svg className="w-5 h-5 text-[#0081FB] shrink-0 drop-shadow-[0_0_8px_rgba(0,129,251,0.6)]" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 7.2c2.1-3 4.2-4.2 6.5-4.2 3.3 0 5.5 2.5 5.5 6 0 4.8-4.2 8.8-8.9 12-1.9 1.3-4.3 1.3-6.2 0-4.7-3.2-8.9-7.2-8.9-12 0-3.5 2.2-6 5.5-6 2.3 0 4.4 1.2 6.5 4.2zm-2.8 5.7c-1.3-1.6-2.5-2.7-3.7-2.7-1.5 0-2.5 1.1-2.5 2.8 0 2.6 2.5 5.3 5.4 7.4 1.1.8 2.5.8 3.6 0 .9-.6 1.8-1.4 2.8-2.4-2-2.3-3.9-3.7-5.6-5.1zm5.6 0c1.7 1.4 3.6 2.8 5.6 5.1 1 1 1.9 1.8 2.8 2.4 1.1.8 2.5.8 3.6 0 2.9-2.1 5.4-4.8 5.4-7.4 0-1.7-1-2.8-2.5-2.8-1.2 0-2.4 1.1-3.7 2.7z" />
+            <div className="flex items-center">
+              {/* Official Meta Logo */}
+              <svg className="w-5 h-5 inline-block mr-1.5 shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M2.5 12C2.5 8.13 5.34 5.5 8.58 5.5c1.9 0 3.32.93 4.42 2.3 1.1-1.37 2.52-2.3 4.42-2.3 3.24 0 6.08 2.63 6.08 6.5 0 4.1-3.08 7.5-6.52 7.5-2.07 0-3.36-.98-3.98-1.78-.62.8-1.91 1.78-3.98 1.78C5.58 19.5 2.5 16.1 2.5 12zm3.17 0c0 2.2 1.48 4.2 3.33 4.2 1.8 0 2.87-1.4 3.4-2.58.53-1.18.9-2.3.9-2.3s-.37-1.12-.9-2.3c-.53-1.18-1.6-2.58-3.4-2.58-1.85 0-3.33 2-3.33 4.26zm12.66 0c0-2.26-1.48-4.26-3.33-4.26-1.8 0-2.87 1.4-3.4 2.58-.53 1.18-.9 2.3-.9 2.3s.37 1.12.9 2.3c.53 1.18 1.6 2.58 3.4 2.58 1.85 0 3.33-2 3.33-4.2z" fill="#0081FB"/>
               </svg>
               <span className="text-sm font-sans font-bold text-white tracking-wide">Meta</span>
             </div>
@@ -255,18 +255,13 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
           className="absolute top-0 -right-6 sm:-right-10 lg:-right-16 z-30 rounded-2xl p-5 sm:p-6 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[215px] sm:w-[245px]"
           style={frostedGlassStyle}
         >
-          {/* Header: Official 4-color Google Ads triangular logo + "Google Ads" in bold white */}
-          <div className="flex items-center gap-2.5 mb-3">
-            <div className="w-5 h-5 flex items-center justify-center shrink-0">
-              <svg viewBox="0 0 24 24" className="w-full h-full drop-shadow-[0_0_8px_rgba(255,255,255,0.4)]">
-                {/* Yellow Angled Bar */}
-                <path fill="#FBBC04" d="M3.7 13.9 8.2 6.1c1-1.8 3.3-2.4 5.1-1.3l.8.5c1.8 1 2.4 3.3 1.3 5.1l-4.5 7.8c-1 1.8-3.3 2.4-5.1 1.3l-.8-.5c-1.8-1-2.4-3.3-1.3-5.1z"/>
-                {/* Blue Angled Bar */}
-                <path fill="#4285F4" d="M19.3 15.6 14.8 7.8c-.5-.9-1.4-1.5-2.4-1.7l6.1-3.5c1.8-1 4.1-.4 5.1 1.3l.8 1.4c1 1.8.4 4.1-1.3 5.1l-3.8 5.2z"/>
-                {/* Green Base Circle */}
-                <circle fill="#34A853" cx="6.4" cy="18.6" r="2.9"/>
-              </svg>
-            </div>
+          {/* Header: Official Google Ads 3-Color Ribbon Logo + "Google Ads" in bold white */}
+          <div className="flex items-center mb-3">
+            <svg className="w-5 h-5 inline-block mr-1.5 shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.5 35.5L20.5 7.5C21.3 5.6 23.5 4.6 25.4 5.4C27.3 6.2 28.3 8.4 27.5 10.3L15.5 38.3C14.7 40.2 12.5 41.2 10.6 40.4C8.7 39.6 7.7 37.4 8.5 35.5Z" fill="#4285F4"/>
+              <path d="M39.5 35.5L27.5 7.5C26.7 5.6 24.5 4.6 22.6 5.4C20.7 6.2 19.7 8.4 20.5 10.3L32.5 38.3C33.3 40.2 35.5 41.2 37.4 40.4C39.3 39.6 40.3 37.4 39.5 35.5Z" fill="#FBBC04"/>
+              <circle cx="12" cy="38" r="5" fill="#34A853"/>
+            </svg>
             <span className="text-sm font-sans font-bold text-white tracking-wide">
               Google Ads
             </span>
