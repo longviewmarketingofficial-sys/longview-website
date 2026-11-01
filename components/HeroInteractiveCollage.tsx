@@ -3,6 +3,7 @@
 import React from 'react';
 import { Wifi, Star } from 'lucide-react';
 import TiltCard from '@/components/TiltCard';
+import LongViewLogo from '@/components/LongViewLogo';
 
 interface HeroInteractiveCollageProps {
   onCardClick?: () => void;
@@ -65,15 +66,7 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
             {/* Center Area: Glowing Orange Sunset/Arch Emblem & LONGVIEW Wordmark */}
             <div className="my-auto flex flex-col items-center justify-center text-center relative z-10 px-4">
               <div className="w-18 h-18 sm:w-22 sm:h-22 mb-2 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <svg className="w-full h-full drop-shadow-[0_0_20px_rgba(255,87,34,0.95)]" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  {/* Glowing Sunset Semi-Circle */}
-                  <path d="M26 42 A 24 24 0 0 1 74 42 Z" fill="#FF5722" />
-                  {/* White / Glowing Orange Architectural Arch */}
-                  <line x1="14" y1="44" x2="86" y2="44" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
-                  <line x1="48" y1="46" x2="24" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-                  <line x1="52" y1="46" x2="76" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-                  <line x1="32" y1="67" x2="68" y2="67" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-                </svg>
+                <LongViewLogo className="w-full h-full" glow />
               </div>
 
               <span className="font-bebas text-3xl sm:text-4xl tracking-[0.25em] text-[#FF6B35] drop-shadow-[0_0_16px_rgba(255,107,53,0.9)] leading-none">

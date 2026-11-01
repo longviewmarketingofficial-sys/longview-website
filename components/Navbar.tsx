@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import LongViewLogo from '@/components/LongViewLogo';
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,15 +48,7 @@ export default function Navbar() {
         {/* Brand Geometric Sunset / Arch Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="w-8 h-8 flex items-center justify-center transition-transform group-hover:scale-105">
-            <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Sunset Semi-Circle */}
-              <path d="M26 42 A 24 24 0 0 1 74 42 Z" fill="#FF5722" className="drop-shadow-[0_0_8px_rgba(255,87,34,0.8)]" />
-              {/* White Angular Arch */}
-              <line x1="14" y1="44" x2="86" y2="44" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
-              <line x1="48" y1="46" x2="24" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-              <line x1="52" y1="46" x2="76" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-              <line x1="32" y1="67" x2="68" y2="67" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-            </svg>
+            <LongViewLogo className="w-full h-full" glow />
           </div>
           <span className="text-lg sm:text-xl font-black tracking-[0.2em] text-white leading-none font-sans">
             LONGVIEW

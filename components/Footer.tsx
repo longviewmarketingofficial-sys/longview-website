@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import LongViewLogo from '@/components/LongViewLogo';
 
 export default function Footer() {
   return (
@@ -10,15 +11,7 @@ export default function Footer() {
         <div className="md:w-1/2 space-y-4">
           <Link href="/" className="inline-flex items-center gap-3 group">
             <div className="w-9 h-9 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center p-1.5 shadow-md group-hover:border-amber-500/40 transition-all">
-              <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Sunset Semi-Circle */}
-                <path d="M26 42 A 24 24 0 0 1 74 42 Z" fill="#FF5722" className="drop-shadow-[0_0_8px_rgba(255,87,34,0.8)]" />
-                {/* White Angular Arch */}
-                <line x1="14" y1="44" x2="86" y2="44" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
-                <line x1="48" y1="46" x2="24" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-                <line x1="52" y1="46" x2="76" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
-                <line x1="32" y1="67" x2="68" y2="67" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
-              </svg>
+              <LongViewLogo className="w-full h-full" glow />
             </div>
             <span className="text-sm font-black text-white tracking-wider group-hover:text-amber-400 transition-colors">
               LONG VIEW DIGITAL MARKETING
