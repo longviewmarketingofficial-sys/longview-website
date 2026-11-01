@@ -86,10 +86,11 @@ export default function HardwarePage() {
                 <div className="col-span-5 flex items-center justify-center">
                   <div className="w-20 h-20 rounded-full bg-[#0E1726] border border-white/20 flex flex-col items-center justify-center p-1.5 text-center shadow-lg group-hover:border-amber-500/50 transition">
                     <svg className="w-7 h-7 mb-0.5" viewBox="0 0 100 100" fill="none">
-                      <path d="M26 44 A 24 24 0 0 1 74 44 Z" fill="#FF5722" />
-                      <rect x="14" y="44" width="72" height="6" rx="3" fill="#FFFFFF" />
-                      <line x1="48" y1="50" x2="25" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
-                      <line x1="52" y1="50" x2="75" y2="78" stroke="#FFFFFF" strokeWidth="6.5" strokeLinecap="round" />
+                      <path d="M26 42 A 24 24 0 0 1 74 42 Z" fill="#FF5722" />
+                      <line x1="14" y1="44" x2="86" y2="44" stroke="#FFFFFF" strokeWidth="5" strokeLinecap="round" />
+                      <line x1="48" y1="46" x2="24" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
+                      <line x1="52" y1="46" x2="76" y2="82" stroke="#FFFFFF" strokeWidth="6" strokeLinecap="round" />
+                      <line x1="32" y1="67" x2="68" y2="67" stroke="#FFFFFF" strokeWidth="3" strokeLinecap="round" />
                     </svg>
                     <span className="text-[8px] font-black tracking-widest text-white leading-tight font-sans">LONGVIEW</span>
                     <span className="text-[5.5px] font-mono tracking-widest text-amber-400">DIGITAL MARKETING</span>
