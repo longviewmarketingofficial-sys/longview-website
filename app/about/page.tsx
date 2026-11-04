@@ -63,30 +63,18 @@ const FOUNDERS: Founder[] = [
 export default function AboutPage() {
   return (
     <div className="relative z-10 py-16 sm:py-24 px-6 sm:px-10 lg:px-14 w-full luxury-bg min-h-screen">
-      <div className="w-full max-w-7xl mx-auto space-y-24 sm:space-y-32">
+      <div className="w-full max-w-7xl mx-auto space-y-14 sm:space-y-20">
         
         {/* ========================================================== */}
         {/* 1. HERO HEADER                                             */}
         {/* ========================================================== */}
-        <section className="max-w-4xl pt-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-[11px] font-bold tracking-widest uppercase mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse" />
-            // ABOUT LONGVIEW
-          </div>
-          
-          <h1 className="font-bebas text-6xl sm:text-7xl md:text-8xl text-white tracking-tight leading-none mb-6">
-            BUILDING BRANDS.{' '}
-            <span className="font-serif italic font-normal text-gold-gradient block sm:inline">
-              CREATING CONNECTIONS.
-            </span>{' '}
-            <span className="text-orange-gradient block">
-              DRIVING GROWTH.
-            </span>
+        <section className="pt-2">
+          <span className="font-mono text-xs text-amber-400 uppercase tracking-widest block mb-1.5">
+            // LONGVIEW
+          </span>
+          <h1 className="font-bebas text-4xl sm:text-5xl text-white tracking-wide">
+            ABOUT <span className="font-serif italic font-normal text-gold-gradient">US</span>
           </h1>
-
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-3xl">
-            At Longview, we believe every business deserves the opportunity to grow, compete, and establish a commanding presence in the digital world.
-          </p>
         </section>
 
         {/* ========================================================== */}
@@ -108,10 +96,13 @@ export default function AboutPage() {
               </h2>
 
               <div className="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed font-normal">
+                <p className="text-white font-medium text-base">
+                  At Longview, we believe every business deserves the opportunity to grow, compete, and establish a strong presence in the digital world.
+                </p>
                 <p>
                   We started Longview with a simple observation: many businesses have exceptional products and services, but struggle to reach the right audience because they lack a strong digital presence, effective marketing strategies, and the right brand positioning.
                 </p>
-                <p className="text-white font-medium">
+                <p className="text-amber-400 font-medium">
                   We saw an opportunity to bridge that gap.
                 </p>
                 <p>
@@ -461,3 +452,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
