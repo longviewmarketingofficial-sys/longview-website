@@ -23,6 +23,14 @@ const EXCLUDED_ROUTES = new Set([
 /**
  * Automatically discovers all indexable page routes in the app directory.
  * Updates dynamically whenever pages are added or removed.
+ *
+ * NOTE ON LASTMOD:
+ * In serverless deployment environments (such as Vercel, Netlify, AWS Lambda),
+ * file system timestamps (fs.statSync().mtime) reflect the container/zip extraction
+ * epoch (e.g. October 2018) rather than actual author edit dates.
+ * Per Google Search Central guidelines, unless an accurate content modification
+ * date can be definitively guaranteed, `lastmod` is omitted to prevent publishing
+ * incorrect historical dates to search engine crawlers.
  */
 function getAppRoutes(): MetadataRoute.Sitemap {
   const appDir = path.join(process.cwd(), 'app');
@@ -49,20 +57,11 @@ function getAppRoutes(): MetadataRoute.Sitemap {
             continue;
           }
 
-          const fullFilePath = path.join(dir, entry.name);
-          let lastModified = new Date();
-          try {
-            const stats = fs.statSync(fullFilePath);
-            lastModified = stats.mtime;
-          } catch {
-            // fallback to current date
-          }
-
           const config = ROUTE_CONFIG[route] || { priority: 0.7, changeFrequency: 'monthly' };
 
+          // Deliberately omitting lastModified to prevent inaccurate serverless zip timestamps (2018-10-20)
           sitemapEntries.push({
             url: `${BASE_URL}${route || '/'}`,
-            lastModified,
             changeFrequency: config.changeFrequency,
             priority: config.priority,
           });
@@ -81,37 +80,31 @@ function getAppRoutes(): MetadataRoute.Sitemap {
     return [
       {
         url: `${BASE_URL}/`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 1.0,
       },
       {
         url: `${BASE_URL}/investments`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.9,
       },
       {
         url: `${BASE_URL}/hardware`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.9,
       },
       {
         url: `${BASE_URL}/clients`,
-        lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
       },
       {
         url: `${BASE_URL}/approach`,
-        lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.8,
       },
       {
         url: `${BASE_URL}/about`,
-        lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.8,
       },
@@ -122,4 +115,3 @@ function getAppRoutes(): MetadataRoute.Sitemap {
 export default function sitemap(): MetadataRoute.Sitemap {
   return getAppRoutes();
 }
-
