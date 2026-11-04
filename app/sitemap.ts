@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import fs from 'fs';
 import path from 'path';
 
-const BASE_URL = 'https://longviewmarketing.agency';
+const BASE_URL = 'https://www.longviewmarketing.agency';
 
 // Custom SEO priorities and update frequencies for known canonical routes
 const ROUTE_CONFIG: Record<string, { priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }> = {
