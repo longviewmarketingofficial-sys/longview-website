@@ -5,6 +5,9 @@ import ProductionRhythm from '@/components/ProductionRhythm';
 export const metadata: Metadata = {
   title: "Engineering Approach & Timeline | Long View Digital Marketing",
   description: "A synchronized 3-pillar growth system for modern businesses: Discovery, Strategy Architecture, and a strict 16-asset monthly production rhythm.",
+  alternates: {
+    canonical: '/approach',
+  },
 };
 
 export default function ApproachPage() {

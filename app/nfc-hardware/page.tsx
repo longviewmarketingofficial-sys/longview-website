@@ -1,4 +1,5 @@
-import HardwarePage from "@/app/hardware/page";
+import { permanentRedirect } from 'next/navigation';
 
-export default HardwarePage;
-
+export default function NfcHardwarePage() {
+  permanentRedirect('/hardware');
+}

@@ -122,3 +122,4 @@ function getAppRoutes(): MetadataRoute.Sitemap {
 export default function sitemap(): MetadataRoute.Sitemap {
   return getAppRoutes();
 }
+
