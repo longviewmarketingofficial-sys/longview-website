@@ -51,7 +51,7 @@ const FOUNDERS: Founder[] = [
     name: 'Jay Thakkar',
     role: 'Co-Founder',
     designation: 'Chief Business Development Officer (CBDO)',
-    // Placeholder as requested, will be updated once image is provided
+    image: '/team/jay-thakkar.jpg',
     domains: [
       'Business Development',
       'Client Acquisition',
