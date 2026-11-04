@@ -133,7 +133,7 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
         {/* 3. META CARD (BOTTOM LEFT): SCALED UP FOR BALANCE        */}
         {/* ======================================================== */}
         <div
-          className="absolute -bottom-10 -left-6 sm:-left-10 lg:-left-16 z-30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[285px] sm:w-[325px]"
+          className="absolute -bottom-8 -left-4 sm:-left-10 lg:-left-16 z-30 rounded-2xl p-5 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[270px] sm:w-[325px]"
           style={frostedGlassStyle}
         >
           {/* Header: Clean Meta Icon + single bold white Meta text + aligned ROI badge */}
@@ -246,7 +246,7 @@ export default function HeroInteractiveCollage({ onCardClick }: HeroInteractiveC
         {/* 4. GOOGLE ADS CARD (TALL RIGHT PANEL): SCALED UP         */}
         {/* ======================================================== */}
         <div
-          className="absolute -top-2 -right-4 sm:-right-8 lg:-right-12 xl:-right-14 z-30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[260px] sm:w-[295px]"
+          className="absolute -top-2 -right-4 sm:-right-8 lg:-right-12 xl:-right-14 z-30 rounded-2xl p-5 sm:p-7 shadow-2xl transition-transform duration-300 hover:scale-105 pointer-events-auto w-[250px] sm:w-[295px]"
           style={frostedGlassStyle}
         >
           {/* Header: Enlarge Google Ads logo to w-7 h-7 + text-base Google Ads */}
