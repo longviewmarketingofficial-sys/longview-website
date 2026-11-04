@@ -24,11 +24,11 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'HOME', href: '/' },
-    { label: 'ABOUT', href: '/about' },
     { label: 'APPROACH', href: '/approach' },
     { label: 'NFC HARDWARE', href: '/hardware' },
-    { label: 'CLIENTS', href: '/clients' },
     { label: 'INVESTMENTS', href: '/investments' },
+    { label: 'CLIENTS', href: '/clients' },
+    { label: 'ABOUT US', href: '/about' },
   ];
 
   const isActive = (href: string) => {

@@ -34,11 +34,11 @@ export default function Footer() {
           <span className="text-xs uppercase tracking-widest text-amber-400 block mb-2">// DIRECTORY</span>
           <div className="flex flex-col space-y-2">
             <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
-            <Link href="/about" className="hover:text-amber-400 transition-colors">About Us</Link>
             <Link href="/approach" className="hover:text-amber-400 transition-colors">Engineering Approach</Link>
             <Link href="/hardware" className="hover:text-amber-400 transition-colors">NFC Hardware & Review Stands</Link>
-            <Link href="/clients" className="hover:text-amber-400 transition-colors">Verified Clients</Link>
             <Link href="/investments" className="hover:text-amber-400 transition-colors">Retainer Investments & Pricing</Link>
+            <Link href="/clients" className="hover:text-amber-400 transition-colors">Verified Clients</Link>
+            <Link href="/about" className="hover:text-amber-400 transition-colors">About Us</Link>
           </div>
         </div>
 
