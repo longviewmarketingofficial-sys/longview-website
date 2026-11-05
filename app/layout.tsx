@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Plus_Jakarta_Sans, JetBrains_Mono, Bebas_Neue } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
@@ -66,6 +67,21 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.variable} ${jetbrainsMono.variable} ${bebasNeue.variable} bg-obsidian text-slate-100 font-sans selection:bg-vermilion selection:text-white antialiased relative overflow-x-hidden min-h-screen bg-architectural-grid`}
       >
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-BYBHF8CWEN"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BYBHF8CWEN');
+          `}
+        </Script>
         <CursorSpotlight />
         <Navbar />
         <main className="min-h-screen flex flex-col">
