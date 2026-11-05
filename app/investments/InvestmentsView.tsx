@@ -65,7 +65,7 @@ export default function InvestmentsPage() {
                 </p>
                 
                 <div className="mb-6 pb-6 border-b border-white/10 font-mono">
-                  <span className="text-4xl font-black text-white">₹20,000</span>
+                  <span className="text-4xl font-black text-white">₹37,000</span>
                   <span className="text-xs text-slate-400"> / month</span>
                 </div>
 
@@ -93,7 +93,7 @@ export default function InvestmentsPage() {
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B937,000/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3.5 text-center editorial-glass-card hover:bg-white/10 hover:border-amber-500/40 text-white font-mono font-bold rounded-xl text-xs uppercase tracking-wider transition-all duration-200"
@@ -130,11 +130,11 @@ export default function InvestmentsPage() {
                 </p>
 
                 <div className="inline-block px-3 py-1 mb-4 rounded-full bg-amber-500/15 border border-amber-500/30 text-[11px] font-mono font-bold text-amber-400">
-                  Save ₹2,500 a month compared with the 3-month plan
+                  Save ₹2,000 a month compared with the 3-month plan
                 </div>
                 
                 <div className="mb-6 pb-6 border-b border-white/10 font-mono">
-                  <span className="text-5xl font-black text-orange-gradient">₹17,500</span>
+                  <span className="text-5xl font-black text-orange-gradient">₹35,000</span>
                   <span className="text-xs text-slate-400"> / month</span>
                 </div>
 
@@ -162,7 +162,7 @@ export default function InvestmentsPage() {
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B917,500/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B935,000/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 text-center rounded-xl bg-gradient-to-r from-[#FF5722] to-[#FF441A] text-white font-mono font-bold text-xs uppercase tracking-wider shadow-[0_0_30px_rgba(255,87,34,0.4)] hover:shadow-[0_0_45px_rgba(255,87,34,0.6)] hover:scale-[1.02] transition-all"
@@ -187,11 +187,11 @@ export default function InvestmentsPage() {
                 </p>
 
                 <div className="inline-block px-3 py-1 mb-4 rounded-full bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono font-bold text-amber-400">
-                  Locked for 1 year, or pay ₹1,74,000 upfront
+                  Locked for 1 year, or pay ₹3,30,000 upfront
                 </div>
                 
                 <div className="mb-6 pb-6 border-b border-white/10 font-mono">
-                  <span className="text-4xl font-black text-white">₹15,500</span>
+                  <span className="text-4xl font-black text-white">₹30,000</span>
                   <span className="text-xs text-slate-400"> / month</span>
                 </div>
 
@@ -225,7 +225,7 @@ export default function InvestmentsPage() {
 
               <MagneticButton strength={0.25} className="w-full mt-8">
                 <a
-                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B915,500/mo)"
+                  href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B930,000/mo)"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-3.5 text-center editorial-glass-card hover:bg-white/10 hover:border-amber-500/40 text-white font-mono font-bold rounded-xl text-xs uppercase tracking-wider transition-all duration-200"

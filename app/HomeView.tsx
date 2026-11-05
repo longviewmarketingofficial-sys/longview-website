@@ -76,7 +76,7 @@ export default function HomePage() {
               <div className="mt-4 flex flex-wrap items-center gap-3">
                 <MagneticButton strength={0.25} className="w-full sm:w-auto">
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B937,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-full px-5 sm:px-6 py-2.5 bg-gradient-to-r from-[#FF5722] via-[#FF441A] to-[#E63900] hover:from-[#FF6A3D] hover:to-[#FF5722] text-white font-mono text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,68,26,0.5)] transition-all hover:scale-[1.02] w-full sm:w-auto"
@@ -365,7 +365,7 @@ export default function HomePage() {
                   </p>
                   
                   <div className="mb-6 pb-6 border-b grid-border font-mono">
-                    <span className="text-4xl font-black text-bone">₹20,000</span>
+                    <span className="text-4xl font-black text-bone">₹37,000</span>
                     <span className="text-xs text-slate-500"> / month</span>
                   </div>
 
@@ -393,7 +393,7 @@ export default function HomePage() {
 
                 <MagneticButton strength={0.25} className="w-full mt-8">
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B920,000/mo)"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B937,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
@@ -421,11 +421,11 @@ export default function HomePage() {
                   </p>
 
                   <div className="inline-block px-2.5 py-1 mb-4 rounded bg-vermilion/10 border border-vermilion/30 text-[11px] font-mono font-bold text-vermilion">
-                    Save ₹2,500 a month compared with the 3-month plan
+                    Save ₹2,000 a month compared with the 3-month plan
                   </div>
                   
                   <div className="mb-6 pb-6 border-b grid-border font-mono">
-                    <span className="text-5xl font-black text-vermilion">₹17,500</span>
+                    <span className="text-5xl font-black text-vermilion">₹35,000</span>
                     <span className="text-xs text-slate-500"> / month</span>
                   </div>
 
@@ -453,7 +453,7 @@ export default function HomePage() {
 
                 <MagneticButton strength={0.25} className="w-full mt-8">
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B917,500/mo)"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%206-Month%20Contract%20Plan%20(%E2%82%B935,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-4 text-center btn-vermilion text-white font-mono font-extrabold rounded-sm text-xs uppercase tracking-wider shadow-lg transition"
@@ -477,11 +477,11 @@ export default function HomePage() {
                   </p>
 
                   <div className="inline-block px-2.5 py-1 mb-4 rounded bg-amber-500/10 border border-amber-500/30 text-[11px] font-mono font-bold text-amber-400">
-                    Locked for 1 year, or pay ₹1,74,000 upfront
+                    Locked for 1 year, or pay ₹3,30,000 upfront
                   </div>
                   
                   <div className="mb-6 pb-6 border-b grid-border font-mono">
-                    <span className="text-4xl font-black text-bone">₹15,500</span>
+                    <span className="text-4xl font-black text-bone">₹30,000</span>
                     <span className="text-xs text-slate-500"> / month</span>
                   </div>
 
@@ -515,7 +515,7 @@ export default function HomePage() {
 
                 <MagneticButton strength={0.25} className="w-full mt-8">
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B915,500/mo)"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%2012-Month%20Contract%20Plan%20(%E2%82%B930,000/mo)"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full py-3.5 text-center bg-white/5 hover:bg-white/15 border grid-border text-bone font-mono font-bold rounded-sm text-xs uppercase tracking-wider transition"
