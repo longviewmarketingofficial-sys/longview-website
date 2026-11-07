@@ -22,14 +22,14 @@ export default function HomePage() {
       {/* ========================================================== */}
       <section className="w-full relative min-h-screen lg:h-screen lg:max-h-screen overflow-x-hidden lg:overflow-hidden flex flex-col justify-between pt-20 pb-4 lg:pt-16 lg:pb-2 px-5 sm:px-8 lg:px-14 border-b border-white/[0.08] hero-backdrop-bg">
         
-        <div className="w-full max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2 lg:py-1">
+        <div className="w-full max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2 lg:py-1 max-w-full min-w-0">
           
           {/* LEFT COLUMN: CRISP ARCHITECTURAL & MONUMENTAL TYPOGRAPHY (LEFT 50%) */}
-          <div className="lg:col-span-6 flex flex-col justify-center space-y-3.5 py-1">
-            <div>
+          <div className="lg:col-span-6 flex flex-col justify-center space-y-3.5 py-1 min-w-0 w-full max-w-full">
+            <div className="w-full min-w-0 max-w-full">
               {/* Monospaced Super-heading */}
               <span className="font-mono text-[10px] sm:text-[11px] text-[#F59E0B] uppercase tracking-[0.25em] block mb-2 drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]">
-                // FULL-SERVICE DIGITAL GROWTH STUDIO
+                {'//'} DIGITAL MARKETING &amp; GROWTH AGENCY
               </span>
 
               {/* Stacked Monumental Headline with 3 Distinct Typographic Styles - Scaled ~10% */}
@@ -67,21 +67,49 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              {/* Neutral readable white/slate description - compact text-sm */}
-              <p className="mt-2.5 text-sm leading-relaxed max-w-md text-slate-300 font-normal select-text">
-                Local business marketing without the agency fluff. High-retention Instagram Reels, hyper-local Meta Ads, and automated 5-star Google Review hardware.
+              {/* Supporting Headline (H2) */}
+              <h2 className="mt-3 text-base sm:text-lg lg:text-xl font-serif italic text-amber-200/90 tracking-wide select-text drop-shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+                Your brand deserves more than just visibility.
+              </h2>
+
+              {/* Approved Description */}
+              <p className="mt-2.5 text-xs sm:text-sm leading-relaxed max-w-xl text-slate-300 font-normal select-text">
+                From strategic social media and compelling content to performance-driven Meta Ads, we help businesses build meaningful connections, strengthen their digital presence and turn attention into opportunities.
               </p>
+
+              {/* Core Services Pills + Supporting Service */}
+              <div className="mt-3 flex flex-wrap items-center gap-1.5 w-full min-w-0">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-[10px] sm:text-[11px] tracking-wide select-text">
+                    Social Media Management
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-[10px] sm:text-[11px] tracking-wide select-text">
+                    Content Creation
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-[10px] sm:text-[11px] tracking-wide select-text">
+                    Meta Ads
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-[10px] sm:text-[11px] tracking-wide select-text">
+                    NFC Review Solutions
+                  </span>
+                </div>
+                <span className="w-full sm:w-auto px-1 sm:px-2 py-0.5 text-slate-400 font-mono text-[10px] sm:text-[10.5px] tracking-wide select-text">
+                  + Website Design &amp; Development
+                </span>
+              </div>
 
               {/* Action Buttons: 2 Pill-shaped CTAs with compact padding */}
               <div className="mt-4 flex flex-wrap items-center gap-3">
                 <MagneticButton strength={0.25} className="w-full sm:w-auto">
                   <a
-                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'm%20interested%20in%20the%203-Month%20Contract%20Plan%20(%E2%82%B937,000/mo)"
+                    href="https://wa.me/919879583117?text=Hi%20Long%20View,%20I'd%20like%20to%20discuss%20growing%20my%20business"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-full px-5 sm:px-6 py-2.5 bg-gradient-to-r from-[#FF5722] via-[#FF441A] to-[#E63900] hover:from-[#FF6A3D] hover:to-[#FF5722] text-white font-mono text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,68,26,0.5)] transition-all hover:scale-[1.02] w-full sm:w-auto"
                   >
-                    <span>START 3-MONTH SPRINT</span>
+                    <span>LET&apos;S TALK</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
                 </MagneticButton>
@@ -91,7 +119,7 @@ export default function HomePage() {
                     href="/approach"
                     className="rounded-full px-5 sm:px-6 py-2.5 bg-white/[0.06] hover:bg-white/[0.14] border border-white/20 hover:border-white/40 backdrop-blur-md text-white font-mono text-xs font-semibold uppercase tracking-wider transition-all block text-center w-full sm:w-auto"
                   >
-                    VIEW METHODOLOGY →
+                    EXPLORE OUR APPROACH
                   </Link>
                 </MagneticButton>
               </div>
@@ -100,20 +128,20 @@ export default function HomePage() {
             {/* Bottom Features: Gold-bordered Worldwide Capsule & 16 Pieces/Mo Flag */}
             <div className="pt-3 mt-3 border-t border-white/[0.08] flex flex-wrap items-center justify-between gap-2.5">
               {/* Bottom Left Capsule */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-[10px] font-mono tracking-wider text-slate-300 shadow-sm select-text max-w-full">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-500/40 bg-black/40 backdrop-blur-md text-[10px] sm:text-[11px] font-mono tracking-wider text-slate-300 shadow-sm select-text max-w-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_#F59E0B] animate-pulse shrink-0"></span>
-                <span className="truncate">SERVING AMBITIOUS BUSINESSES WORLDWIDE</span>
+                <span className="truncate">Based in Ahmedabad. Working with businesses across India and beyond.</span>
               </div>
 
               {/* Bottom Right Flag */}
               <div className="inline-flex items-center px-2.5 py-0.5 rounded-sm border border-amber-500/30 bg-amber-500/10 text-amber-400 font-mono text-[10px] font-bold tracking-widest select-text shrink-0">
-                // 16 PIECES/MO
+                {'//'} DIGITAL GROWTH
               </div>
             </div>
           </div>
 
           {/* RIGHT COLUMN: 3D INTERACTIVE UI COLLAGE ON VOLUMETRIC VORTEX CANVAS (SCALED ~10%) */}
-          <div className="lg:col-span-6 relative flex items-center justify-center transform scale-[0.72] sm:scale-[0.85] lg:scale-[0.92] origin-center my-6 lg:my-0 py-4 lg:py-0">
+          <div className="lg:col-span-6 relative flex items-center justify-center transform scale-[0.72] sm:scale-[0.85] lg:scale-[0.92] origin-center my-6 lg:my-0 py-4 lg:py-0 max-w-full overflow-hidden lg:overflow-visible">
             <HeroInteractiveCollage onCardClick={() => setIsNfcModalOpen(true)} />
           </div>
 
