@@ -24,6 +24,18 @@ const FAQS: FaqItem[] = [
   {
     question: "How fast does onboarding take?",
     answer: "Once you confirm your plan via WhatsApp, we collect your business assets within 48 hours. By Day 7, your Week 1 content calendar is delivered for approval and your custom NFC hardware enters production."
+  },
+  {
+    question: "Can you work with businesses outside Ahmedabad or internationally?",
+    answer: "Yes. While Long View is based in Ahmedabad, our entire creative workflow, digital strategy, Meta Ads management and website development are built for seamless remote delivery. We work with ambitious businesses across India and internationally. Clients can share raw content footage through our guided monthly shot lists, and local production partners can be coordinated when on-location photography or video shoots are required."
+  },
+  {
+    question: "Do you only work with restaurants and food brands?",
+    answer: "No. While we have proven success in food and hospitality, our marketing systems, high-retention content frameworks, Meta Ads and Google Review solutions are designed for retail businesses, professional services, healthcare clinics, lifestyle brands and growing enterprises across diverse sectors."
+  },
+  {
+    question: "Is website design and development included in your packages?",
+    answer: "Yes. Website design and development is included in all three Long View marketing packages (3-month, 6-month and 12-month). We design and build modern, mobile-responsive business websites to support your digital growth. The client only pays directly for their own domain registration and hosting (approximately ₹1,500/year)."
   }
 ];
 

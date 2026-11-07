@@ -6,8 +6,8 @@ interface MarqueeTickerProps {
 }
 
 const PHRASES = [
-  "HYPER-LOCAL META ADS",
-  "CUSTOM NFC REVIEW HARDWARE",
+  "PERFORMANCE-DRIVEN META ADS",
+  "CUSTOM GOOGLE REVIEW CARDS",
   "SCALING AMBITIOUS BUSINESSES",
 ];
 
@@ -37,7 +37,7 @@ export default function MarqueeTicker({ className = '' }: MarqueeTickerProps) {
         }
       `}</style>
       <div className="marquee-track flex items-center">
-        {/* Set 1: Begins cleanly with ★ HYPER-LOCAL META ADS */}
+        {/* Set 1: Begins cleanly with ★ PERFORMANCE-DRIVEN META ADS */}
         <div className="flex shrink-0 items-center">
           {items.map((item, idx) => (
             <div key={`m1-${idx}`} className="flex items-center">

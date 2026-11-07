@@ -24,9 +24,9 @@ export default function Navbar() {
 
   const navLinks = [
     { label: 'HOME', href: '/' },
-    { label: 'APPROACH', href: '/approach' },
-    { label: 'NFC HARDWARE', href: '/hardware' },
-    { label: 'INVESTMENTS', href: '/investments' },
+    { label: 'OUR APPROACH', href: '/approach' },
+    { label: 'GOOGLE REVIEW CARDS', href: '/hardware' },
+    { label: 'PRICING', href: '/investments' },
     { label: 'CLIENTS', href: '/clients' },
     { label: 'ABOUT US', href: '/about' },
   ];
@@ -57,7 +57,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center Navigation: Micro-sized, widely spaced typography */}
-        <nav className="hidden lg:flex items-center gap-7 text-[11px] font-sans font-medium tracking-[0.22em] text-slate-400">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-[10.5px] xl:text-[11px] font-sans font-medium tracking-[0.16em] xl:tracking-[0.22em] text-slate-400">
           {navLinks.map((link) => {
             const active = isActive(link.href);
             return (

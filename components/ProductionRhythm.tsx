@@ -14,46 +14,46 @@ interface WeekData {
 
 const WEEKS: Record<number, WeekData> = {
   1: {
-    title: "WEEK 1 // SIGNATURE OFFERINGS & HERO HOOKS",
+    title: "WEEK 1 // HERO OFFERINGS & VALUE HOOKS",
     badge: "04 DELIVERABLES",
-    desc: "We focus on what you are famous for. Hero Reels showcasing signature dishes or flagship services, with macro framing designed to stop local thumbs from scrolling.",
+    desc: "We spotlight your flagship products, services and core value propositions with compelling visual hooks designed to capture attention across digital feeds.",
     items: [
-      "2x Cinematic Reels on bestseller items",
-      "1x Menu/Feature breakdown carousel",
+      "2x High-retention product or service Reels",
+      "1x Feature or offering breakdown carousel",
       "1x Direct-offer single static graphic"
     ],
     icon: Film
   },
   2: {
-    title: "WEEK 2 // CRAFT, KITCHEN & BACKSTORY",
+    title: "WEEK 2 // CRAFT, PROCESS & BRAND STORY",
     badge: "04 DELIVERABLES",
-    desc: "Customers buy from businesses they trust. We highlight hygiene, preparation craft, behind-the-counter dedication, and founder story clips that humanize your brand.",
+    desc: "Customers connect with businesses they trust. We showcase behind-the-scenes processes, team expertise, quality standards and founder stories that humanise your brand.",
     items: [
-      "1x Behind-the-scenes preparation reel",
-      "1x Team & hygiene highlight carousel",
-      "2x High-resolution product showcase posts"
+      "1x Behind-the-scenes process Reel",
+      "1x Team expertise & standards carousel",
+      "2x High-resolution product or service showcase posts"
     ],
     icon: Sparkles
   },
   3: {
-    title: "WEEK 3 // HIGH-INTENT COMBOS & FOOTFALLS",
+    title: "WEEK 3 // HIGH-INTENT CONVERSIONS & OFFERS",
     badge: "04 DELIVERABLES",
-    desc: "Designed to drive immediate action and fill slow mid-week periods with lunch combos, seasonal promotions, or early festival bookings.",
+    desc: "Designed to encourage direct customer response through promotions, seasonal campaigns, lead-generating hooks and WhatsApp enquiries.",
     items: [
-      "1x Fast-cut promotional reel",
-      "2x Multi-slide value combo carousels",
-      "1x WhatsApp direct-order flyer post"
+      "1x Fast-cut promotional Reel",
+      "2x Multi-slide value proposition carousels",
+      "1x Direct-inquiry WhatsApp flyer post"
     ],
     icon: TrendingUp
   },
   4: {
-    title: "WEEK 4 // AMBIENT VIBE & SOCIAL PROOF",
+    title: "WEEK 4 // SOCIAL PROOF & COMMUNITY AUTHORITY",
     badge: "04 DELIVERABLES",
-    desc: "We spotlight buzzing dining rooms, happy guest moments, and review quotes to cement your location as the top weekend destination.",
+    desc: "We highlight genuine customer testimonials, real customer experiences and review milestones to strengthen your brand's credibility.",
     items: [
-      "2x Ambient weekend energy reels",
+      "2x Customer spotlight & brand energy Reels",
       "1x Customer praise review carousel",
-      "1x Weekend schedule/reservation reminder"
+      "1x Value reminder or schedule graphic"
     ],
     icon: Calendar
   }
@@ -73,8 +73,8 @@ export default function ProductionRhythm() {
           const labels = [
             '01 // WEEK 1: HERO HOOKS',
             '02 // WEEK 2: CRAFT & STORY',
-            '03 // WEEK 3: COMBOS & FOOTFALL',
-            '04 // WEEK 4: AMBIENT VIBE'
+            '03 // WEEK 3: CONVERSIONS & OFFERS',
+            '04 // WEEK 4: SOCIAL PROOF'
           ];
           return (
             <button

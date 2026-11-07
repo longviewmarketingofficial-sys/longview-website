@@ -165,16 +165,16 @@ export default function HomePage() {
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">01 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">01 {'//'} 03</span>
                 </div>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
-                  01 // DISCOVERY
+                  01 {'//'} DISCOVERY
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
                   METADATA — 01 AUDIT
                 </div>
                 <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                  Understand customers, advertising gaps, and business unit economics to build a high-retention organic content roadmap.
+                  We analyse your target audience, market positioning and conversion funnel to build a content and advertising roadmap tailored to your growth goals.
                 </p>
               </div>
             </div>
@@ -186,16 +186,16 @@ export default function HomePage() {
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">02 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">02 {'//'} 03</span>
                 </div>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
-                  02 // ARCHITECTURE
+                  02 {'//'} ARCHITECTURE
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
                   METADATA — 02 STRATEGY
                 </div>
                 <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                  Custom-designed with 16 scheduled assets, geo-fenced Meta ad funnels, and counter NFC review hardware.
+                  Strategic campaign design combining monthly creative assets, targeted Meta Ad funnels and modern review capture solutions.
                 </p>
               </div>
             </div>
@@ -207,21 +207,32 @@ export default function HomePage() {
               <div>
                 <div className="flex justify-between items-start mb-2.5 font-mono text-xs">
                   <span className="text-slate-400 uppercase tracking-wider text-[10px]">LONG VIEW<br />DIGITAL MARKETING</span>
-                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">03 // 03</span>
+                  <span className="text-amber-400 font-bold tracking-widest text-[11px]">03 {'//'} 03</span>
                 </div>
                 <h3 className="font-bebas text-3xl sm:text-4xl text-white mb-1 tracking-wide group-hover:text-amber-400 transition-colors">
-                  03 // EXECUTION
+                  03 {'//'} EXECUTION
                 </h3>
                 <div className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-2.5">
                   METADATA — 03 SUCCESS
                 </div>
                 <p className="text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
-                  Execution of sustainable foot traffic, weekend walk-in surges, and verified 5-star Google review velocity for your business.
+                  Consistent execution focused on high-intent enquiries, customer acquisition, measurable brand authority and sustainable business growth.
                 </p>
               </div>
             </div>
           </TiltCard>
 
+        </div>
+
+        {/* Contextual Link to /approach */}
+        <div className="w-full py-3.5 px-6 sm:px-10 lg:px-14 border-t border-white/10 flex items-center justify-center bg-black/20 text-center">
+          <Link
+            href="/approach"
+            className="inline-flex items-center gap-1.5 font-mono text-xs text-slate-300 hover:text-amber-400 transition-colors uppercase tracking-wider group"
+          >
+            <span>Explore our three-pillar methodology</span>
+            <ArrowUpRight className="w-3.5 h-3.5 text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </Link>
         </div>
       </section>
 
@@ -232,7 +243,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">
-              // PRODUCTION TIMELINE
+              {'//'} PRODUCTION TIMELINE
             </span>
             <h2 className="font-bebas text-4xl sm:text-6xl text-bone tracking-wide">
               HOW EVERY SINGLE MONTH OPERATES
@@ -247,31 +258,31 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================== */}
-      {/* 4. NFC HARDWARE ADVANTAGE                                  */}
+      {/* 4. GOOGLE REVIEW CARDS / HARDWARE                          */}
       {/* ========================================================== */}
       <section id="hardware" className="w-full border-b grid-border py-20 sm:py-28 px-6 sm:px-10 lg:px-14">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           <div className="lg:col-span-7 space-y-6">
             <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block">
-              // HARDWARE ADVANTAGE
+              {'//'} GOOGLE REVIEW CARDS
             </span>
             <h2 className="font-bebas text-4xl sm:text-6xl text-bone leading-tight">
-              CUSTOM NFC SMART CARDS. <br />
-              <span className="text-vermilion">PERMANENTLY AT YOUR BILLING COUNTER.</span>
+              CUSTOM GOOGLE REVIEW CARDS. <br />
+              <span className="text-vermilion">DESIGNED FOR EVERY CUSTOMER TOUCHPOINT.</span>
             </h2>
 
             <p className="text-slate-400 text-sm sm:text-base leading-relaxed font-normal">
-              Most businesses print QR codes on paper bills that end up crumpled in the trash. We manufacture high-grade matte smart cards customized with your branding that sit permanently at your checkout.
+              Most businesses print QR codes on paper receipts or flyers that get discarded. We provide premium, custom-branded NFC cards that make it effortless for genuine customers to access your Google review link—at checkout counters, reception desks, consultation desks, retail stores and key customer interaction points.
             </p>
 
             {/* 4-Step Checklist */}
             <div className="space-y-3 pt-2 font-mono text-xs">
               {[
-                { step: '01', text: 'Customer completes payment or counter dining experience.' },
-                { step: '02', text: 'Staff invites them: "Simply tap your phone here to leave your review!"' },
+                { step: '01', text: 'Customer completes their purchase, appointment or service experience.' },
+                { step: '02', text: 'Staff invites them: "Simply tap your smartphone here to leave us feedback!"' },
                 { step: '03', text: 'Customer taps phone — no typing, search bar, or app download needed.' },
-                { step: '04', text: 'Your Google Maps 5-star review modal launches instantaneously.' },
+                { step: '04', text: 'Your official Google Maps review prompt launches instantaneously.' },
               ].map((item) => (
                 <div key={item.step} className="flex items-start gap-3.5 p-3.5 rounded bg-obsidianSurface border grid-border">
                   <span className="w-6 h-6 rounded bg-vermilion/20 text-vermilion font-bold flex items-center justify-center shrink-0 mt-0.5">
@@ -281,13 +292,23 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
+
+            <div className="pt-2">
+              <Link
+                href="/hardware"
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-amber-400 hover:text-white transition-colors uppercase tracking-wider group"
+              >
+                <span>Explore Google Review Card specifications</span>
+                <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </Link>
+            </div>
           </div>
 
           {/* Right: Simulator Callout */}
           <div className="lg:col-span-5 flex flex-col items-center text-center">
             <div className="p-8 rounded-xl bg-obsidianSurface border grid-border w-full max-w-sm space-y-5">
               <span className="text-amber-400 font-mono text-xs font-bold block uppercase tracking-widest">
-                // LIVE TEST
+                {'//'} LIVE TEST
               </span>
               <h4 className="font-bebas text-3xl text-bone">TEST THE 2-SECOND EXPERIENCE</h4>
               <p className="text-xs text-slate-400 font-normal leading-relaxed">
@@ -295,7 +316,7 @@ export default function HomePage() {
               </p>
               <button
                 onClick={() => setIsNfcModalOpen(true)}
-                className="btn-vermilion w-full py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider shadow-lg shadow-vermilion/25 flex items-center justify-center gap-2"
+                className="btn-vermilion w-full py-3.5 rounded-sm font-mono text-xs font-bold uppercase tracking-wider shadow-lg shadow-vermilion/25 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>SIMULATE PHONE TAP</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -314,17 +335,20 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10">
             <div>
               <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-1">
-                // PROVEN RESULTS
+                {'//'} PROVEN RESULTS
               </span>
               <h2 className="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">
                 AMBITIOUS BRANDS IN OUR MONTHLY RHYTHM
               </h2>
+              <p className="text-slate-400 text-sm mt-2 font-normal max-w-2xl">
+                From hospitality and consumer retail to professional practices and growing enterprises, we help ambitious brands strengthen their digital presence.
+              </p>
             </div>
             <Link
               href="/clients"
-              className="btn-bone px-5 py-2.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-1.5"
+              className="btn-bone px-5 py-2.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shrink-0"
             >
-              <span>VIEW ALL CLIENTS</span>
+              <span>VIEW ALL CLIENTS &amp; SECTORS</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -346,7 +370,7 @@ export default function HomePage() {
                   MAHARAJ K MOMOS
                 </h3>
                 <span className="text-[10px] font-mono font-bold text-vermilion bg-vermilion/10 border grid-border px-3 py-1 rounded uppercase tracking-wider self-center sm:self-auto">
-                  FOOD & DINING
+                  FOOD &amp; DINING
                 </span>
               </div>
               <p className="text-xs font-mono text-slate-400 mb-3 flex items-center justify-center sm:justify-start gap-1.5">
@@ -368,13 +392,13 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">
-              // PACKAGES
+              {'//'} PACKAGES
             </span>
             <h2 className="font-bebas text-4xl sm:text-6xl text-bone tracking-wide">
               CHOOSE THE LEVEL OF MARKETING YOUR BUSINESS NEEDS
             </h2>
             <p className="text-slate-400 text-sm mt-3 font-normal">
-              No hidden percentage cuts, secret markups, or lock-in traps. Every plan includes dedicated execution.
+              No hidden percentage cuts, secret markups, or lock-in traps. Every plan includes dedicated execution and complete website design and development.
             </p>
           </div>
 
@@ -385,7 +409,7 @@ export default function HomePage() {
               <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                    01 // SPRINT
+                    01 {'//'} SPRINT
                   </span>
                   <h3 className="font-bebas text-3xl text-bone mb-1">3-MONTH CONTRACT</h3>
                   <p className="text-slate-400 text-xs mb-6">
@@ -416,6 +440,12 @@ export default function HomePage() {
                         <strong>Reputation:</strong> 1 branded NFC Google Review Tap Card
                       </span>
                     </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Website Design &amp; Development</strong> — Included
+                      </span>
+                    </li>
                   </ul>
                 </div>
 
@@ -441,7 +471,7 @@ export default function HomePage() {
 
                 <div>
                   <span className="text-[11px] font-mono font-bold text-vermilion uppercase tracking-widest block mb-2">
-                    02 // GROWTH PARTNER
+                    02 {'//'} GROWTH PARTNER
                   </span>
                   <h3 className="font-bebas text-3xl text-bone mb-1">6-MONTH CONTRACT</h3>
                   <p className="text-slate-400 text-xs mb-3">
@@ -476,6 +506,12 @@ export default function HomePage() {
                         <strong>Reputation:</strong> 2 branded NFC Google Review Tap Cards
                       </span>
                     </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-vermilion shrink-0 mt-0.5" />
+                      <span>
+                        <strong>Website Design &amp; Development</strong> — Included
+                      </span>
+                    </li>
                   </ul>
                 </div>
 
@@ -497,7 +533,7 @@ export default function HomePage() {
               <div className="bg-obsidianSurface border grid-border p-8 rounded-xl flex flex-col justify-between h-full">
                 <div>
                   <span className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest block mb-2">
-                    03 // FULL DELEGATION
+                    03 {'//'} FULL DELEGATION
                   </span>
                   <h3 className="font-bebas text-3xl text-bone mb-1">12-MONTH CONTRACT</h3>
                   <p className="text-slate-400 text-xs mb-3">
@@ -535,6 +571,12 @@ export default function HomePage() {
                     <li className="flex items-start gap-2.5">
                       <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
                       <span>
+                        <strong>Website Design &amp; Development</strong> — Included
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="w-4 h-4 text-amber-400 shrink-0 mt-0.5 drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
+                      <span>
                         <strong>Support:</strong> priority WhatsApp support
                       </span>
                     </li>
@@ -558,8 +600,19 @@ export default function HomePage() {
 
           {/* Disclaimer / Ad Spend & Hosting Note */}
           <p className="text-center font-mono text-xs text-slate-500 max-w-4xl mx-auto leading-relaxed">
-            * Meta advertising spend is separate from our management fee. For the website, the client pays domain and hosting (about ₹1,500 a year).
+            * Meta advertising spend is separate from our management fee and paid directly to Meta. Website design and development is included in all three packages; the client pays domain registration and hosting (approximately ₹1,500 a year, subject to provider charges).
           </p>
+
+          {/* Contextual Link to /investments */}
+          <div className="text-center mt-6">
+            <Link
+              href="/investments"
+              className="font-mono text-xs text-amber-400 hover:text-white transition-colors inline-flex items-center gap-1.5 uppercase tracking-wider group"
+            >
+              <span>Compare full package details &amp; contract terms on our pricing page</span>
+              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -570,7 +623,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-2">
-              // TECHNICAL CLARITY
+              {'//'} TECHNICAL CLARITY
             </span>
             <h2 className="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">
               FREQUENTLY ADDRESSED QUESTIONS
