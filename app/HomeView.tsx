@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowUpRight, Wifi, Sparkles, Check, Phone, MapPin } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import NfcModal from '@/components/NfcModal';
 import ProductionRhythm from '@/components/ProductionRhythm';
 import FaqAccordion from '@/components/FaqAccordion';
@@ -327,66 +326,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========================================================== */}
-      {/* 5. FEATURED CLIENT SPOTLIGHT                               */}
-      {/* ========================================================== */}
-      <section className="w-full border-b grid-border py-20 px-6 sm:px-10 lg:px-14 bg-obsidianSurface/40">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10">
-            <div>
-              <span className="text-vermilion font-mono font-bold text-xs uppercase tracking-widest block mb-1">
-                {'//'} PROVEN RESULTS
-              </span>
-              <h2 className="font-bebas text-4xl sm:text-5xl text-bone tracking-wide">
-                AMBITIOUS BRANDS IN OUR MONTHLY RHYTHM
-              </h2>
-              <p className="text-slate-400 text-sm mt-2 font-normal max-w-2xl">
-                From hospitality and consumer retail to professional practices and growing enterprises, we help ambitious brands strengthen their digital presence.
-              </p>
-            </div>
-            <Link
-              href="/clients"
-              className="btn-bone px-5 py-2.5 rounded-sm font-mono font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 shrink-0"
-            >
-              <span>VIEW ALL CLIENTS &amp; SECTORS</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-          {/* Client Card */}
-          <div className="bg-obsidianSurface border grid-border p-6 sm:p-8 rounded-xl flex flex-col sm:flex-row items-center sm:items-start gap-6 group hover:border-vermilion/50 transition-colors">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-lg bg-white p-2.5 flex items-center justify-center shrink-0 shadow-md relative overflow-hidden">
-              <Image
-                src="/maharaj-k-momos-logo.jpg"
-                alt="Maharaj K Momos Logo"
-                width={112}
-                height={112}
-                className="object-contain"
-              />
-            </div>
-            <div className="flex-1 text-center sm:text-left">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
-                <h3 className="font-bebas text-3xl sm:text-4xl text-bone group-hover:text-vermilion transition-colors">
-                  MAHARAJ K MOMOS
-                </h3>
-                <span className="text-[10px] font-mono font-bold text-vermilion bg-vermilion/10 border grid-border px-3 py-1 rounded uppercase tracking-wider self-center sm:self-auto">
-                  FOOD &amp; DINING
-                </span>
-              </div>
-              <p className="text-xs font-mono text-slate-400 mb-3 flex items-center justify-center sm:justify-start gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-vermilion" />
-                <span>Bopal, Ahmedabad, Gujarat</span>
-              </p>
-              <p className="text-sm text-slate-400 leading-relaxed font-normal">
-                Ahmedabad&apos;s premier destination for authentic, steaming dumplings. Partnered with Long View for cinematic Reels, festive foot traffic campaigns, and counter NFC review hardware.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ========================================================== */}
-      {/* 6. PACKAGES & RETAINERS                                    */}
+      {/* 5. PACKAGES & RETAINERS                                    */}
       {/* ========================================================== */}
       <section id="retainers" className="w-full border-b grid-border py-24 px-6 sm:px-10 lg:px-14">
         <div className="max-w-6xl mx-auto">
@@ -617,7 +559,7 @@ export default function HomePage() {
       </section>
 
       {/* ========================================================== */}
-      {/* 7. FREQUENTLY ADDRESSED QUESTIONS                          */}
+      {/* 6. FREQUENTLY ADDRESSED QUESTIONS                          */}
       {/* ========================================================== */}
       <section id="faq" className="w-full border-b grid-border py-24 px-6 sm:px-10 lg:px-14">
         <div className="max-w-4xl mx-auto">
