@@ -20,9 +20,9 @@ export default function HomePage() {
       {/* ========================================================== */}
       {/* 1. HERO SECTION WITH INTEGRATED BOTTOM MARQUEE             */}
       {/* ========================================================== */}
-      <section className="w-full relative min-h-screen lg:h-screen lg:max-h-screen overflow-x-hidden lg:overflow-hidden flex flex-col justify-between pt-20 pb-4 lg:pt-16 lg:pb-2 px-5 sm:px-8 lg:px-14 border-b border-white/[0.08] hero-backdrop-bg">
+      <section className="w-full relative min-h-screen lg:h-screen lg:max-h-screen overflow-x-hidden lg:overflow-hidden flex flex-col justify-between pt-20 lg:pt-16 border-b border-white/[0.08] hero-backdrop-bg">
         
-        <div className="w-full max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2 lg:py-1 max-w-full min-w-0">
+        <div className="w-full max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 items-center gap-8 lg:gap-8 relative z-10 my-auto py-2 lg:py-1 px-5 sm:px-8 lg:px-14 pb-4 lg:pb-2 min-w-0">
           
           {/* LEFT COLUMN: CRISP ARCHITECTURAL & MONUMENTAL TYPOGRAPHY (LEFT 50%) */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-3.5 py-1 min-w-0 w-full max-w-full">
